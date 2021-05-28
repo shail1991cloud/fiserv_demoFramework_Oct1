@@ -57,8 +57,8 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
     Examples:
       | projectname | Description      | Tag  |
       | DemoProject | CreatingPipeLine | Test |
-
-  @Smoke @Test6
+#Do not run it *****
+  @SmokeInNotScope @Test6
   Scenario: user is able to delete all Projects from Project listing page
     Given user is on DIL login page
     When  enter username and password

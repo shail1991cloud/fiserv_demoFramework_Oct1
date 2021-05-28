@@ -165,18 +165,40 @@ public class Projectspage {
 		Commonfunction.waitForElementToAppear(driver,createProjectButton);
 		System.out.println(deleteButtonsOnProjectListingPage.size());
 
-		for(int i=1;i<=deleteButtonsOnProjectListingPage.size();i++)
+		for (WebElement dele:deleteButtonsOnProjectListingPage) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			dele.click();
+			Commonfunction.waitForElementToAppear(driver,deleteButtonOnDeleteProjectPopUp);
+			deleteButtonOnDeleteProjectPopUp.click();
+		}
+
+
+
+
+/*
+		for(int i=0;i<deleteButtonsOnProjectListingPage.size();i++)
 		{
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			deleteButtonsOnProjectListingPage.get(i).click();
 			Commonfunction.waitForElementToAppear(driver,deleteButtonOnDeleteProjectPopUp);
 			deleteButtonOnDeleteProjectPopUp.click();
+			//Commonfunction.scrollToElement(driver,deleteButtonsOnProjectListingPage.get(i-1));
 
-		}
+		}*/
 	}
 
 }
