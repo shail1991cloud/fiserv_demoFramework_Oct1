@@ -63,19 +63,19 @@ public class Projectspage {
 	WebElement createdProjectOnProjectListingPage;
 
 	@FindBy(how=How.XPATH ,using = "//*[@id=\"projectName\"]")
-	WebElement projectStatusOnProjecListingPage;
+	WebElement projectStatusOnProjectListingPage;
 
 	@FindBy(how=How.XPATH ,using = "//*[@id=\"projectTag\"]")
-	WebElement projectTagOnProjecListingPage;
+	WebElement projectTagOnProjectListingPage;
 
 	@FindBy(how=How.XPATH ,using = "//*[@id=\"engineId\"]/p/span")
-	WebElement projectEngineOnProjecListingPage;
+	WebElement projectEngineOnProjectListingPage;
 
 	@FindBy(how=How.XPATH ,using = "//*[@id=\"app\"]//div[5]//p[1]")
-	WebElement projectRunOnProjecListingPage;
+	WebElement projectRunOnProjectListingPage;
 
 	@FindBy(how=How.XPATH ,using = "//*[@id=\"app\"]//div[5]//p[2]")
-	WebElement projectCopyOnProjecListingPage;
+	WebElement projectCopyOnProjectListingPage;
 
 
 
@@ -121,6 +121,21 @@ public class Projectspage {
 
 
 	}
+
+	public void validateProjectRecord(String projectName) throws InterruptedException {
+		driver.navigate().refresh();
+		Commonfunction.waitForSomeTime();
+		Commonfunction.waitForElementToAppear(driver,searchBoxOnProjectListingPage);
+		searchBoxOnProjectListingPage.sendKeys(EnvSetUp.getDataKeyValue(Constant.ProjectName));
+		Assert.assertTrue(createdProjectOnProjectListingPage.isDisplayed());
+		Assert.assertTrue(projectStatusOnProjectListingPage.isDisplayed());
+		Assert.assertTrue(projectTagOnProjectListingPage.isDisplayed());
+		Assert.assertTrue(projectEngineOnProjectListingPage.isDisplayed());
+		Assert.assertTrue(projectCopyOnProjectListingPage.isDisplayed());
+		Assert.assertTrue(projectRunOnProjectListingPage.isDisplayed());
+		Assert.assertTrue(deleteButtonOnProjectListingPage.isDisplayed());
+	}
+
 
 	public void validateProjectName(String projectName) throws InterruptedException {
 		driver.navigate().refresh();
@@ -176,9 +191,6 @@ public class Projectspage {
 			deleteButtonOnDeleteProjectPopUp.click();
 		}
 
-
-
-
 /*
 		for(int i=0;i<deleteButtonsOnProjectListingPage.size();i++)
 		{
@@ -199,6 +211,11 @@ public class Projectspage {
 			//Commonfunction.scrollToElement(driver,deleteButtonsOnProjectListingPage.get(i-1));
 
 		}*/
+
+
+
+
+
 	}
 
 }

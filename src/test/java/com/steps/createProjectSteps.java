@@ -97,4 +97,9 @@ public class createProjectSteps extends Baseclass {
     public void heShouldBeAbleToDeleteAllTheProjectsFromProjectListingPage() {
         projectspage.deleteAllProjectsOnProjectListingPage();
     }
+
+    @Then("^created \"([^\"]*)\"is validated for details like status,tag,projectName,run button,run button,delete button etc.$")
+    public void createdIsValidatedForDetailsLikeStatusTagProjectNameRunButtonRunButtonDeleteButton(String projectName) throws Throwable {
+        projectspage.validateProjectRecord(projectName);
+    }
 }

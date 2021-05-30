@@ -35,7 +35,7 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
 
 
   @Smoke @Test4
-  Scenario Outline: user is able to create a Project and should be able to validate same in ProjectListing Page
+  Scenario Outline: user is able to create a Project and should be able to validate same in ProjectListing Page by using search functionality
     Given user is on DIL login page
     When  enter username and password
     And clicks on createProject tab
@@ -57,9 +57,24 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
     Examples:
       | projectname | Description      | Tag  |
       | DemoProject | CreatingPipeLine | Test |
+
+  @Smoke @Test6
+  Scenario Outline: user is able to validate details for project on project listing page
+    Given user is on DIL login page
+    When enter username and password
+    And  clicks on createProject tab
+    When enters "<projectname>","<Description>","<Tag>" and select engine
+    Then created "<projectname>"is validated for details like status,tag,projectName,run button,run button,delete button etc.
+    Examples:
+      | projectname | Description      | Tag  |
+      | DemoProject | CreatingPipeLine | Test |
+
+
 #Do not run it *****
-  @SmokeInNotScope @Test6
+  @SmokeInNotScope @Test7
   Scenario: user is able to delete all Projects from Project listing page
     Given user is on DIL login page
     When  enter username and password
     Then  he should be able to delete all the Projects from Project Listing Page
+
+
