@@ -6,6 +6,7 @@ import com.dataproviderUtilities.ConfigFileReader;
 import com.helperUtilities.Constant;
 import com.helperUtilities.EnvSetUp;
 import com.managersUtilities.Commonfunction;
+import com.pagesPF.Project_Builderpage;
 import com.pagesPF.Projectspage;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;
@@ -15,11 +16,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class createProjectSteps extends Baseclass {
     Projectspage projectspage;
+    Project_Builderpage projectBuilderpage;
     public ConfigFileReader configFileReader;
     //Logger log = LoggerHelper.getLogger(createProjectSteps.class);
 
     public createProjectSteps() {
         projectspage = PageFactory.initElements(driver, Projectspage.class);
+        projectBuilderpage=PageFactory.initElements(driver,Project_Builderpage.class);
         configFileReader = new ConfigFileReader();
 
     }
@@ -33,7 +36,7 @@ public class createProjectSteps extends Baseclass {
     }
 
     @When("^enters \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" and select engine$")
-    public void entersAndSelectEngine(String name, String description, String tag) {
+    public void entersAndSelectEngine(String name, String description, String tag)  {
         projectspage.enterDetailsIntoCreateProjectPopUp(name, description, tag);
         Commonfunction.submitDetails(projectspage.buttonCreate);
         Reporter.addStepLog("--Details entered for Project--");
@@ -41,8 +44,8 @@ public class createProjectSteps extends Baseclass {
 
 
     @Then("^created \"([^\"]*)\"is validated in project listing page$")
-    public void createdIsValidatedInProjectListingPage(String projectName) throws InterruptedException {
-        projectspage.validateProjectName(projectName);
+    public void createdIsValidatedInProjectListingPage(String projectName,String tag) throws InterruptedException {
+        projectspage.validateProjectName(projectName,tag);
         Reporter.addStepLog("--Project with Name-->" + EnvSetUp.getDataKeyValue(Constant.ProjectName) + "--is validated on Project Listing page");
 
     }
@@ -54,21 +57,21 @@ public class createProjectSteps extends Baseclass {
     }
 
     @Then("^submit button is displaying disable$")
-    public void submitButtonIsDisplayDisable() throws InterruptedException {
+    public void submitButtonIsDisplayDisable()  {
         Assert.assertTrue(!projectspage.buttonCreate.isSelected());
         Reporter.addStepLog("--Submit button displays disable and Project is not created -");
 
     }
 
     @When("^enters \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" with empty description and select engine$")
-    public void entersWithEmptyDescriptionAndSelectEngine(String name, String description, String tag) throws Throwable {
+    public void entersWithEmptyDescriptionAndSelectEngine(String name, String description, String tag){
         projectspage.enterDetailsIntoCreateProjectPopUp(name, description, tag);
         Reporter.addStepLog("--Details entered for Project--");
 
     }
 
     @When("^enters \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" and select engine and Cancel$")
-    public void entersAndSelectEngineAndCancel(String name, String description, String tag) throws Throwable {
+    public void entersAndSelectEngineAndCancel(String name, String description, String tag) {
         projectspage.enterDetailsIntoCreateProjectPopUp(name, description, tag);
         Commonfunction.submitDetails(projectspage.buttonCancel);
         Reporter.addStepLog("--Details entered for Project and cancelled on Project Setting PopUp--");
@@ -101,5 +104,27 @@ public class createProjectSteps extends Baseclass {
     @Then("^created \"([^\"]*)\"is validated for details like status,tag,projectName,run button,run button,delete button etc.$")
     public void createdIsValidatedForDetailsLikeStatusTagProjectNameRunButtonRunButtonDeleteButton(String projectName) throws Throwable {
         projectspage.validateProjectRecord(projectName);
+    }
+
+    @Then("^\"([^\"]*)\" and \"([^\"]*)\" is updated and validated$")
+    public void andIsUpdatedAndValidated(String description, String newTag) throws Throwable {
+        projectBuilderpage.editProjectDetailsOnProjectBuilder(newTag,description);
+        Commonfunction.navigateBackward(driver);
+        Commonfunction.navigateBackward(driver);
+        projectspage.validateProjectName(description,newTag);
+
+
+    }
+
+    @When("^enters \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" or edit existing project$")
+    public void entersOrEditExistingProject(String projectName, String description, String tag)  {
+
+    }
+
+    @Then("^created \"([^\"]*)\" with \"([^\"]*)\"is validated in project listing page$")
+    public void createdWithIsValidatedInProjectListingPage(String projectName, String tag) throws Throwable {
+        projectspage.validateProjectName(projectName,tag);
+        Reporter.addStepLog("--Project with Name-->" + EnvSetUp.getDataKeyValue(Constant.ProjectName) + "--is validated on Project Listing page");
+
     }
 }

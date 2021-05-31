@@ -10,6 +10,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -41,20 +42,32 @@ public class Commonfunction {
         Select select = new Select(dropDown);
         select.selectByValue(value);
     }
-    public static void submitDetails(WebElement element)
-    {
+
+    public static void submitDetails(WebElement element) {
         element.click();
     }
+
     public static void waitForElementToAppear(WebDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 50);
         wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public static void clickByHoveringMouse(WebDriver driver, WebElement element) throws InterruptedException {
+
+        waitForSomeTime();
+        Actions action = new Actions(driver);
+        action.moveToElement(element).click().perform();
+    }
+
+    public static void navigateBackward(WebDriver driver) {
+        driver.navigate().back();
     }
 
     public static void waitForSomeTime() throws InterruptedException {
         Thread.sleep(5000);
     }
 
-    public static void getScreenShots(WebDriver driver, Scenario scenario) throws IOException {
+    public static void getScreenShots(WebDriver driver, Scenario scenario) {
         if (scenario.isFailed()) {
             String screenshotName = scenario.getName().replaceAll(" ", "_");
             try {
