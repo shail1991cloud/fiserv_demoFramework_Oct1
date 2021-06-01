@@ -1,22 +1,19 @@
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/baselibrary/Capturescreenshots.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/steps/Hooks.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/steps/Steps.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/dataproviderUtilities/ConfigFileReader.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/pagesPF/Projectspage.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/managersUtilities/Commonfunction.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/pagesPF/Loginpage.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/pagesPF/DIL_loginpage.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/config/enums/Browsers.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/managersUtilities/FileReaderManager.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/runnerUtilies/TestRunner.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/steps/Steps2.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/steps/createProjectSteps.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/helperUtilities/LoggerHelper.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/config/enums/OS.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/helperUtilities/Constant.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/pagesPF/Flightdetailspage.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/helperUtilities/EnvSetUp.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/steps/commonSteps.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/pagesPF/Selectflight.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/helperUtilities/DatesHelper.java
-/home/pihu/My ProjectSpecific_DIL/DIL_TestAutomation-SH/src/test/java/com/baselibrary/Baseclass.java
+/home/pihu/dil_automation/src/test/java/com/pagesPF/DIL_loginpage.java
+/home/pihu/dil_automation/src/test/java/com/steps/Hooks.java
+/home/pihu/dil_automation/src/test/java/com/steps/commonSteps.java
+/home/pihu/dil_automation/src/test/java/com/helperUtilities/EnvSetUp.java
+/home/pihu/dil_automation/src/test/java/com/baselibrary/Capturescreenshots.java
+/home/pihu/dil_automation/src/test/java/com/helperUtilities/DatesHelper.java
+/home/pihu/dil_automation/src/test/java/com/runnerUtilies/TestRunner.java
+/home/pihu/dil_automation/src/test/java/com/baselibrary/Baseclass.java
+/home/pihu/dil_automation/src/test/java/com/helperUtilities/Constant.java
+/home/pihu/dil_automation/src/test/java/com/managersUtilities/FileReaderManager.java
+/home/pihu/dil_automation/src/test/java/com/managersUtilities/Commonfunction.java
+/home/pihu/dil_automation/src/test/java/com/config/enums/OS.java
+/home/pihu/dil_automation/src/test/java/com/pagesPF/Loginpage.java
+/home/pihu/dil_automation/src/test/java/com/pagesPF/Project_Builderpage.java
+/home/pihu/dil_automation/src/test/java/com/pagesPF/Projectspage.java
+/home/pihu/dil_automation/src/test/java/com/helperUtilities/LoggerHelper.java
+/home/pihu/dil_automation/src/test/java/com/config/enums/Browsers.java
+/home/pihu/dil_automation/src/test/java/com/dataproviderUtilities/ConfigFileReader.java
+/home/pihu/dil_automation/src/test/java/com/steps/createProjectSteps.java

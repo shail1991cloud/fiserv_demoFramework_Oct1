@@ -28,9 +28,9 @@ public class DIL_loginpage {
 
     public void loginToDIL() {
         Commonfunction.waitForElementToAppear(driver, dilUserName);
-        dilUserName.sendKeys(configFileReader.getProperties().getProperty("dilUserName"));
+        dilUserName.sendKeys(configFileReader.getProperties().getProperty("awsDevDilUsrNm"));
         Commonfunction.waitForElementToAppear(driver, dilPassword);
-        dilPassword.sendKeys(configFileReader.getProperties().getProperty("dilPassword"));
+        dilPassword.sendKeys(configFileReader.getProperties().getProperty("awsDevDilPwd"));
         Commonfunction.waitForElementToAppear(driver, login);
         login.click();
 

@@ -9,6 +9,7 @@ import com.managersUtilities.Commonfunction;
 import com.pagesPF.Project_Builderpage;
 import com.pagesPF.Projectspage;
 import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
@@ -30,6 +31,7 @@ public class createProjectSteps extends Baseclass {
 
     @When("^clicks on createProject tab$")
     public void clicksOnCreateProjectTab() {
+        Commonfunction.waitForElementToAppear(driver, projectspage.createProjectButton);
         projectspage.enterDetailsInProjectSetting();
         Reporter.addStepLog("--Details entered in ProjectSetUp Pop Up--");
         //log.info("User has clicked on ProjectSetUp Popup");
@@ -77,8 +79,8 @@ public class createProjectSteps extends Baseclass {
         Reporter.addStepLog("--Details entered for Project and cancelled on Project Setting PopUp--");
     }
 
-    @Then("^created \"([^\"]*)\"is not validated in project listing page$")
-    public void createdIsNotValidatedInProjectListingPage(String projectName) throws InterruptedException {
+    @Then("^cancelled \"([^\"]*)\"is not validated in project listing page$")
+    public void cancelledIsNotValidatedInProjectListingPage(String projectName) throws InterruptedException {
        projectspage.validateProjectNameNotOnProjectListingPage(projectName);
         Reporter.addStepLog("--Project is not present on ProjectListing Page--");
 
@@ -90,8 +92,8 @@ public class createProjectSteps extends Baseclass {
         Reporter.addStepLog("--Project is deleted on ProjectListing Page--");
     }
 
-    @Then("^created \"([^\"]*)\" disappear from Project Listing Page$")
-    public void createdDisappearFromProjectListingPage(String projectName) throws Throwable {
+    @Then("^deleted \"([^\"]*)\" disappear from Project Listing Page$")
+    public void deletedDisappearFromProjectListingPage(String projectName) throws Throwable {
         projectspage.validateProjectNameNotOnProjectListingPage(projectName);
         Reporter.addStepLog("--Project disappears from ProjectListing Page--");
     }
@@ -125,6 +127,25 @@ public class createProjectSteps extends Baseclass {
     public void createdWithIsValidatedInProjectListingPage(String projectName, String tag) throws Throwable {
         projectspage.validateProjectName(projectName,tag);
         Reporter.addStepLog("--Project with Name-->" + EnvSetUp.getDataKeyValue(Constant.ProjectName) + "--is validated on Project Listing page");
+
+    }
+
+    @Then("^user is able to get Project Setting PopUp$")
+    public void userIsAbleToGetProjectSettingPopUp() {
+        projectspage.validateAllFieldsOnProjectSettingPopUp();
+        Reporter.addStepLog("--Fields on Project Setting PopUp is present--");
+
+    }
+
+    @And("^searches the \"([^\"]*)\" with \"([^\"]*)\",\"([^\"]*)\"$")
+    public void searchesTheWith(String project, String description, String tag) throws Throwable {
+
+        projectspage.pickExistingProjectOrCreateNew(project,description,tag);
+
+    }
+
+    @Then("^\"([^\"]*)\" with \"([^\"]*)\"is validated in project listing page$")
+    public void withIsValidatedInProjectListingPage(String project, String tag) throws Throwable {
 
     }
 }

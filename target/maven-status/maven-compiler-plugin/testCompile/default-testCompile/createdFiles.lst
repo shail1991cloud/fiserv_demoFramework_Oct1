@@ -11,11 +11,8 @@ com/steps/commonSteps.class
 com/helperUtilities/Constant.class
 com/helperUtilities/DatesHelper.class
 com/config/enums/OS.class
-com/pagesPF/Selectflight.class
 com/steps/createProjectSteps.class
 com/pagesPF/Projectspage.class
-com/steps/Steps2.class
+com/pagesPF/Project_Builderpage.class
 com/config/enums/Browsers.class
-com/steps/Steps.class
-com/pagesPF/Flightdetailspage.class
 com/helperUtilities/EnvSetUp.class

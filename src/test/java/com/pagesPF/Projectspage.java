@@ -25,7 +25,10 @@ public class Projectspage {
     }
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"create-project-btn\"]")
-    WebElement createProjectButton;
+    public WebElement createProjectButton;
+
+    @FindBy(how = How.XPATH, using = "//*[text()=' Create project ']")
+    public WebElement createProjectButtonWhenNoProject;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"input-text-field0\"]")
     WebElement projectNameTextField;
@@ -57,6 +60,9 @@ public class Projectspage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div/div[1]/div[2]/div/div/scale-modal/scale-button[2]")
     WebElement deleteButtonOnDeleteProjectPopUp;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"project-dashboard-header\"]/div[1]")
+    WebElement optionToSortByStatus;
+
     @FindBy(how = How.XPATH, using = "//*[@placeholder=\"Search\"]")
     WebElement searchBoxOnProjectListingPage;
 
@@ -84,7 +90,6 @@ public class Projectspage {
 
 
     public void enterDetailsInProjectSetting() {
-        Commonfunction.waitForElementToAppear(driver, createProjectButton);
         createProjectButton.click();
     }
 
@@ -99,6 +104,27 @@ public class Projectspage {
         Assert.assertTrue(buttonCreate.isDisplayed());
         Assert.assertTrue(buttonCancel.isDisplayed());
 
+    }
+
+    public void pickExistingProjectOrCreateNew(String name, String description, String tag) throws InterruptedException {
+        if (createdProjectsOnProjectListingPage.size() > 0) {
+            String existingProjectName=createdProjectsOnProjectListingPage.get(1).getText();
+            System.out.println("ProjectName--->"+existingProjectName);
+            driver.navigate().refresh();
+            Commonfunction.waitForSomeTime();
+            Commonfunction.waitForElementToAppear(driver,searchBoxOnProjectListingPage);
+            searchBoxOnProjectListingPage.sendKeys(existingProjectName);
+            Assert.assertTrue(createdProjectOnProjectListingPage.isDisplayed());
+
+
+        } else {
+            Commonfunction.waitForElementToAppear(driver, createProjectButtonWhenNoProject);
+            Commonfunction.scrollToElement(driver,createProjectButtonWhenNoProject);
+            createProjectButtonWhenNoProject.click();
+            enterDetailsIntoCreateProjectPopUp(name,description,tag);
+            buttonCreate.click();
+            validateProjectName(name,tag);
+        }
     }
 
     public void enterDetailsIntoCreateProjectPopUp(String name, String description, String tag) {
@@ -171,18 +197,24 @@ public class Projectspage {
 
 
     public void deleteAllProjectsOnProjectListingPage() {
-        Commonfunction.waitForElementToAppear(driver, createProjectButton);
-        System.out.println(deleteButtonsOnProjectListingPage.size());
+
 
         for (WebElement dele : deleteButtonsOnProjectListingPage) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            dele.click();
-            Commonfunction.waitForElementToAppear(driver, deleteButtonOnDeleteProjectPopUp);
-            deleteButtonOnDeleteProjectPopUp.click();
+            try {
+                Commonfunction.waitForElementToAppear(driver, createProjectButton);
+                dele.click();
+                Commonfunction.waitForElementToAppear(driver, deleteButtonOnDeleteProjectPopUp);
+                deleteButtonOnDeleteProjectPopUp.click();
+                Commonfunction.waitForSomeTime();
+            } catch (Exception e) {
+               System.out.println(e.getMessage());
+            }
+
         }
 
 

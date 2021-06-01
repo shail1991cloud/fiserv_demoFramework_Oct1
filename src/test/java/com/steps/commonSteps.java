@@ -23,7 +23,7 @@ public class commonSteps extends Baseclass {
 
     @Given("^user is on DIL login page$")
     public void userIsOnDILLoginPage() {
-        driver.get(configFileReader.getProperties().getProperty("website"));
+        driver.get(configFileReader.getProperties().getProperty("awsDev_Url"));
         Commonfunction.maximiseBrowser(driver);
         Reporter.addScenarioLog("Browser Launched");
         Reporter.addStepLog("--Navigated to URL--");
