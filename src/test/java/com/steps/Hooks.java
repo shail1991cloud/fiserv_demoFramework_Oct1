@@ -10,7 +10,6 @@ import com.config.enums.Browsers;
 import com.cucumber.listener.Reporter;
 import com.dataproviderUtilities.ConfigFileReader;
 import com.managersUtilities.Commonfunction;
-import com.pagesPF.Loginpage;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -18,7 +17,6 @@ import cucumber.api.java.Before;
 public class Hooks {
 
     WebDriver driver;
-    Loginpage lpf;
     public ConfigFileReader configFileReader;
 
 

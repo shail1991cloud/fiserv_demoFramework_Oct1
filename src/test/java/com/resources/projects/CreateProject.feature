@@ -23,12 +23,12 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
   Scenario Outline: user is able to create a Project and should be able to validate same in ProjectListing Page
     Given user is on DIL login page
     When  enter username and password
-    And clicks on createProject tab
+    And   clicks on createProject tab
     When enters "<ProjectName>","<Description>","<Tag>" and select engine
     Then created "<ProjectName>" with "<Tag>"is validated in project listing page
     Examples:
       | ProjectName | Description      | Tag  |
-      | Auto-DemoProject | CreatingPipeLine | Test |
+      | Auto_Pro | CreatingPipeLine | Test |
 
   @Smoke @Positive @Test4
   Scenario Outline: user is able to validate details for project on project listing page
@@ -39,7 +39,7 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
     Then created "<ProjectName>"is validated for details like status,tag,projectName,run button,run button,delete button etc.
     Examples:
       | ProjectName | Description      | Tag  |
-      | Auto-DemoProject | CreatingPipeLine | Test |
+      | Auto-Test | CreatingPipeLine | Test |
 
   @Smoke @Positive @Test5
   Scenario Outline: user is able to Search Project on Project Listing by the use of Search Functionality
@@ -48,19 +48,19 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
     Then searches the "<ProjectName>" with "<Description>","<Tag>"
     Examples:
       | ProjectName | Description      | Tag  |
-      | Auto-DemoProject | CreatingPipeLine | Test |
+      | Auto-Pro | CreatingPipeLine | Test |
 
-  @Smoke @Positive @Test6
+ @Smoke @Positive @Test6
   Scenario Outline: user is able to validate updated project on Project Listing page
-    Given user is on DIL login page
-    When enter username and password
-    And  clicks on createProject tab
-    When enters "<ProjectName>","<Description>","<Tag>" and select engine
-    And created "<ProjectName>" with "<Tag>"is validated in project listing page
-    Then "<NewTag>" and "<Description>" is updated and validated
-    Examples:
-      | ProjectName | Description      | Tag  | NewTag  | Description     |
-      | Auto-DemoProject| CreatingPipeLine | Test | TestTag | Updated Project |
+   Given user is on DIL login page
+   When enter username and password
+   And  clicks on createProject tab
+   When enters "<ProjectName>","<Description>","<Tag>" and select engine
+   And  created "<ProjectName>" with "<Tag>"is validated in project listing page
+   Then "<NewTag>" and "<Description>" is updated and validated
+   Examples:
+     | ProjectName | Description      | Tag  | NewTag  | Description     |
+     | Auto-Pro_Test| CreatingPipeLine | Test | TestTag | Updated Project |
 
 
     #-------Negative Scenarios-------#
@@ -98,11 +98,11 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
     Then deleted "<ProjectName>" disappear from Project Listing Page
     Examples:
       | ProjectName | Description      | Tag  |
-      | Auto-DemoProject  | CreatingPipeLine | Test |
+      | Auto-DemoTestProject  | CreatingPipeLine | Test |
 
 
     # Do not run it *****
-  @SmokeInNotScope @Test8
+  @SmokeInNotScope @Test12
   Scenario: user is able to delete all Projects from Project listing page
     Given user is on DIL login page
     When  enter username and password

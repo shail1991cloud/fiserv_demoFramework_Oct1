@@ -4,12 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -44,7 +41,47 @@ public class Commonfunction {
     }
 
     public static void submitDetails(WebElement element) {
+
         element.click();
+    }
+
+    public static void clickForceFully(WebDriver driver,WebElement element)
+    {
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
+
+    public static String generateRandomString(int n)
+    {
+        String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                + "0123456789"
+                + "abcdefghijklmnopqrstuvxyz";
+
+        // create StringBuffer size of AlphaNumericString
+        StringBuilder sb = new StringBuilder(n);
+
+        for (int i = 0; i < n; i++) {
+
+            // generate a random number between
+            // 0 to AlphaNumericString variable length
+            int index
+                    = (int)(AlphaNumericString.length()
+                    * Math.random());
+
+            // add Character one by one in end of sb
+            sb.append(AlphaNumericString
+                    .charAt(index));
+        }
+
+        return sb.toString();
+    }
+
+    public static void clickOnShadowElement(WebDriver driver, String elementJSPath) throws InterruptedException {
+        Commonfunction.waitForSomeTime();
+        JavascriptExecutor jse=(JavascriptExecutor) driver;
+        WebElement elementToClick=(WebElement) jse.executeScript(elementJSPath);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", elementToClick);
+
     }
 
     public static void waitForElementToAppear(WebDriver driver, WebElement element) {
@@ -65,6 +102,14 @@ public class Commonfunction {
 
     public static void waitForSomeTime() throws InterruptedException {
         Thread.sleep(5000);
+    }
+    public static void waitForMinimalTime() throws InterruptedException {
+        Thread.sleep(200);
+    }
+    public static List<WebElement> getCustomisedWebElements(WebDriver driver,String stringXpath, String stringToAdd)
+    {
+        List<WebElement> customisedElements= driver.findElements(org.openqa.selenium.By.xpath(String.format(stringXpath,stringToAdd)));
+        return customisedElements;
     }
 
     public static void getScreenShots(WebDriver driver, Scenario scenario) {

@@ -32,14 +32,15 @@ public class createProjectSteps extends Baseclass {
     @When("^clicks on createProject tab$")
     public void clicksOnCreateProjectTab() {
         Commonfunction.waitForElementToAppear(driver, projectspage.createProjectButton);
-        projectspage.enterDetailsInProjectSetting();
+        projectspage.createProjectButton.click();
         Reporter.addStepLog("--Details entered in ProjectSetUp Pop Up--");
         //log.info("User has clicked on ProjectSetUp Popup");
     }
 
     @When("^enters \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" and select engine$")
-    public void entersAndSelectEngine(String name, String description, String tag)  {
+    public void entersAndSelectEngine(String name, String description, String tag) throws InterruptedException {
         projectspage.enterDetailsIntoCreateProjectPopUp(name, description, tag);
+        Commonfunction.submitDetails(projectspage.buttonCreate);
         Commonfunction.submitDetails(projectspage.buttonCreate);
         Reporter.addStepLog("--Details entered for Project--");
     }
@@ -66,14 +67,14 @@ public class createProjectSteps extends Baseclass {
     }
 
     @When("^enters \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" with empty description and select engine$")
-    public void entersWithEmptyDescriptionAndSelectEngine(String name, String description, String tag){
+    public void entersWithEmptyDescriptionAndSelectEngine(String name, String description, String tag) throws InterruptedException {
         projectspage.enterDetailsIntoCreateProjectPopUp(name, description, tag);
         Reporter.addStepLog("--Details entered for Project--");
 
     }
 
     @When("^enters \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" and select engine and Cancel$")
-    public void entersAndSelectEngineAndCancel(String name, String description, String tag) {
+    public void entersAndSelectEngineAndCancel(String name, String description, String tag) throws InterruptedException {
         projectspage.enterDetailsIntoCreateProjectPopUp(name, description, tag);
         Commonfunction.submitDetails(projectspage.buttonCancel);
         Reporter.addStepLog("--Details entered for Project and cancelled on Project Setting PopUp--");
@@ -87,8 +88,8 @@ public class createProjectSteps extends Baseclass {
     }
 
     @When("^deletes the project$")
-    public void deletesTheProject() {
-        projectspage.deleteProjectOnProjectListingPage();
+    public void deletesTheProject() throws InterruptedException {
+       projectspage.deleteProjectOnProjectListingPage();
         Reporter.addStepLog("--Project is deleted on ProjectListing Page--");
     }
 
@@ -106,14 +107,16 @@ public class createProjectSteps extends Baseclass {
     @Then("^created \"([^\"]*)\"is validated for details like status,tag,projectName,run button,run button,delete button etc.$")
     public void createdIsValidatedForDetailsLikeStatusTagProjectNameRunButtonRunButtonDeleteButton(String projectName) throws Throwable {
         projectspage.validateProjectRecord(projectName);
+        projectspage.deleteProjectOnProjectListingPage();
     }
 
     @Then("^\"([^\"]*)\" and \"([^\"]*)\" is updated and validated$")
-    public void andIsUpdatedAndValidated(String description, String newTag) throws Throwable {
+    public void andIsUpdatedAndValidated(String newTag, String description) throws Throwable {
         projectBuilderpage.editProjectDetailsOnProjectBuilder(newTag,description);
         Commonfunction.navigateBackward(driver);
-        Commonfunction.navigateBackward(driver);
+      //  Commonfunction.navigateBackward(driver);
         projectspage.validateProjectName(description,newTag);
+      //  projectspage.deleteProjectOnProjectListingPage();
 
 
     }
@@ -132,7 +135,7 @@ public class createProjectSteps extends Baseclass {
 
     @Then("^user is able to get Project Setting PopUp$")
     public void userIsAbleToGetProjectSettingPopUp() {
-        projectspage.validateAllFieldsOnProjectSettingPopUp();
+        projectspage.validateProjectSettingPopUp();
         Reporter.addStepLog("--Fields on Project Setting PopUp is present--");
 
     }

@@ -51,7 +51,7 @@ public class ConfigFileReader {
     }
 
     public String getApplicationUrl() {
-        String url = properties.getProperty("awsDev_Url");
+        String url = properties.getProperty("dil_Url");
         if (url != null) return url;
         else throw new RuntimeException("url not specified in the Configuration.properties file.");
     }
