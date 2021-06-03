@@ -13,11 +13,19 @@ import com.config.enums.OS;
 import com.dataproviderUtilities.ConfigFileReader;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+/*
+@author-Shailendra PS Parihar
+ */
 public class Baseclass {
 
 
     public static WebDriver driver;
+
+    /*
+    @param browser is the name of browser that we can pas from enums
+    @method selectBrowser is used provide driver instance
+    @return this method returns WebDriver instance
+     */
 
     public static WebDriver selectBrowser(String browser) {
 

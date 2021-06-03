@@ -127,7 +127,7 @@ public class Commonfunction {
                 timeStamp = timeStamp.replace(' ', '_');
                 timeStamp = timeStamp.replace(':', '_');
 
-                String dest = System.getProperty("user.dir") + "test-output/ScreenShots" + timeStamp + ".png";
+                String dest = System.getProperty("user.dir") + "/test-output/ScreenShots/failScreen" + timeStamp + ".png";
                 System.out.println(dest);
                 File destinationPath = new File(dest);
 

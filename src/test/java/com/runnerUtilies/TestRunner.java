@@ -18,7 +18,7 @@ import cucumber.api.junit.Cucumber;
         features = "src/test/java/com/resources",
         glue = {"com/steps"},
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
-        tags = {"@Smoke"},
+        tags = {"@Test8"},
         monochrome = true
 
 )
