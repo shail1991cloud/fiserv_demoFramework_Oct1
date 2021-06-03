@@ -1,6 +1,6 @@
 package com.pagesPF;
 
-import com.managersUtilities.Commonfunction;
+import com.managersUtilities.CommonFunction;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,15 +34,15 @@ public class Project_Builderpage {
     WebElement buttonSaveOnProjectBuilderPage;
 
     public void editProjectDetailsOnProjectBuilder(String tagName, String Description) throws InterruptedException {
-        Commonfunction.waitForElementToAppear(driver, projectspage.existingProjectOnProjectListingPage);
+        CommonFunction.waitForElementToAppear(driver, projectspage.existingProjectOnProjectListingPage);
         projectspage.existingProjectOnProjectListingPage.click();
-        Commonfunction.clickByHoveringMouse(driver, editProjectToolTipOnProjectBuilder);
-        Commonfunction.clickByHoveringMouse(driver, deleteTagToolTipOnProjectBuilderPage);
+        CommonFunction.clickByHoveringMouse(driver, editProjectToolTipOnProjectBuilder);
+        CommonFunction.clickByHoveringMouse(driver, deleteTagToolTipOnProjectBuilderPage);
         textFieldTagName.sendKeys(Keys.ENTER);
         textFieldTagName.sendKeys(tagName);
         textFieldTagName.sendKeys(Keys.ENTER);
-        Commonfunction.scrollToElement(driver, buttonSaveOnProjectBuilderPage);
-        Commonfunction.waitForElementToAppear(driver, buttonSaveOnProjectBuilderPage);
+        CommonFunction.scrollToElement(driver, buttonSaveOnProjectBuilderPage);
+        CommonFunction.waitForElementToAppear(driver, buttonSaveOnProjectBuilderPage);
         buttonSaveOnProjectBuilderPage.click();
 
     }

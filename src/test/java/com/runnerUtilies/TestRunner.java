@@ -2,23 +2,21 @@
 
 package com.runnerUtilies;
 
-import java.io.File;
-
+import com.cucumber.listener.Reporter;
+import com.managersUtilities.FileReaderManager;
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 
-import com.cucumber.listener.Reporter;
-import com.managersUtilities.FileReaderManager;
-
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import java.io.File;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/java/com/resources",
         glue = {"com/steps"},
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
-        tags = {"@Test1"},
+        tags = {"@Test10"},
         monochrome = true
 
 )

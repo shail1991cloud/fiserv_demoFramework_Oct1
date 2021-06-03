@@ -53,7 +53,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jun 3, 2021 03:37:37 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Jun 3, 2021 08:20:55 PM</span>
 				</a>
 			</li>
 			<li>
@@ -92,9 +92,9 @@
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
 					<li><a href='#'>@CreateProject</a></li>
-					<li><a href='#'>@Positive</a></li>
 					<li><a href='#'>@Smoke</a></li>
-					<li><a href='#'>@Test1</a></li>
+					<li><a href='#'>@Negative</a></li>
+					<li><a href='#'>@Test10</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -172,7 +172,7 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>7</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -192,28 +192,28 @@
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Creation of Projects and validation of Project Setting Pop Up</span>
-						<span class='test-time'>Jun 3, 2021 03:37:37 PM</span>
+						<span class='test-time'>Jun 3, 2021 08:20:55 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenariooutline node' test-id='2' status='pass'>
-	<span class='duration right label'>0h 0m 8s+475ms</span>
+	<span class='duration right label'>0h 0m 46s+273ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
-		<span class="desc-text">user is able to get Create Project Tab on Project Listing page</span>
+		<span class="desc-text">user is not able to find deleted project on ProjectListing Page</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='3' class='node scenario pass' status='pass'>
 			<div class='category-list'>
-				<span class='category label white-text'>@Positive</span>
 				<span class='category label white-text'>@CreateProject</span>
 				<span class='category label white-text'>@Smoke</span>
-				<span class='category label white-text'>@Test1</span>
+				<span class='category label white-text'>@Negative</span>
+				<span class='category label white-text'>@Test10</span>
 			</div>
 			
 			<b>Scenario</b>
 			
-			<span class="bdd-step-name">user is able to get Create Project Tab on Project Listing page</span>
+			<span class="bdd-step-name">user is not able to find deleted project on ProjectListing Page</span>
 				<div class='pre'>--Browser Launched--</div>
 				<div class='pre'>----Test is Completed----</div>
 			
@@ -228,8 +228,30 @@
 							<div class='pre'>--UserName and Password Entered--</div>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='6' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then user is able to verify "Create Project" on Project Listing page</span>
+					<li test-id='6' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And clicks on createProject tab</span>
+							<div class='pre'>--Details entered in ProjectSetUp Pop Up--</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='7' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When enters "Auto-DemoTestProject","CreatingPipeLine","Test" and select engine</span>
+							<div class='pre'>--Details entered for Project--</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='8' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then created "Auto-DemoTestProject" with "Test"is validated in project listing page</span>
+							<div class='pre'>--Project with Name-->vIXANAuto-DemoTestProject03-00--is validated on Project Listing page</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='9' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When deletes the project</span>
+							<div class='pre'>--Project is deleted on ProjectListing Page--</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='10' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then deleted "Auto-DemoTestProject" disappear from Project Listing Page</span>
+							<div class='pre'>Element is not present on Project listing page</div>
+							<div class='pre'>--Project disappears from ProjectListing Page--</div>
 							<div class='pre'>passed</div>
 					</li>
 				</ul>
@@ -313,47 +335,13 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jun 3, 2021 03:37:37 PM</td>
+										<td>Jun 3, 2021 08:20:55 PM</td>
 										<td class='linked' test-id='1'>Creation of Projects and validation of Project Setting Pop Up</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jun 3, 2021 03:37:37 PM</td>
-										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to get Create Project Tab on Project Listing page.user is able to get Create Project Tab on Project Listing page</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-				<li class='category displayed active'>
-					<div class='category-heading'>
-						<span class='category-name'>@Positive</span>
-						<span class='category-status right'>
-							<span class='label pass'>1</span>
-						</span>
-					</div>
-					<div class='category-content hide'>
-						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
-							
-							
-						</div>
-					
-						<div class='category-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Jun 3, 2021 03:37:37 PM</td>
-										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to get Create Project Tab on Project Listing page.user is able to get Create Project Tab on Project Listing page</td>
+										<td>Jun 3, 2021 08:20:55 PM</td>
+										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is not able to find deleted project on ProjectListing Page.user is not able to find deleted project on ProjectListing Page</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -386,8 +374,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jun 3, 2021 03:37:37 PM</td>
-										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to get Create Project Tab on Project Listing page.user is able to get Create Project Tab on Project Listing page</td>
+										<td>Jun 3, 2021 08:20:55 PM</td>
+										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is not able to find deleted project on ProjectListing Page.user is not able to find deleted project on ProjectListing Page</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -397,7 +385,7 @@
 				</li>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@Test1</span>
+						<span class='category-name'>@Negative</span>
 						<span class='category-status right'>
 							<span class='label pass'>1</span>
 						</span>
@@ -420,8 +408,42 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jun 3, 2021 03:37:37 PM</td>
-										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to get Create Project Tab on Project Listing page.user is able to get Create Project Tab on Project Listing page</td>
+										<td>Jun 3, 2021 08:20:55 PM</td>
+										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is not able to find deleted project on ProjectListing Page.user is not able to find deleted project on ProjectListing Page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Test10</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jun 3, 2021 08:20:55 PM</td>
+										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is not able to find deleted project on ProjectListing Page.user is not able to find deleted project on ProjectListing Page</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -490,8 +512,8 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Jun 3, 2021 03:37:37 PM</td>
-                                                <td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to get Create Project Tab on Project Listing page.user is able to get Create Project Tab on Project Listing page</td>
+                                                <td>Jun 3, 2021 08:20:55 PM</td>
+                                                <td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is not able to find deleted project on ProjectListing Page.user is not able to find deleted project on ProjectListing Page</td>
                                                 <td><span class='test-status pass'>pass</span></td>
                                             </tr>
                                         </tbody>
@@ -531,25 +553,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>3</div>
+					<div class='panel-lead'>7</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jun 3, 2021 03:37:37 PM</div>
+					<div class='panel-lead'>Jun 3, 2021 08:20:55 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jun 3, 2021 03:37:45 PM</div>
+			 		<div class='panel-lead'>Jun 3, 2021 08:21:41 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>8,619ms</div>
+					<div class='panel-lead'>46,473ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -574,15 +596,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td>@Positive</td>
-							<td>1</td>
-							<td>0</td>
-							<td>0</td>
-							<td>
-									100%
-							</td>
-						</tr>
-						<tr>
 							<td>@Smoke</td>
 							<td>1</td>
 							<td>0</td>
@@ -592,7 +605,16 @@
 							</td>
 						</tr>
 						<tr>
-							<td>@Test1</td>
+							<td>@Negative</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@Test10</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -630,7 +652,7 @@
 				infoChild: 0,
 				exceptionsChild: 0,
 				
-				passGrandChild: 3,
+				passGrandChild: 7,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,

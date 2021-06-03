@@ -1,27 +1,23 @@
 package com.baselibrary;
 
-import java.util.concurrent.TimeUnit;
-
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 
-import com.config.enums.Browsers;
-import com.config.enums.OS;
-import com.dataproviderUtilities.ConfigFileReader;
+import java.util.concurrent.TimeUnit;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-/*
-@author-Shailendra PS Parihar
+/**
+@autho- Shailendra PS Parihar
  */
 public class Baseclass {
 
 
     public static WebDriver driver;
 
-    /*
+    /**
     @param browser is the name of browser that we can pas from enums
     @method selectBrowser is used provide driver instance
     @return this method returns WebDriver instance

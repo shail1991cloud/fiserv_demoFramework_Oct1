@@ -4,8 +4,7 @@ import com.cucumber.listener.Reporter;
 import com.helperUtilities.Constant;
 import com.helperUtilities.DatesHelper;
 import com.helperUtilities.EnvSetUp;
-import com.managersUtilities.Commonfunction;
-
+import com.managersUtilities.CommonFunction;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -108,18 +107,18 @@ public class Projectspage {
 
     public void validateProjectSettingPopUp()
     {
-        Commonfunction.waitForElementToAppear(driver, projectSettingUpModelPanel);
+        CommonFunction.waitForElementToAppear(driver, projectSettingUpModelPanel);
         Assert.assertTrue(projectSettingUpModelPanel.isDisplayed());
     }
 
 
     public void validateAllFieldsOnProjectSettingPopUp() {
-        Commonfunction.waitForElementToAppear(driver, projectNameTextField);
+        CommonFunction.waitForElementToAppear(driver, projectNameTextField);
         Assert.assertTrue(projectNameTextField.isDisplayed());
-        Commonfunction.waitForElementToAppear(driver, projectTag);
+        CommonFunction.waitForElementToAppear(driver, projectTag);
         Assert.assertTrue(projectTag.isDisplayed());
-        Commonfunction.waitForElementToAppear(driver, dropDown_Engines);
-        Commonfunction.scrollToElement(driver, dropDown_Engines);
+        CommonFunction.waitForElementToAppear(driver, dropDown_Engines);
+        CommonFunction.scrollToElement(driver, dropDown_Engines);
         Assert.assertTrue(dropDown_Engines.isDisplayed());
         Assert.assertTrue(buttonCreateOnProjectSettingPopUp.isDisplayed());
         Assert.assertTrue(buttonCancelOnProjectSettingPopUp.isDisplayed());
@@ -129,14 +128,14 @@ public class Projectspage {
     public void pickExistingProjectOrCreateNew(String name, String description, String tag) throws InterruptedException {
         if (createdProjectsOnProjectListingPage.size() > 0) {
             String existingProjectName=createdProjectsOnProjectListingPage.get(1).getText();
-            Commonfunction.waitForElementToAppear(driver,searchBoxOnProjectListingPage);
+            CommonFunction.waitForElementToAppear(driver,searchBoxOnProjectListingPage);
             searchBoxOnProjectListingPage.sendKeys(existingProjectName);
             Assert.assertTrue(existingProjectOnProjectListingPage.isDisplayed());
 
 
         } else {
-            Commonfunction.waitForElementToAppear(driver, createProjectButtonWhenNoProject);
-            Commonfunction.scrollToElement(driver,createProjectButtonWhenNoProject);
+            CommonFunction.waitForElementToAppear(driver, createProjectButtonWhenNoProject);
+            CommonFunction.scrollToElement(driver,createProjectButtonWhenNoProject);
             createProjectButtonWhenNoProject.click();
             enterDetailsIntoCreateProjectPopUp(name,description,tag);
             buttonCreateOnProjectSettingPopUp.click();
@@ -145,17 +144,17 @@ public class Projectspage {
     }
 
     public void enterDetailsIntoCreateProjectPopUp(String name, String description, String tag) throws InterruptedException {
-        Commonfunction.waitForElementToAppear(driver, projectNameTextField);
-        String uniqueProjectName = Commonfunction.generateRandomString(5) + name+DatesHelper.getTodayDateWithSeconds();
+        CommonFunction.waitForElementToAppear(driver, projectNameTextField);
+        String uniqueProjectName = CommonFunction.generateRandomString(5) + name+DatesHelper.getTodayDateWithSeconds();
         EnvSetUp.setDataValue(Constant.ProjectName, uniqueProjectName);
         projectNameTextField.sendKeys(uniqueProjectName);
         projectDescriptionTextField.sendKeys(description);
-        Commonfunction.waitForElementToAppear(driver, projectTag);
+        CommonFunction.waitForElementToAppear(driver, projectTag);
         projectTag.sendKeys(tag);
         projectTag.sendKeys(Keys.ENTER);
-        Commonfunction.waitForElementToAppear(driver, dropDown_Engines);
-        Commonfunction.scrollToElement(driver, dropDown_Engines);
-        Commonfunction.selectFromDropDownWithValue(dropDown_Engines, "1");
+        CommonFunction.waitForElementToAppear(driver, dropDown_Engines);
+        CommonFunction.scrollToElement(driver, dropDown_Engines);
+        CommonFunction.selectFromDropDownWithValue(dropDown_Engines, "1");
 
     }
 
@@ -172,11 +171,11 @@ public class Projectspage {
 
     public void validateProjectName(String projectName, String tag) throws InterruptedException {
 
-        Commonfunction.clickOnShadowElement(driver,projectJsPath);
-        Commonfunction.waitForElementToAppear(driver, searchBoxOnProjectListingPage);
+        CommonFunction.clickOnShadowElement(driver,projectJsPath);
+        CommonFunction.waitForElementToAppear(driver, searchBoxOnProjectListingPage);
         searchBoxOnProjectListingPage.sendKeys(EnvSetUp.getDataKeyValue(Constant.ProjectName));
-        Commonfunction.waitForSomeTime();
-        Assert.assertTrue(Commonfunction.getCustomisedWebElement(driver,customisedProjectOnProjectListingPage,EnvSetUp.getDataKeyValue(Constant.ProjectName)).isDisplayed());
+        CommonFunction.waitForSomeTime();
+        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,customisedProjectOnProjectListingPage,EnvSetUp.getDataKeyValue(Constant.ProjectName)).isDisplayed());
         String tagNameOnProjectListingPage = projectTagOnProjectListingPage.getText();
         Assert.assertEquals(tag, tagNameOnProjectListingPage);
 
@@ -184,15 +183,15 @@ public class Projectspage {
 
     public void validateProjectNameNotOnProjectListingPage(String projectName) throws InterruptedException {
 
-        Commonfunction.waitForElementToAppear(driver, searchBoxOnProjectListingPage);
+        CommonFunction.waitForElementToAppear(driver, searchBoxOnProjectListingPage);
         searchBoxOnProjectListingPage.sendKeys(EnvSetUp.getDataKeyValue(Constant.ProjectName));
-        Commonfunction.waitForSomeTime();
+        CommonFunction.waitForSomeTime();
         validatePresenceOfElement();
 
     }
 
     public void validatePresenceOfElement() {
-        if (Commonfunction.getCustomisedWebElements(driver, customisedProjectOnProjectListingPage,EnvSetUp.getDataKeyValue(Constant.ProjectName)).size() > 0) {
+        if (CommonFunction.getCustomisedWebElements(driver, customisedProjectOnProjectListingPage,EnvSetUp.getDataKeyValue(Constant.ProjectName)).size() > 0) {
             Assert.fail("Project is Present on Project Listing page");
         } else {
             Reporter.addStepLog("Element is not present on Project listing page");
@@ -201,10 +200,10 @@ public class Projectspage {
 
     public void deleteProjectOnProjectListingPage() throws InterruptedException {
 
-        Commonfunction.clickByHoveringMouse(driver,deleteButtonOnProjectListingPage);
-        Commonfunction.waitForSomeTime();
-        Commonfunction.clickForceFully(driver,deleteButtonOnDeleteProjectPopUp);
-        Commonfunction.waitForMinimalTime();
+        CommonFunction.clickByHoveringMouse(driver,deleteButtonOnProjectListingPage);
+        CommonFunction.waitForSomeTime();
+        CommonFunction.clickForceFully(driver,deleteButtonOnDeleteProjectPopUp);
+        CommonFunction.waitForMinimalTime();
         deleteButtonOnDeleteProjectPopUp.click();
 
     }
@@ -220,11 +219,11 @@ public class Projectspage {
                 e.printStackTrace();
             }
             try {
-                Commonfunction.waitForElementToAppear(driver, createProjectButton);
+                CommonFunction.waitForElementToAppear(driver, createProjectButton);
                 dele.click();
-                Commonfunction.waitForElementToAppear(driver, deleteButtonOnDeleteProjectPopUp);
+                CommonFunction.waitForElementToAppear(driver, deleteButtonOnDeleteProjectPopUp);
                 deleteButtonOnDeleteProjectPopUp.click();
-                Commonfunction.waitForSomeTime();
+                CommonFunction.waitForSomeTime();
             } catch (Exception e) {
                System.out.println(e.getMessage());
             }

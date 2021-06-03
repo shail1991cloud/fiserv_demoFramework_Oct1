@@ -3,8 +3,13 @@ package com.helperUtilities;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * @author Shailendra PS Parihar
+ */
 public class EnvSetUp {
-
+    /**
+     * @Data_KEYS to set data variables
+     */
     public static Map<String, String> DATA_KEYS = new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
     public static boolean IS_ENVIRONMENT_READY;
 

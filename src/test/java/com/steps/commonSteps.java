@@ -3,7 +3,7 @@ package com.steps;
 import com.baselibrary.Baseclass;
 import com.cucumber.listener.Reporter;
 import com.dataproviderUtilities.ConfigFileReader;
-import com.managersUtilities.Commonfunction;
+import com.managersUtilities.CommonFunction;
 import com.pagesPF.DIL_loginpage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
@@ -24,7 +24,7 @@ public class commonSteps extends Baseclass {
     @Given("^user is on DIL login page$")
     public void userIsOnDILLoginPage() {
         driver.get(configFileReader.getProperties().getProperty("dil_Url"));
-        Commonfunction.maximiseBrowser(driver);
+        CommonFunction.maximiseBrowser(driver);
         Reporter.addScenarioLog("--Browser Launched--");
         Reporter.addStepLog("--Navigated to URL--");
     }

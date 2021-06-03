@@ -6,7 +6,6 @@ com/pagesPF/DIL_loginpage.class
 com/baselibrary/Baseclass.class
 com/runnerUtilies/TestRunner.class
 com/baselibrary/Capturescreenshots.class
-com/pagesPF/Loginpage.class
 com/steps/commonSteps.class
 com/helperUtilities/Constant.class
 com/helperUtilities/DatesHelper.class

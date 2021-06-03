@@ -1,23 +1,21 @@
 package com.managersUtilities;
 
-import java.io.File;
-import java.io.IOException;
-import java.sql.Timestamp;
-import java.util.Date;
-import java.util.List;
-
+import com.cucumber.listener.Reporter;
+import com.google.common.io.Files;
+import cucumber.api.Scenario;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.cucumber.listener.Reporter;
-import com.google.common.io.Files;
+import java.io.File;
+import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.List;
 
-import cucumber.api.Scenario;
-
-public class Commonfunction {
+public class CommonFunction {
 
 
     public static void maximiseBrowser(WebDriver driver) {
@@ -70,7 +68,7 @@ public class Commonfunction {
     }
 
     public static void clickOnShadowElement(WebDriver driver, String elementJSPath) throws InterruptedException {
-        Commonfunction.waitForSomeTime();
+        CommonFunction.waitForSomeTime();
         JavascriptExecutor jse=(JavascriptExecutor) driver;
         WebElement elementToClick=(WebElement) jse.executeScript(elementJSPath);
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", elementToClick);

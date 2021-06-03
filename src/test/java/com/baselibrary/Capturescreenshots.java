@@ -1,21 +1,25 @@
 package com.baselibrary;
 
-import java.io.File;
-import java.io.IOException;
-import java.sql.Timestamp;
-import java.util.Date;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-/*
-@author-Shailendra Ps Parihar
+
+import java.io.File;
+import java.io.IOException;
+import java.sql.Timestamp;
+import java.util.Date;
+/**
+@author- Shailendra Ps Parihar
  */
 public class Capturescreenshots {
 
+    /**
+    @captureScreenshots -Capture screenshot is used to take screenshot
+    @return -dest is a captureScreenshot destination path
+     */
 
-    public static String capturescreenshots(WebDriver driver, String screenshotName) throws IOException {
+    public static String captureScreenshots(WebDriver driver, String screenshotName) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File Source = ts.getScreenshotAs(OutputType.FILE);
         Date d = new Date();

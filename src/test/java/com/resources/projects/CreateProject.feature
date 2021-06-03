@@ -110,7 +110,7 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
 
 
     # Do not run it *****
-  @SmokeInNotScope @Test12
+  @SmokeInNotScope @Test11
   Scenario: user is able to delete all Projects from Project listing page
     Given user is on DIL login page
     When  enter username and password

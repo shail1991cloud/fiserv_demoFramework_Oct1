@@ -1,7 +1,7 @@
 package com.pagesPF;
 
 import com.dataproviderUtilities.ConfigFileReader;
-import com.managersUtilities.Commonfunction;
+import com.managersUtilities.CommonFunction;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,11 +27,11 @@ public class DIL_loginpage {
     WebElement loginBtn;
 
     public void loginToDIL() {
-        Commonfunction.waitForElementToAppear(driver, dilUserName);
+        CommonFunction.waitForElementToAppear(driver, dilUserName);
         dilUserName.sendKeys(configFileReader.getProperties().getProperty("dilUsrNm"));
-        Commonfunction.waitForElementToAppear(driver, dilPassword);
+        CommonFunction.waitForElementToAppear(driver, dilPassword);
         dilPassword.sendKeys(configFileReader.getProperties().getProperty("dilPwd"));
-        Commonfunction.waitForElementToAppear(driver, loginBtn);
+        CommonFunction.waitForElementToAppear(driver, loginBtn);
         loginBtn.click();
 
 
