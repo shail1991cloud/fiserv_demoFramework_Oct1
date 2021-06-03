@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.runnerUtilies.TestRunner" time="43.969" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.runnerUtilies.TestRunner" time="9.072" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk-11.0.11/lib"/>
-    <property name="sun.java.command" value="/home/pihu/dil_automation/target/surefire/surefirebooter5151614034891971153.jar /home/pihu/dil_automation/target/surefire 2021-05-31T17-16-08_244-jvmRun1 surefire14716566895195751723tmp surefire_08332522792393275534tmp"/>
+    <property name="sun.java.command" value="/home/pihu/dil_automation/target/surefire/surefirebooter7155107910364441357.jar /home/pihu/dil_automation/target/surefire 2021-06-03T15-37-36_381-jvmRun1 surefire3810350301040896645tmp surefire_015968077505451961155tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/pihu/dil_automation/target/test-classes:/home/pihu/dil_automation/target/classes:/home/pihu/.m2/repository/org/seleniumhq/selenium/selenium-java/3.7.0/selenium-java-3.7.0.jar:/home/pihu/.m2/repository/org/seleniumhq/selenium/selenium-api/3.7.0/selenium-api-3.7.0.jar:/home/pihu/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.7.0/selenium-chrome-driver-3.7.0.jar:/home/pihu/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.7.0/selenium-edge-driver-3.7.0.jar:/home/pihu/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.7.0/selenium-firefox-driver-3.7.0.jar:/home/pihu/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.7.0/selenium-ie-driver-3.7.0.jar:/home/pihu/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.7.0/selenium-opera-driver-3.7.0.jar:/home/pihu/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.7.0/selenium-remote-driver-3.7.0.jar:/home/pihu/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.7.0/selenium-safari-driver-3.7.0.jar:/home/pihu/.m2/repository/org/seleniumhq/selenium/selenium-support/3.7.0/selenium-support-3.7.0.jar:/home/pihu/.m2/repository/net/bytebuddy/byte-buddy/1.7.5/byte-buddy-1.7.5.jar:/home/pihu/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/pihu/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/home/pihu/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/pihu/.m2/repository/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar:/home/pihu/.m2/repository/com/google/guava/guava/23.0/guava-23.0.jar:/home/pihu/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/home/pihu/.m2/repository/com/google/errorprone/error_prone_annotations/2.0.18/error_prone_annotations-2.0.18.jar:/home/pihu/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/home/pihu/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/home/pihu/.m2/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar:/home/pihu/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/home/pihu/.m2/repository/info/cukes/cucumber-picocontainer/1.2.5/cucumber-picocontainer-1.2.5.jar:/home/pihu/.m2/repository/info/cukes/gherkin/2.12.2/gherkin-2.12.2.jar:/home/pihu/.m2/repository/org/picocontainer/picocontainer/2.15/picocontainer-2.15.jar:/home/pihu/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/pihu/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/pihu/.m2/repository/com/aventstack/extentreports/3.1.2/extentreports-3.1.2.jar:/home/pihu/.m2/repository/org/freemarker/freemarker/2.3.23/freemarker-2.3.23.jar:/home/pihu/.m2/repository/org/mongodb/mongodb-driver/3.3.0/mongodb-driver-3.3.0.jar:/home/pihu/.m2/repository/org/mongodb/bson/3.3.0/bson-3.3.0.jar:/home/pihu/.m2/repository/org/mongodb/mongodb-driver-core/3.3.0/mongodb-driver-core-3.3.0.jar:/home/pihu/.m2/repository/org/apache/httpcomponents/httpmime/4.5.2/httpmime-4.5.2.jar:/home/pihu/.m2/repository/org/jsoup/jsoup/1.9.2/jsoup-1.9.2.jar:/home/pihu/.m2/repository/info/cukes/cucumber-java/1.2.5/cucumber-java-1.2.5.jar:/home/pihu/.m2/repository/info/cukes/cucumber-core/1.2.5/cucumber-core-1.2.5.jar:/home/pihu/.m2/repository/info/cukes/cucumber-html/0.2.3/cucumber-html-0.2.3.jar:/home/pihu/.m2/repository/info/cukes/cucumber-jvm-deps/1.0.5/cucumber-jvm-deps-1.0.5.jar:/home/pihu/.m2/repository/info/cukes/cucumber-junit/1.2.5/cucumber-junit-1.2.5.jar:/home/pihu/.m2/repository/com/vimalselvam/cucumber-extentsreport/3.0.2/cucumber-extentsreport-3.0.2.jar:/home/pihu/.m2/repository/io/github/bonigarcia/webdrivermanager/3.8.1/webdrivermanager-3.8.1.jar:/home/pihu/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/home/pihu/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/home/pihu/.m2/repository/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar:/home/pihu/.m2/repository/org/rauschig/jarchivelib/1.0.0/jarchivelib-1.0.0.jar:/home/pihu/.m2/repository/org/apache/commons/commons-compress/1.18/commons-compress-1.18.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -32,7 +32,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/pihu/dil_automation/target/surefire/surefirebooter5151614034891971153.jar"/>
+    <property name="surefire.real.class.path" value="/home/pihu/dil_automation/target/surefire/surefirebooter7155107910364441357.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.11+9-LTS-194"/>
     <property name="user.name" value="pihu"/>
@@ -45,7 +45,7 @@
     <property name="localRepository" value="/home/pihu/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="idea.version" value="2021.1.1"/>
+    <property name="idea.version" value="2021.1.2"/>
     <property name="java.version" value="11.0.11"/>
     <property name="user.dir" value="/home/pihu/dil_automation"/>
     <property name="os.arch" value="amd64"/>
@@ -59,11 +59,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="Given user is on DIL login page" classname="| DemoProject | CreatingPipeLine | Test | TestTag | Updated Project |" time="0.002"/>
-  <testcase name="When enter username and password" classname="| DemoProject | CreatingPipeLine | Test | TestTag | Updated Project |" time="0"/>
-  <testcase name="And clicks on createProject tab" classname="| DemoProject | CreatingPipeLine | Test | TestTag | Updated Project |" time="0"/>
-  <testcase name="When enters &quot;DemoProject&quot;,&quot;CreatingPipeLine&quot;,&quot;Test&quot; and select engine" classname="| DemoProject | CreatingPipeLine | Test | TestTag | Updated Project |" time="0"/>
-  <testcase name="And created &quot;DemoProject&quot; with &quot;Test&quot;is validated in project listing page" classname="| DemoProject | CreatingPipeLine | Test | TestTag | Updated Project |" time="0"/>
-  <testcase name="Then &quot;TestTag&quot; and &quot;CreatingPipeLine&quot; is updated and validated" classname="| DemoProject | CreatingPipeLine | Test | TestTag | Updated Project |" time="0"/>
-  <testcase name="" classname="| DemoProject | CreatingPipeLine | Test | TestTag | Updated Project |" time="0.076"/>
+  <testcase name="Given user is on DIL login page" classname="| Create Project |" time="0.004"/>
+  <testcase name="When enter username and password" classname="| Create Project |" time="0"/>
+  <testcase name="Then user is able to verify &quot;Create Project&quot; on Project Listing page" classname="| Create Project |" time="0"/>
+  <testcase name="" classname="| Create Project |" time="0.075"/>
 </testsuite>
