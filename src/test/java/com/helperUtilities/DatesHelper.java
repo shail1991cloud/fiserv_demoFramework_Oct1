@@ -5,9 +5,9 @@ import java.util.Date;
 
 public class DatesHelper {
 
-    public static String getTodayDateWithHMS() {
+    public static String getTodayDateWithSeconds() {
         Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-"+"ss");
         String givenDate = sdf.format(date);
         return givenDate;
     }

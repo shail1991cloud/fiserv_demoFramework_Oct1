@@ -25,7 +25,7 @@ public class commonSteps extends Baseclass {
     public void userIsOnDILLoginPage() {
         driver.get(configFileReader.getProperties().getProperty("dil_Url"));
         Commonfunction.maximiseBrowser(driver);
-        Reporter.addScenarioLog("Browser Launched");
+        Reporter.addScenarioLog("--Browser Launched--");
         Reporter.addStepLog("--Navigated to URL--");
     }
 

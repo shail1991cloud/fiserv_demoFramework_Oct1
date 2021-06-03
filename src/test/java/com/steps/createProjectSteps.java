@@ -40,8 +40,8 @@ public class createProjectSteps extends Baseclass {
     @When("^enters \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" and select engine$")
     public void entersAndSelectEngine(String name, String description, String tag) throws InterruptedException {
         projectspage.enterDetailsIntoCreateProjectPopUp(name, description, tag);
-        Commonfunction.submitDetails(projectspage.buttonCreate);
-        Commonfunction.submitDetails(projectspage.buttonCreate);
+        Commonfunction.submitDetails(projectspage.buttonCreateOnProjectSettingPopUp);
+        Commonfunction.submitDetails(projectspage.buttonCreateOnProjectSettingPopUp);
         Reporter.addStepLog("--Details entered for Project--");
     }
 
@@ -61,7 +61,7 @@ public class createProjectSteps extends Baseclass {
 
     @Then("^submit button is displaying disable$")
     public void submitButtonIsDisplayDisable()  {
-        Assert.assertTrue(!projectspage.buttonCreate.isSelected());
+        Assert.assertTrue(!projectspage.buttonCreateOnProjectSettingPopUp.isSelected());
         Reporter.addStepLog("--Submit button displays disable and Project is not created -");
 
     }
@@ -76,7 +76,7 @@ public class createProjectSteps extends Baseclass {
     @When("^enters \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" and select engine and Cancel$")
     public void entersAndSelectEngineAndCancel(String name, String description, String tag) throws InterruptedException {
         projectspage.enterDetailsIntoCreateProjectPopUp(name, description, tag);
-        Commonfunction.submitDetails(projectspage.buttonCancel);
+        Commonfunction.submitDetails(projectspage.buttonCancelOnProjectSettingPopUp);
         Reporter.addStepLog("--Details entered for Project and cancelled on Project Setting PopUp--");
     }
 
@@ -114,9 +114,7 @@ public class createProjectSteps extends Baseclass {
     public void andIsUpdatedAndValidated(String newTag, String description) throws Throwable {
         projectBuilderpage.editProjectDetailsOnProjectBuilder(newTag,description);
         Commonfunction.navigateBackward(driver);
-      //  Commonfunction.navigateBackward(driver);
         projectspage.validateProjectName(description,newTag);
-      //  projectspage.deleteProjectOnProjectListingPage();
 
 
     }
@@ -149,6 +147,13 @@ public class createProjectSteps extends Baseclass {
 
     @Then("^\"([^\"]*)\" with \"([^\"]*)\"is validated in project listing page$")
     public void withIsValidatedInProjectListingPage(String project, String tag) throws Throwable {
+
+    }
+
+    @Then("^user is able to verify \"([^\"]*)\" on Project Listing page$")
+    public void userIsAbleToVerifyOnProjectListingPage(String createProjectTab) throws Throwable {
+        Commonfunction.getCustomisedWebElement(driver,projectspage.customisedCreateProjectTab,createProjectTab);
+        Assert.assertTrue(Commonfunction.getCustomisedWebElement(driver,projectspage.customisedCreateProjectTab,createProjectTab).isDisplayed());
 
     }
 }

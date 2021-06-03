@@ -19,20 +19,20 @@ public class DIL_loginpage {
 
     }
 
-    @FindBy(how = How.XPATH, using = "//input[@id=\"username\"]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"username\"]")
     WebElement dilUserName;
-    @FindBy(how = How.XPATH, using = "//input[@id=\"password\"]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"password\"]")
     WebElement dilPassword;
     @FindBy(how = How.XPATH, using = "//*[@value=\"Login\"]")
-    WebElement login;
+    WebElement loginBtn;
 
     public void loginToDIL() {
         Commonfunction.waitForElementToAppear(driver, dilUserName);
         dilUserName.sendKeys(configFileReader.getProperties().getProperty("dilUsrNm"));
         Commonfunction.waitForElementToAppear(driver, dilPassword);
         dilPassword.sendKeys(configFileReader.getProperties().getProperty("dilPwd"));
-        Commonfunction.waitForElementToAppear(driver, login);
-        login.click();
+        Commonfunction.waitForElementToAppear(driver, loginBtn);
+        loginBtn.click();
 
 
     }
