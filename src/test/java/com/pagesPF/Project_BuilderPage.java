@@ -9,15 +9,15 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class Project_Builderpage {
+public class Project_BuilderPage {
 
     WebDriver driver;
-    public Projectspage projectspage;
+    public ProjectsPage projectspage;
 
-    public Project_Builderpage(WebDriver driver) {
+    public Project_BuilderPage(WebDriver driver) {
 
         this.driver = driver;
-        projectspage = PageFactory.initElements(driver, Projectspage.class);
+        projectspage = PageFactory.initElements(driver, ProjectsPage.class);
 
     }
 
@@ -32,6 +32,9 @@ public class Project_Builderpage {
 
     @FindBy(how = How.XPATH, using = "//*[text()='Save']")
     WebElement buttonSaveOnProjectBuilderPage;
+
+    String projectNameOnProjectBuilderPage="//*[contains(text(),' %s ')]";
+
 
     public void editProjectDetailsOnProjectBuilder(String tagName, String Description) throws InterruptedException {
         CommonFunction.waitForElementToAppear(driver, projectspage.existingProjectOnProjectListingPage);
@@ -48,9 +51,7 @@ public class Project_Builderpage {
     }
 
 
-    public void validateEditedRecord() {
 
-    }
 
 
 }

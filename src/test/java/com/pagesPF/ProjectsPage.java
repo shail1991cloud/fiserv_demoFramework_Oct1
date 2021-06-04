@@ -11,16 +11,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
 
-public class Projectspage {
+public class ProjectsPage {
 
     WebDriver driver;
+    public Functions_LeanPageObject functions_leanPageObject;
 
-    public Projectspage(WebDriver driver) {
+    public ProjectsPage(WebDriver driver) {
         this.driver = driver;
+        functions_leanPageObject= PageFactory.initElements(driver, Functions_LeanPageObject.class);
+
     }
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"create-project-btn\"]")
@@ -180,6 +184,17 @@ public class Projectspage {
         Assert.assertEquals(tag, tagNameOnProjectListingPage);
 
     }
+    public void navigateToProjectListing() throws InterruptedException {
+
+        CommonFunction.clickOnShadowElement(driver,projectJsPath);
+        CommonFunction.waitForElementToAppear(driver, searchBoxOnProjectListingPage);
+        searchBoxOnProjectListingPage.sendKeys(EnvSetUp.getDataKeyValue(Constant.ProjectName));
+        CommonFunction.waitForMinimalTime();
+        CommonFunction.getCustomisedWebElement(driver,customisedProjectOnProjectListingPage,EnvSetUp.getDataKeyValue(Constant.ProjectName)).click();
+
+
+    }
+
 
     public void validateProjectNameNotOnProjectListingPage(String projectName) throws InterruptedException {
 

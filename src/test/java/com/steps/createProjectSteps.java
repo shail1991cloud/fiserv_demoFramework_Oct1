@@ -6,8 +6,8 @@ import com.dataproviderUtilities.ConfigFileReader;
 import com.helperUtilities.Constant;
 import com.helperUtilities.EnvSetUp;
 import com.managersUtilities.CommonFunction;
-import com.pagesPF.Project_Builderpage;
-import com.pagesPF.Projectspage;
+import com.pagesPF.Project_BuilderPage;
+import com.pagesPF.ProjectsPage;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -15,14 +15,14 @@ import org.junit.Assert;
 import org.openqa.selenium.support.PageFactory;
 
 public class createProjectSteps extends Baseclass {
-    Projectspage projectspage;
-    Project_Builderpage projectBuilderpage;
+    ProjectsPage projectspage;
+    Project_BuilderPage projectBuilderpage;
     public ConfigFileReader configFileReader;
     //Logger log = LoggerHelper.getLogger(createProjectSteps.class);
 
     public createProjectSteps() {
-        projectspage = PageFactory.initElements(driver, Projectspage.class);
-        projectBuilderpage=PageFactory.initElements(driver,Project_Builderpage.class);
+        projectspage = PageFactory.initElements(driver, ProjectsPage.class);
+        projectBuilderpage=PageFactory.initElements(driver, Project_BuilderPage.class);
         configFileReader = new ConfigFileReader();
 
     }
@@ -36,7 +36,7 @@ public class createProjectSteps extends Baseclass {
         //log.info("User has clicked on ProjectSetUp Popup");
     }
 
-    @When("^enters \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" and select engine$")
+    @When("^creates project with \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" and engine$")
     public void entersAndSelectEngine(String name, String description, String tag) throws InterruptedException {
         projectspage.enterDetailsIntoCreateProjectPopUp(name, description, tag);
         CommonFunction.submitDetails(projectspage.buttonCreateOnProjectSettingPopUp);
@@ -155,4 +155,6 @@ public class createProjectSteps extends Baseclass {
         Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,projectspage.customisedCreateProjectTab,createProjectTab).isDisplayed());
 
     }
+
+
 }

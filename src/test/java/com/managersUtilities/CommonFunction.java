@@ -103,8 +103,8 @@ public class CommonFunction {
         return customisedElements;
     }
 
-    public static WebElement getCustomisedWebElement(WebDriver driver,String stringXpath, String stringToAdd)
-    {
+    public static WebElement getCustomisedWebElement(WebDriver driver,String stringXpath, String stringToAdd) throws InterruptedException {
+        CommonFunction.waitForMinimalTime();
         WebElement customisedElement= driver.findElement(org.openqa.selenium.By.xpath(String.format(stringXpath,stringToAdd)));
         return customisedElement;
     }
