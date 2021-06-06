@@ -1,3 +1,58 @@
-2021-05-26 20:05:992 INFO  Steps:40 - ---Starting the Run----
-2021-05-26 20:05:401 INFO  Steps2:41 - ---Navigating to URLr----
-2021-05-26 20:05:685 INFO  Steps2:47 - ---Logging In----
+2021-06-06 14:06:100 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-06 14:06:724 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-06 14:06:811 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
+2021-06-06 14:06:515 INFO  createProjectSteps:47 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-06-06 14:06:31 INFO  createProjectSteps:38 - User navigated to tab-->Overview
+2021-06-06 14:06:653 INFO  createProjectSteps:45 - Pipeline listing page is validated for message-->There is no pipelines in this project.
+2021-06-06 14:06:793 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-06 14:06:809 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-06 14:06:708 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
+2021-06-06 14:06:253 INFO  createProjectSteps:47 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-06-06 14:06:244 INFO  createProjectSteps:63 - Pipe line is created with name-->PipeLIne
+2021-06-06 14:06:679 INFO  createProjectSteps:53 - Pipeline listing page is validated for message created Pipeline
+2021-06-06 14:06:755 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-06 14:06:445 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-06 14:06:355 INFO  createProjectSteps:178 - Varification of-->Create Project--is done
+2021-06-06 14:06:315 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-06 14:06:985 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-06 14:06:723 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
+2021-06-06 14:06:769 INFO  createProjectSteps:159 - --Fields on Project Setting PopUp is present--
+2021-06-06 14:06:783 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-06 14:06:425 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-06 14:06:223 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
+2021-06-06 14:06:458 INFO  createProjectSteps:64 - --Fields on Project Setting PopUp are validated--
+2021-06-06 14:06:39 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-06 14:06:750 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-06 14:06:483 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
+2021-06-06 14:06:147 INFO  createProjectSteps:47 - --Details entered for Project With--->Auto_Pro,CreatingPipeLine and Test
+2021-06-06 14:06:967 INFO  createProjectSteps:151 - --Project with Name-->GfFe4Auto_Pro06-31--is validated on Project Listing page
+2021-06-06 14:06:852 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-06 14:06:521 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-06 14:06:390 INFO  createProjectSteps:168 - Record with -->Auto-Test,CreatingPipeLine--is picked
+2021-06-06 14:06:52 INFO  createProjectSteps:131 - --Project with Name-->GfFe4Auto_Pro06-31--is validated on Project Listing page
+2021-06-06 14:06:469 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-06 14:06:296 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-06 14:06:258 INFO  createProjectSteps:168 - Record with -->Auto-Pro,CreatingPipeLine--is picked
+2021-06-06 14:06:110 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-06 14:06:773 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-06 14:06:705 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
+2021-06-06 14:06:402 INFO  createProjectSteps:47 - --Details entered for Project With--->Auto-Pro_Test,CreatingPipeLine and Test
+2021-06-06 14:06:262 INFO  createProjectSteps:151 - --Project with Name-->Xnqg1Auto-Pro_Test06-26--is validated on Project Listing page
+2021-06-06 14:06:725 INFO  createProjectSteps:141 - --Project with -->TestTag--is validated on Project Listing page
+2021-06-06 14:06:988 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-06 14:06:759 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-06 14:06:501 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
+2021-06-06 14:06:292 INFO  createProjectSteps:47 - --Details entered for Project With--->Auto-DemoProject, and Test
+2021-06-06 14:06:309 INFO  createProjectSteps:72 - --Submit button displays disable and Project is not created -
+2021-06-06 14:06:869 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-06 14:06:654 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-06 14:06:191 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
+2021-06-06 14:06:810 INFO  createProjectSteps:89 - --Details entered for Project and cancelled on Project Setting PopUp--
+2021-06-06 14:06:82 INFO  createProjectSteps:97 - --Project is not present on ProjectListing Page with name-->Auto-DemoProject
+2021-06-06 14:06:13 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-06 14:06:675 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-06 14:06:530 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
+2021-06-06 14:06:241 INFO  createProjectSteps:47 - --Details entered for Project With--->Auto-DemoTestProject,CreatingPipeLine and Test
+2021-06-06 14:06:126 INFO  createProjectSteps:151 - --Project with Name-->BORMIAuto-DemoTestProject06-02--is validated on Project Listing page
+2021-06-06 14:06:579 INFO  createProjectSteps:105 - --Project is deleted on ProjectListing Page--
+2021-06-06 14:06:728 INFO  createProjectSteps:114 - --Project disappears from ProjectListing Page with name-->Auto-DemoTestProject
