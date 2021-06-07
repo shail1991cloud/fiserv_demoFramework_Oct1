@@ -15,100 +15,150 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * @author Shailendra PS Parihar
+ * @Note-Very important class it has all the reusable functions
+ */
 public class CommonFunction {
-
+    /**
+     * @method maximiseBrowser is used to maximise browser of any type
+     */
 
     public static void maximiseBrowser(WebDriver driver) {
         driver.manage().window().maximize();
-
     }
 
+    /**
+     * @method scrollToAxis is used to scroll the window vertically
+     */
     public static void scrollToAxis(WebDriver driver) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,1000)");
-
     }
 
+    /**
+     * @method scrollToElement is used to scroll the window w.r.to the location of located WebElement
+     */
     public static void scrollToElement(WebDriver driver, WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
+    /**
+     * Select methods to select values on the basis of index,visible text and by value
+     */
     public static void selectFromDropDownWithValue(WebElement dropDown, String value) {
         Select select = new Select(dropDown);
         select.selectByValue(value);
     }
 
-    public static void submitDetails(WebElement element) {
+    public static void selectFromDropDownWithIndex(WebElement dropDown, int index) {
+        Select select = new Select(dropDown);
+        select.selectByIndex(index);
+    }
 
+    public static void selectFromDropDownWithVisibleText(WebElement dropDown, String visibleText) {
+        Select select = new Select(dropDown);
+        select.selectByVisibleText(visibleText);
+    }
+
+    /**
+     * To select a WebElement to click on it
+     */
+    public static void submitDetails(WebElement element) {
         element.click();
     }
 
-    public static void clickForceFully(WebDriver driver,WebElement element)
-    {
-        JavascriptExecutor executor = (JavascriptExecutor)driver;
+    /**
+     * @method clickForceFully to click on a WebElement by the help of JavaScriptExecutor
+     */
+    public static void clickForceFully(WebDriver driver, WebElement element) {
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         executor.executeScript("arguments[0].click();", element);
     }
 
-    public static String generateRandomString(int n)
-    {
+    /**
+     * @method generateRandomString to generate a random string
+     */
+    public static String generateRandomString(int n) {
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 + "0123456789"
                 + "abcdefghijklmnopqrstuvxyz";
         StringBuilder sb = new StringBuilder(n);
-
         for (int i = 0; i < n; i++) {
             int index
-                    = (int)(AlphaNumericString.length()
+                    = (int) (AlphaNumericString.length()
                     * Math.random());
             sb.append(AlphaNumericString
                     .charAt(index));
         }
-
         return sb.toString();
     }
 
+    /**
+     * @method clickOnShadowElement to click on ShadowElement,accept DOM Js of the element and returns WebElement to click
+     */
     public static void clickOnShadowElement(WebDriver driver, String elementJSPath) throws InterruptedException {
         CommonFunction.waitForSomeTime();
-        JavascriptExecutor jse=(JavascriptExecutor) driver;
-        WebElement elementToClick=(WebElement) jse.executeScript(elementJSPath);
-        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", elementToClick);
-
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        WebElement elementToClick = (WebElement) jse.executeScript(elementJSPath);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", elementToClick);
     }
 
+    /**
+     * @method waitForElementToAppear to wait for element for a certain condition
+     */
     public static void waitForElementToAppear(WebDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 50);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
+    /**
+     * @method clickByHoveringMouse to click by use of Actions class to perform mouse actions
+     */
     public static void clickByHoveringMouse(WebDriver driver, WebElement element) throws InterruptedException {
-
         waitForSomeTime();
         Actions action = new Actions(driver);
         action.moveToElement(element).click().perform();
     }
 
+    /**
+     * @method navigateBackward for backard navigation
+     */
     public static void navigateBackward(WebDriver driver) {
         driver.navigate().back();
     }
 
+    /**
+     * @methods to wait for some static times
+     */
     public static void waitForSomeTime() throws InterruptedException {
         Thread.sleep(5000);
     }
+
     public static void waitForMinimalTime() throws InterruptedException {
         Thread.sleep(200);
     }
-    public static List<WebElement> getCustomisedWebElements(WebDriver driver,String stringXpath, String stringToAdd)
-    {
-        List<WebElement> customisedElements= driver.findElements(org.openqa.selenium.By.xpath(String.format(stringXpath,stringToAdd)));
+
+    /**
+     * @method getCustomisedWebElements returns List of Elements on run time itself during execution
+     */
+    public static List<WebElement> getCustomisedWebElements(WebDriver driver, String stringXpath, String stringToAdd) {
+        List<WebElement> customisedElements = driver.findElements(org.openqa.selenium.By.xpath(String.format(stringXpath, stringToAdd)));
         return customisedElements;
     }
 
-    public static WebElement getCustomisedWebElement(WebDriver driver,String stringXpath, String stringToAdd) throws InterruptedException {
+    /**
+     * @method getCustomisedWebElement returns Element on run time itself during execution
+     */
+    public static WebElement getCustomisedWebElement(WebDriver driver, String stringXpath, String stringToAdd) throws InterruptedException {
         CommonFunction.waitForMinimalTime();
-        WebElement customisedElement= driver.findElement(org.openqa.selenium.By.xpath(String.format(stringXpath,stringToAdd)));
+        WebElement customisedElement = driver.findElement(org.openqa.selenium.By.xpath(String.format(stringXpath, stringToAdd)));
         return customisedElement;
     }
 
+    /**
+     * @method getScreenShots returns destination to save the captured screenShots foe fail test cases
+     */
     public static void getScreenShots(WebDriver driver, Scenario scenario) {
         if (scenario.isFailed()) {
             String screenshotName = scenario.getName().replaceAll(" ", "_");
@@ -137,7 +187,6 @@ public class CommonFunction {
             } catch (IOException e) {
             }
         }
-
 
     }
 

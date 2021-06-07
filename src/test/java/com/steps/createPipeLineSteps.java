@@ -48,8 +48,8 @@ public class createPipeLineSteps extends Baseclass {
     @Then("^PipeLine listing page is validated for created Pipeline$")
     public void pipelineListingPageIsValidatedForCreatedPipeline() throws InterruptedException {
         pipeLIne_listingPage.validatePipeLineRecord();
-        Reporter.addStepLog("Pipeline listing page is validated for message created Pipeline");
-        log.info("Pipeline listing page is validated for message created Pipeline");
+        Reporter.addStepLog("Pipeline listing page is validated for  created Pipeline");
+        log.info("Pipeline listing page is validated for  created Pipeline");
 
 
     }

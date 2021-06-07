@@ -1,10 +1,13 @@
 package com.pagesPF;
 
+import com.cucumber.listener.Reporter;
 import com.dataproviderUtilities.ConfigFileReader;
 import com.helperUtilities.Constant;
 import com.helperUtilities.DatesHelper;
 import com.helperUtilities.EnvSetUp;
+import com.helperUtilities.LoggerHelper;
 import com.managersUtilities.CommonFunction;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -13,6 +16,7 @@ public class Functions_LeanPageObject {
 
     WebDriver driver;
     public ConfigFileReader configFileReader;
+    Logger log = LoggerHelper.getLogger(DIL_loginpage.class);
 
     public Functions_LeanPageObject(WebDriver driver) {
         this.driver = driver;
@@ -26,6 +30,9 @@ public class Functions_LeanPageObject {
 
     public void switchBetweenPages(String pageName) throws InterruptedException {
         CommonFunction.getCustomisedWebElement(driver,pages,pageName).click();
+        log.info("User is switched to-->"+pageName);
+        Reporter.addStepLog("User is switched to-->"+pageName);
+
     }
     public void fetchProjectsRecordsOnProjectListingPage(String projectName) throws InterruptedException {
         CommonFunction.getCustomisedWebElement(driver,customisedCreateProjectRecord,projectName);
