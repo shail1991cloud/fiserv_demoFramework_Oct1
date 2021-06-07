@@ -10,7 +10,7 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 import java.util.concurrent.TimeUnit;
 
 /**
-@autho- Shailendra PS Parihar
+ * @autho- Shailendra PS Parihar
  */
 public class Baseclass {
 
@@ -18,9 +18,9 @@ public class Baseclass {
     public static WebDriver driver;
 
     /**
-    @param browser is the name of browser that we can pas from enums
-    @method selectBrowser is used provide driver instance
-    @return this method returns WebDriver instance
+     * @param browser is the name of browser that we can pas from enums
+     * @return this method returns WebDriver instance
+     * @method selectBrowser is used provide driver instance
      */
 
     public static WebDriver selectBrowser(String browser) {

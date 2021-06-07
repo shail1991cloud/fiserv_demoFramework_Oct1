@@ -9,14 +9,15 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Date;
+
 /**
-@author- Shailendra Ps Parihar
+ * @author- Shailendra Ps Parihar
  */
 public class Capturescreenshots {
 
     /**
-    @captureScreenshots -Capture screenshot is used to take screenshot
-    @return -dest is a captureScreenshot destination path
+     * @return -dest is a captureScreenshot destination path
+     * @captureScreenshots -Capture screenshot is used to take screenshot
      */
 
     public static String captureScreenshots(WebDriver driver, String screenshotName) throws IOException {

@@ -10,9 +10,10 @@ import org.apache.log4j.PropertyConfigurator;
 public class LoggerHelper {
 
     private static boolean root = false;
-/**
- * @getlogger method is used to return Logger class object
- * */
+
+    /**
+     * @getlogger method is used to return Logger class object
+     */
 
     public static Logger getLogger(Class cls) {
         if (root) {

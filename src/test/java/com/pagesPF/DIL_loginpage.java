@@ -37,8 +37,8 @@ public class DIL_loginpage {
         dilPassword.sendKeys(configFileReader.getProperties().getProperty("dilPwd"));
         CommonFunction.waitForElementToAppear(driver, loginBtn);
         loginBtn.click();
-        log.info("User is logged into DIL UI with userId-->"+configFileReader.getProperties().getProperty("dilUsrNm"));
-        Reporter.addStepLog("User is logged into DIL UI with userId-->"+configFileReader.getProperties().getProperty("dilUsrNm"));
+        log.info("User is logged into DIL UI with userId-->" + configFileReader.getProperties().getProperty("dilUsrNm"));
+        Reporter.addStepLog("User is logged into DIL UI with userId-->" + configFileReader.getProperties().getProperty("dilUsrNm"));
 
 
     }

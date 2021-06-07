@@ -33,7 +33,7 @@ public class Project_BuilderPage {
     @FindBy(how = How.XPATH, using = "//*[text()='Save']")
     WebElement buttonSaveOnProjectBuilderPage;
 
-    String projectNameOnProjectBuilderPage="//*[contains(text(),' %s ')]";
+    String projectNameOnProjectBuilderPage = "//*[contains(text(),' %s ')]";
 
 
     public void editProjectDetailsOnProjectBuilder(String tagName, String Description) throws InterruptedException {
@@ -49,9 +49,6 @@ public class Project_BuilderPage {
         buttonSaveOnProjectBuilderPage.click();
 
     }
-
-
-
 
 
 }

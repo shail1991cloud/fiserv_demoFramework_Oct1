@@ -12,8 +12,8 @@ Feature:Creation and Field level validation of pipelines
     And  switches to "<Tab>"
     Then PipeLine listing page is validated for ProjectName,PipelineTag and "<Message>"
     Examples:
-      | ProjectName|Description         |       Tag   |Tab|Message|
-      |  AutoDIL   |ProjectForAutomation|Test_Pipeline|Overview|There is no pipelines in this project.|
+      | ProjectName | Description          | Tag           | Tab      | Message                                |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | Overview | There is no pipelines in this project. |
 
   @Smoke @Reg @Positive @CP-Test2
   Scenario Outline: user is able to create pipeline and validate the same in Pipeline Listing page
@@ -25,5 +25,5 @@ Feature:Creation and Field level validation of pipelines
     Then PipeLine listing page is validated for created Pipeline
 
     Examples:
-      | ProjectName|Description         |       Tag   |Pipeline|
-      |  AutoDIL   |ProjectForAutomation|Test_Pipeline|PipeLIne|
+      | ProjectName | Description          | Tag           | Pipeline |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne |

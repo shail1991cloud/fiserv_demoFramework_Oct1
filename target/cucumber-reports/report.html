@@ -53,7 +53,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jun 7, 2021 01:30:58 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Jun 7, 2021 05:15:53 PM</span>
 				</a>
 			</li>
 			<li>
@@ -94,7 +94,7 @@
 					<li><a href='#'>@CreateProject</a></li>
 					<li><a href='#'>@Positive</a></li>
 					<li><a href='#'>@Smoke</a></li>
-					<li><a href='#'>@CRP-Test4</a></li>
+					<li><a href='#'>@CRP-Test7</a></li>
 					<li><a href='#'>@Reg</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
@@ -173,7 +173,7 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>5</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>6</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -193,15 +193,15 @@
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Creation of Projects and validation of Project Setting Pop Up</span>
-						<span class='test-time'>Jun 7, 2021 01:30:58 PM</span>
+						<span class='test-time'>Jun 7, 2021 05:15:53 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenariooutline node' test-id='2' status='pass'>
-	<span class='duration right label'>0h 0m 25s+729ms</span>
+	<span class='duration right label'>0h 0m 43s+7ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
-		<span class="desc-text">user is able to create a Project and is able to validate it in ProjectListing Page</span>
+		<span class="desc-text">user is able to validate updated project on Project Listing page</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='3' class='node scenario pass' status='pass'>
@@ -209,13 +209,13 @@
 				<span class='category label white-text'>@Positive</span>
 				<span class='category label white-text'>@CreateProject</span>
 				<span class='category label white-text'>@Smoke</span>
-				<span class='category label white-text'>@CRP-Test4</span>
+				<span class='category label white-text'>@CRP-Test7</span>
 				<span class='category label white-text'>@Reg</span>
 			</div>
 			
 			<b>Scenario</b>
 			
-			<span class="bdd-step-name">user is able to create a Project and is able to validate it in ProjectListing Page</span>
+			<span class="bdd-step-name">user is able to validate updated project on Project Listing page</span>
 				<div class='pre'>--Browser Launched--</div>
 				<div class='pre'>----Test is Completed----</div>
 			
@@ -238,13 +238,18 @@
 							<div class='pre'>passed</div>
 					</li>
 					<li test-id='7' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When creates project with "Auto_Pro","CreatingPipeLine","Test" and engine</span>
-							<div class='pre'>--Details entered for Project With--->Auto_Pro,CreatingPipeLine and Test</div>
+						<span class="bdd-step-name">When creates project with "Auto-Pro_Test","CreatingPipeLine","Test" and engine</span>
+							<div class='pre'>--Details entered for Project With--->Auto-Pro_Test,CreatingPipeLine and Test</div>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='8' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then created "Auto_Pro" with "Test"is validated in project listing page</span>
-							<div class='pre'>--Project with Name-->Y0NZQAuto_Pro07-08--is validated on Project Listing page</div>
+					<li test-id='8' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And created "Auto-Pro_Test" with "Test"is validated in project listing page</span>
+							<div class='pre'>--Project with Name-->fKqPhAuto-Pro_Test07-03--is validated on Project Listing page</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='9' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then "TestTag" and "CreatingPipeLine" is updated and validated</span>
+							<div class='pre'>--Project with -->TestTag--is validated on Project Listing page</div>
 							<div class='pre'>passed</div>
 					</li>
 				</ul>
@@ -328,13 +333,13 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jun 7, 2021 01:30:58 PM</td>
+										<td>Jun 7, 2021 05:15:53 PM</td>
 										<td class='linked' test-id='1'>Creation of Projects and validation of Project Setting Pop Up</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jun 7, 2021 01:30:58 PM</td>
-										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to create a Project and is able to validate it in ProjectListing Page.user is able to create a Project and is able to validate it in ProjectListing Page</td>
+										<td>Jun 7, 2021 05:15:53 PM</td>
+										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to validate updated project on Project Listing page.user is able to validate updated project on Project Listing page</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -367,8 +372,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jun 7, 2021 01:30:58 PM</td>
-										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to create a Project and is able to validate it in ProjectListing Page.user is able to create a Project and is able to validate it in ProjectListing Page</td>
+										<td>Jun 7, 2021 05:15:53 PM</td>
+										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to validate updated project on Project Listing page.user is able to validate updated project on Project Listing page</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -401,8 +406,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jun 7, 2021 01:30:58 PM</td>
-										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to create a Project and is able to validate it in ProjectListing Page.user is able to create a Project and is able to validate it in ProjectListing Page</td>
+										<td>Jun 7, 2021 05:15:53 PM</td>
+										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to validate updated project on Project Listing page.user is able to validate updated project on Project Listing page</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -412,7 +417,7 @@
 				</li>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@CRP-Test4</span>
+						<span class='category-name'>@CRP-Test7</span>
 						<span class='category-status right'>
 							<span class='label pass'>1</span>
 						</span>
@@ -435,8 +440,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jun 7, 2021 01:30:58 PM</td>
-										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to create a Project and is able to validate it in ProjectListing Page.user is able to create a Project and is able to validate it in ProjectListing Page</td>
+										<td>Jun 7, 2021 05:15:53 PM</td>
+										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to validate updated project on Project Listing page.user is able to validate updated project on Project Listing page</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -469,8 +474,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jun 7, 2021 01:30:58 PM</td>
-										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to create a Project and is able to validate it in ProjectListing Page.user is able to create a Project and is able to validate it in ProjectListing Page</td>
+										<td>Jun 7, 2021 05:15:53 PM</td>
+										<td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to validate updated project on Project Listing page.user is able to validate updated project on Project Listing page</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -539,8 +544,8 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Jun 7, 2021 01:30:58 PM</td>
-                                                <td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to create a Project and is able to validate it in ProjectListing Page.user is able to create a Project and is able to validate it in ProjectListing Page</td>
+                                                <td>Jun 7, 2021 05:15:53 PM</td>
+                                                <td class='linked' test-id='3'>Creation of Projects and validation of Project Setting Pop Up.user is able to validate updated project on Project Listing page.user is able to validate updated project on Project Listing page</td>
                                                 <td><span class='test-status pass'>pass</span></td>
                                             </tr>
                                         </tbody>
@@ -580,25 +585,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>5</div>
+					<div class='panel-lead'>6</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jun 7, 2021 01:30:58 PM</div>
+					<div class='panel-lead'>Jun 7, 2021 05:15:53 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jun 7, 2021 01:31:24 PM</div>
+			 		<div class='panel-lead'>Jun 7, 2021 05:16:36 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>25,914ms</div>
+					<div class='panel-lead'>43,175ms</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -641,7 +646,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>@CRP-Test4</td>
+							<td>@CRP-Test7</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -688,7 +693,7 @@
 				infoChild: 0,
 				exceptionsChild: 0,
 				
-				passGrandChild: 5,
+				passGrandChild: 6,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
