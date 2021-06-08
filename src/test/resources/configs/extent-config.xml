@@ -2,7 +2,7 @@
 <extentreports>
   <configuration>
     <!-- report theme --> <!-- standard, dark -->
-    <theme>standard</theme>
+    <theme>dark</theme>
 
     <!-- document encoding -->  <!-- defaults to UTF-8 -->
     <encoding>UTF-8</encoding>
@@ -15,6 +15,9 @@
 
     <!-- report name - displayed at top-nav -->
     <reportName>TestAutomation_DIL</reportName>
+
+    <!-- top, bottom -->
+    <testViewChartLocation>bottom</testViewChartLocation>
 
     <!-- global date format override -->  <!-- defaults to yyyy-MM-dd -->
     <dateFormat>yyyy-MM-dd</dateFormat>

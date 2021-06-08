@@ -13,10 +13,10 @@ import java.io.File;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java/com/resources",
+        features = "src/test/resources/features/projects",
         glue = {"com/steps"},
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
-        tags = {"@CRP-Test7"},
+        tags = {"@Smoke"},
         monochrome = true
 
 )
@@ -26,5 +26,6 @@ public class TestRunner {
     @AfterClass
     public static void writeExtentReport() {
         Reporter.loadXMLConfig(new File(FileReaderManager.getInstance().getConfigReader().getReportConfigPath()));
+
     }
 }

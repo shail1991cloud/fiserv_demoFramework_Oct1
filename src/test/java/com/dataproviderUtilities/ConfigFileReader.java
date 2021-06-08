@@ -16,7 +16,7 @@ public class ConfigFileReader {
      */
 
     private Properties properties;
-    private final String propertyFilePath = "src/test/java/configs/configuration.properties";
+    private final String propertyFilePath = "src/test/resources/configs/configuration.properties";
 
     /**
      * @ileReder() constructor to initialise properties class
