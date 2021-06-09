@@ -1,12 +1,12 @@
-2021-06-09 18:06:628 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
-2021-06-09 18:06:513 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
-2021-06-09 18:06:515 INFO  commonSteps:41 - --user name and Password are entered--
-2021-06-09 18:06:87 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
-2021-06-09 18:06:771 INFO  createProjectSteps:47 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
-2021-06-09 18:06:724 INFO  createProjectSteps:62 - Pipe line is created with name-->PipeLIne
-2021-06-09 18:06:198 INFO  createProjectSteps:52 - Pipeline listing page is validated for  created Pipeline
-2021-06-09 18:06:367 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
-2021-06-09 18:06:169 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
-2021-06-09 18:06:172 INFO  commonSteps:41 - --user name and Password are entered--
-2021-06-09 18:06:50 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
-2021-06-09 18:06:282 INFO  createProjectSteps:64 - --Fields on Project Setting PopUp are validated--
+2021-06-10 04:06:368 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-10 04:06:14 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-06-10 04:06:16 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-10 04:06:824 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
+2021-06-10 04:06:475 INFO  createProjectSteps:47 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-06-10 04:06:373 INFO  createProjectSteps:62 - Pipe line is created with name-->PipeLIne
+2021-06-10 04:06:812 INFO  createProjectSteps:52 - Pipeline listing page is validated for  created Pipeline
+2021-06-10 04:06:162 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-10 04:06:603 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-06-10 04:06:606 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-10 04:06:975 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
+2021-06-10 04:06:199 INFO  createProjectSteps:64 - --Fields on Project Setting PopUp are validated--
