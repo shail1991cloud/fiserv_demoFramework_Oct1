@@ -15,7 +15,7 @@ import java.io.File;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"com/steps"},
-        plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
+        plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/extent.html"},
         tags = {"@CP-Test2,@CRP-Test3"},
         monochrome = true
 
