@@ -1,4 +1,4 @@
-package com.baselibrary;
+package com.helperUtilities;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -13,7 +13,7 @@ import java.util.Date;
 /**
  * @author- Shailendra Ps Parihar
  */
-public class Capturescreenshots {
+public class CaptureScreenShots {
 
     /**
      * @return -dest is a captureScreenshot destination path

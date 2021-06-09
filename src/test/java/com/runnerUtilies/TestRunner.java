@@ -13,10 +13,10 @@ import java.io.File;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/projects",
+        features = "src/test/resources/features",
         glue = {"com/steps"},
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html"},
-        tags = {"@Smoke"},
+        tags = {"@CP-Test2,@CRP-Test3"},
         monochrome = true
 
 )

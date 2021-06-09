@@ -1,5 +1,4 @@
 package com.baselibrary;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,7 +9,7 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @autho- Shailendra PS Parihar
+ * @author - Shailendra PS Parihar
  */
 public class Baseclass {
 

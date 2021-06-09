@@ -76,6 +76,14 @@ public class CommonFunction {
         executor.executeScript("arguments[0].click();", element);
     }
 
+
+  /*  public static void getShadowElementOnScreen(WebDriver driver,String cssSelector) throws InterruptedException {
+        waitForSomeTime();
+        Shadow shadow = new Shadow(driver);
+        WebElement shadowElement = shadow.findElement(cssSelector);
+        shadowElement.click();
+    }*/
+
     /**
      * @method generateRandomString to generate a random string
      */

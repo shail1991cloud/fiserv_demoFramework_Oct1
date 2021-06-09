@@ -18,7 +18,7 @@ Feature:Creation and Field level validation of pipelines
   @Smoke @Reg @Positive @CP-Test2
   Scenario Outline: user is able to create pipeline and validate the same in Pipeline Listing page
     Given user is on DIL login page
-    When  enter username and password
+    When enter username and password
     And  clicks on createProject tab
     When creates project with "<ProjectName>","<Description>","<Tag>" and engine
     And  creates a "<Pipeline>" with "<Description>" and "<Tag>"

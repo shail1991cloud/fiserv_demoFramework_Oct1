@@ -39,7 +39,7 @@ public class ConfigFileReader {
     }
 
     /**
-     * @getDriver method  is a is to fetch driverPath
+     * @getDriver method  is to fetch driverPath
      */
 
     public String getDriverPath() {

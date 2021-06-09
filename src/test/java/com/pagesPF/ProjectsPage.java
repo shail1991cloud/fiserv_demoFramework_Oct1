@@ -94,7 +94,6 @@ public class ProjectsPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//div[5]//p[2]")
     WebElement projectCopyOnProjectListingPage;
 
-
     @FindBy(how = How.XPATH, using = "//*[@id=\"projectName\"]")
     List<WebElement> createdProjectsOnProjectListingPage;
 
@@ -102,7 +101,7 @@ public class ProjectsPage {
     public final String customisedCreateProjectTab = "//*[text()=' %s ']";
 
     String projectJsPath = "return document.querySelector(\"#header\").shadowRoot.querySelector(\"div > scale-app-header > header > nav.header__nav > div > div.header__nav-menu-wrapper > div.header__nav-menu-main > ul > scale-nav-main:nth-child(1) > li > a > span.main-navigation__item-link-text\")";
-
+    String cssSelector="div > scale-app-header > header > nav.header__nav > div > div.header__nav-menu-wrapper > div.header__nav-menu-main > ul > scale-nav-main:nth-child(1) > li > a > span.main-navigation__item-link-text";
 
     public void enterDetailsInProjectSetting() {
         createProjectButton.click();
