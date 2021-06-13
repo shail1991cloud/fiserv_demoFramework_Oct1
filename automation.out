@@ -1,12 +1,8 @@
-2021-06-10 04:06:626 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
-2021-06-10 04:06:652 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
-2021-06-10 04:06:653 INFO  commonSteps:41 - --user name and Password are entered--
-2021-06-10 04:06:449 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
-2021-06-10 04:06:108 INFO  createProjectSteps:47 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
-2021-06-10 04:06:993 INFO  createProjectSteps:62 - Pipe line is created with name-->PipeLIne
-2021-06-10 04:06:535 INFO  createProjectSteps:52 - Pipeline listing page is validated for  created Pipeline
-2021-06-10 04:06:843 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
-2021-06-10 04:06:321 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
-2021-06-10 04:06:324 INFO  commonSteps:41 - --user name and Password are entered--
-2021-06-10 04:06:593 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
-2021-06-10 04:06:773 INFO  createProjectSteps:64 - --Fields on Project Setting PopUp are validated--
+2021-06-13 16:06:687 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-06-13 16:06:695 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->pihu
+2021-06-13 16:06:696 INFO  commonSteps:41 - --user name and Password are entered--
+2021-06-13 16:06:07 INFO  createProjectSteps:38 - User has clicked on ProjectSetUp Popup
+2021-06-13 16:06:770 INFO  createProjectSteps:47 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-06-13 16:06:244 INFO  DIL_loginpage:34 - User is switched to-->Overview
+2021-06-13 16:06:245 INFO  createProjectSteps:37 - User navigated to tab-->Overview
+2021-06-13 16:06:771 INFO  createProjectSteps:44 - Pipeline listing page is validated for message-->There is no pipelines in this project.

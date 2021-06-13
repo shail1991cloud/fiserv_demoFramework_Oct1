@@ -16,7 +16,7 @@ import java.io.File;
         features = "src/test/resources/features",
         glue = {"com/steps"},
         plugin = {"com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/extent.html"},
-        tags = {"@CP-Test2,@CRP-Test3"},
+        tags = {"@CP-Test1"},
         monochrome = true
 
 )
