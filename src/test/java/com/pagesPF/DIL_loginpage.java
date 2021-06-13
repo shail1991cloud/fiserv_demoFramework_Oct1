@@ -1,6 +1,5 @@
 package com.pagesPF;
 
-import com.cucumber.listener.Reporter;
 import com.dataproviderUtilities.ConfigFileReader;
 import com.helperUtilities.LoggerHelper;
 import com.managersUtilities.CommonFunction;
@@ -38,7 +37,6 @@ public class DIL_loginpage {
         CommonFunction.waitForElementToAppear(driver, loginBtn);
         loginBtn.click();
         log.info("User is logged into DIL UI with userId-->" + configFileReader.getProperties().getProperty("dilUsrNm"));
-        Reporter.addStepLog("User is logged into DIL UI with userId-->" + configFileReader.getProperties().getProperty("dilUsrNm"));
 
 
     }

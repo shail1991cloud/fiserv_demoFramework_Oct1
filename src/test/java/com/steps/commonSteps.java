@@ -1,13 +1,12 @@
 package com.steps;
 
 import com.baselibrary.Baseclass;
-import com.cucumber.listener.Reporter;
 import com.dataproviderUtilities.ConfigFileReader;
 import com.helperUtilities.LoggerHelper;
 import com.managersUtilities.CommonFunction;
 import com.pagesPF.DIL_loginpage;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 
@@ -27,9 +26,6 @@ public class commonSteps extends Baseclass {
     public void userIsOnDILLoginPage() {
         driver.get(configFileReader.getProperties().getProperty("dil_Url"));
         CommonFunction.maximiseBrowser(driver);
-        Reporter.addScenarioLog("--Browser Launched--");
-        Reporter.addStepLog("--Navigated to URL--");
-        Reporter.addStepLog("--User is on DIL Login Page--");
         log.info("--Browser Launched--and user is navigated to DIL Login Page");
     }
 
@@ -37,7 +33,6 @@ public class commonSteps extends Baseclass {
     @When("^enter username and password$")
     public void enterUsernameAndPassword() {
         dil_loginpage.loginToDIL();
-        Reporter.addStepLog("--UserName and Password Entered--");
         log.info("--user name and Password are entered--");
 
     }

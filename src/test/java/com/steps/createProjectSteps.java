@@ -1,7 +1,6 @@
 package com.steps;
 
 import com.baselibrary.Baseclass;
-import com.cucumber.listener.Reporter;
 import com.dataproviderUtilities.ConfigFileReader;
 import com.helperUtilities.Constant;
 import com.helperUtilities.EnvSetUp;
@@ -9,9 +8,9 @@ import com.helperUtilities.LoggerHelper;
 import com.managersUtilities.CommonFunction;
 import com.pagesPF.Project_BuilderPage;
 import com.pagesPF.ProjectsPage;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.support.PageFactory;
@@ -34,7 +33,6 @@ public class createProjectSteps extends Baseclass {
     public void clicksOnCreateProjectTab() {
         CommonFunction.waitForElementToAppear(driver, projectspage.createProjectButton);
         projectspage.createProjectButton.click();
-        Reporter.addStepLog("--Details entered in ProjectSettingUp Pop Up--");
         log.info("User has clicked on ProjectSetUp Popup");
     }
 
@@ -42,8 +40,7 @@ public class createProjectSteps extends Baseclass {
     public void entersAndSelectEngine(String name, String description, String tag) throws InterruptedException {
         projectspage.enterDetailsIntoCreateProjectPopUp(name, description, tag);
         CommonFunction.submitDetails(projectspage.buttonCreateOnProjectSettingPopUp);
-        CommonFunction.submitDetails(projectspage.buttonCreateOnProjectSettingPopUp);
-        Reporter.addStepLog("--Details entered for Project With--->" + name + "," + description + " and " + tag);
+      CommonFunction.submitDetails(projectspage.buttonCreateOnProjectSettingPopUp);
         log.info("--Details entered for Project With--->" + name + "," + description + " and " + tag);
 
     }
@@ -52,7 +49,6 @@ public class createProjectSteps extends Baseclass {
     @Then("^created \"([^\"]*)\"is validated in project listing page$")
     public void createdIsValidatedInProjectListingPage(String projectName, String tag) throws InterruptedException {
         projectspage.validateProjectName(projectName, tag);
-        Reporter.addStepLog("--Project with Name-->" + EnvSetUp.getDataKeyValue(Constant.ProjectName) + "--is validated on Project Listing page");
         log.info("--Project with Name-->" + EnvSetUp.getDataKeyValue(Constant.ProjectName) + "--is validated on Project Listing page");
 
     }
@@ -60,7 +56,6 @@ public class createProjectSteps extends Baseclass {
     @Then("^all the fields on Project Setting up page are validated$")
     public void allTheFieldsOnProjectSettingUpPageAreValidated() {
         projectspage.validateAllFieldsOnProjectSettingPopUp();
-        Reporter.addStepLog("--Fields on Project Setting PopUp are validated--");
         log.info("--Fields on Project Setting PopUp are validated--");
 
     }
@@ -68,7 +63,6 @@ public class createProjectSteps extends Baseclass {
     @Then("^submit button is displaying disable$")
     public void submitButtonIsDisplayDisable() {
         Assert.assertTrue(!projectspage.buttonCreateOnProjectSettingPopUp.isSelected());
-        Reporter.addStepLog("--Submit button displays disable and Project is not created -");
         log.info("--Submit button displays disable and Project is not created -");
 
     }
@@ -76,7 +70,6 @@ public class createProjectSteps extends Baseclass {
     @When("^enters \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\" with empty description and select engine$")
     public void entersWithEmptyDescriptionAndSelectEngine(String name, String description, String tag) throws InterruptedException {
         projectspage.enterDetailsIntoCreateProjectPopUp(name, description, tag);
-        Reporter.addStepLog("--Details entered for Project-->" + name + "," + description + "," + tag);
         log.info("--Details entered for Project-->" + name + "," + description + "," + tag);
 
     }
@@ -85,7 +78,6 @@ public class createProjectSteps extends Baseclass {
     public void entersAndSelectEngineAndCancel(String name, String description, String tag) throws InterruptedException {
         projectspage.enterDetailsIntoCreateProjectPopUp(name, description, tag);
         CommonFunction.submitDetails(projectspage.buttonCancelOnProjectSettingPopUp);
-        Reporter.addStepLog("--Details entered for Project and cancelled on Project Setting PopUp--");
         log.info("--Details entered for Project and cancelled on Project Setting PopUp--");
 
     }
@@ -93,7 +85,6 @@ public class createProjectSteps extends Baseclass {
     @Then("^cancelled \"([^\"]*)\"is not validated in project listing page$")
     public void cancelledIsNotValidatedInProjectListingPage(String projectName) throws InterruptedException {
         projectspage.validateProjectNameNotOnProjectListingPage(projectName);
-        Reporter.addStepLog("--Project is not present on ProjectListing Page with name-->" + projectName);
         log.info("--Project is not present on ProjectListing Page with name-->" + projectName);
 
     }
@@ -101,7 +92,6 @@ public class createProjectSteps extends Baseclass {
     @When("^deletes the project$")
     public void deletesTheProject() throws InterruptedException {
         projectspage.deleteProjectOnProjectListingPage();
-        Reporter.addStepLog("--Project is deleted on ProjectListing Page--");
         log.info("--Project is deleted on ProjectListing Page--");
 
     }
@@ -110,7 +100,6 @@ public class createProjectSteps extends Baseclass {
     @Then("^deleted \"([^\"]*)\" disappear from Project Listing Page$")
     public void deletedDisappearFromProjectListingPage(String projectName) throws Throwable {
         projectspage.validateProjectNameNotOnProjectListingPage(projectName);
-        Reporter.addStepLog("--Project disappears from ProjectListing Page with name-->" + projectName);
         log.info("--Project disappears from ProjectListing Page with name-->" + projectName);
 
     }
@@ -118,7 +107,6 @@ public class createProjectSteps extends Baseclass {
     @Then("^he should be able to delete all the Projects from Project Listing Page$")
     public void heShouldBeAbleToDeleteAllTheProjectsFromProjectListingPage() {
         projectspage.deleteAllProjectsOnProjectListingPage();
-        Reporter.addStepLog("All the projrcts are deleted");
         log.info("All the projrcts are deleted");
 
     }
@@ -127,7 +115,6 @@ public class createProjectSteps extends Baseclass {
     public void createdIsValidatedForDetailsLikeStatusTagProjectNameRunButtonRunButtonDeleteButton(String projectName) throws Throwable {
         projectspage.validateProjectRecord(projectName);
         projectspage.deleteProjectOnProjectListingPage();
-        Reporter.addStepLog("--Project with Name-->" + EnvSetUp.getDataKeyValue(Constant.ProjectName) + "--is validated on Project Listing page");
         log.info("--Project with Name-->" + EnvSetUp.getDataKeyValue(Constant.ProjectName) + "--is validated on Project Listing page");
 
     }
@@ -137,7 +124,6 @@ public class createProjectSteps extends Baseclass {
         projectBuilderpage.editProjectDetailsOnProjectBuilder(newTag, description);
         CommonFunction.navigateBackward(driver);
         projectspage.validateProjectName(description, newTag);
-        Reporter.addStepLog("--Project with -->" + newTag + "--is validated on Project Listing page");
         log.info("--Project with -->" + newTag + "--is validated on Project Listing page");
 
 
@@ -147,7 +133,6 @@ public class createProjectSteps extends Baseclass {
     @Then("^created \"([^\"]*)\" with \"([^\"]*)\"is validated in project listing page$")
     public void createdWithIsValidatedInProjectListingPage(String projectName, String tag) throws Throwable {
         projectspage.validateProjectName(projectName, tag);
-        Reporter.addStepLog("--Project with Name-->" + EnvSetUp.getDataKeyValue(Constant.ProjectName) + "--is validated on Project Listing page");
         log.info("--Project with Name-->" + EnvSetUp.getDataKeyValue(Constant.ProjectName) + "--is validated on Project Listing page");
 
     }
@@ -155,7 +140,6 @@ public class createProjectSteps extends Baseclass {
     @Then("^user is able to get Project Setting PopUp$")
     public void userIsAbleToGetProjectSettingPopUp() {
         projectspage.validateProjectSettingPopUp();
-        Reporter.addStepLog("--Fields on Project Setting PopUp is present--");
         log.info("--Fields on Project Setting PopUp is present--");
 
     }
@@ -164,7 +148,6 @@ public class createProjectSteps extends Baseclass {
     public void searchesTheWith(String project, String description, String tag) throws Throwable {
 
         projectspage.pickExistingProjectOrCreateNew(project, description, tag);
-        Reporter.addStepLog("Record with -->" + project + "," + description + "--is picked");
         log.info("Record with -->" + project + "," + description + "--is picked");
 
     }
@@ -174,7 +157,6 @@ public class createProjectSteps extends Baseclass {
     public void userIsAbleToVerifyOnProjectListingPage(String createProjectTab) throws Throwable {
         CommonFunction.getCustomisedWebElement(driver, projectspage.customisedCreateProjectTab, createProjectTab);
         Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, projectspage.customisedCreateProjectTab, createProjectTab).isDisplayed());
-        Reporter.addStepLog("Varification of-->" + createProjectTab + "--is done");
         log.info("Varification of-->" + createProjectTab + "--is done");
 
     }

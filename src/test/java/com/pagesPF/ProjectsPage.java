@@ -1,6 +1,5 @@
 package com.pagesPF;
 
-import com.cucumber.listener.Reporter;
 import com.helperUtilities.Constant;
 import com.helperUtilities.DatesHelper;
 import com.helperUtilities.EnvSetUp;
@@ -208,7 +207,6 @@ public class ProjectsPage {
         if (CommonFunction.getCustomisedWebElements(driver, customisedProjectOnProjectListingPage, EnvSetUp.getDataKeyValue(Constant.ProjectName)).size() > 0) {
             Assert.fail("Project is Present on Project Listing page");
         } else {
-            Reporter.addStepLog("Element is not present on Project listing page");
         }
     }
 

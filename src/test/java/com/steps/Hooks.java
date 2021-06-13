@@ -2,12 +2,12 @@ package com.steps;
 
 import com.baselibrary.Baseclass;
 import com.config.enums.Browsers;
-import com.cucumber.listener.Reporter;
 import com.dataproviderUtilities.ConfigFileReader;
-import com.managersUtilities.CommonFunction;
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
@@ -26,23 +26,38 @@ public class Hooks {
 
     @Before
     public void beforeScenario(Scenario scenario) {
-        Reporter.assignAuthor("Shailendra Parihar");
+        scenario.log("--Starting the Execution--");
 
 
     }
 
     @After(order = 1)
     public void afterScenario(Scenario scenario) throws IOException {
+        try {
+            String screenshotName = scenario.getName().replaceAll(" ", "_");
+            if (scenario.isFailed()) {
+                scenario.log("this is my failure message");
+                TakesScreenshot ts = (TakesScreenshot) driver;
+                byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
+                scenario.attach(screenshot, "image/png", screenshotName);
 
-        CommonFunction.getScreenShots(driver, scenario);
+            }
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
 
     }
 
 
     @After(order = 0)
-    public void afterScenario() {
-        Reporter.addScenarioLog("----Test is Completed----");
+    public void quitBrowser(Scenario scenario) {
+
         driver.quit();
+        scenario.log("---Closing the Browser---");
+
     }
+
 
 }

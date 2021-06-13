@@ -2,7 +2,7 @@ package com.managersUtilities;
 
 import com.cucumber.listener.Reporter;
 import com.google.common.io.Files;
-import cucumber.api.Scenario;
+import io.cucumber.java.Scenario;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
