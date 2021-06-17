@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         glue = {"com/steps"},
         plugin = {"pretty", "html:test-output", "json:target/cucumber.json",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-        tags = "@CP-Test1 or @CP-Test3",
+        tags = "@CP-Test1",
         monochrome = true
 
 )

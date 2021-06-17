@@ -52,7 +52,19 @@ public class Baseclass {
                 driver = new InternetExplorerDriver(ieOptions);
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             }
+        } else if (System.getProperty("os.name").toLowerCase().contains(OS.WINDOW.name().toLowerCase())) {
+            if (browser.equalsIgnoreCase(com.config.enums.Browsers.CHROME.name())) {
+                ChromeOptions chromeOptions = new ChromeOptions();
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver(chromeOptions);
+                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            } else if (browser.equalsIgnoreCase(com.config.enums.Browsers.IE.name())) {
 
+                InternetExplorerOptions ieOptions = new InternetExplorerOptions();
+                WebDriverManager.iedriver().setup();
+                driver = new InternetExplorerDriver(ieOptions);
+                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            }
 
 
         }

@@ -31,8 +31,16 @@ public class createProjectSteps extends Baseclass {
 
     @When("^clicks on createProject tab$")
     public void clicksOnCreateProjectTab() {
+        if (projectspage.createdProjectsOnProjectListingPage.size() > 0) {
         CommonFunction.waitForElementToAppear(driver, projectspage.createProjectButton);
         projectspage.createProjectButton.click();
+        }
+        else{
+            CommonFunction.waitForElementToAppear(driver, projectspage.createProjectButtonWhenNoProject);
+            CommonFunction.scrollToElement(driver,projectspage.createProjectButtonWhenNoProject);
+            projectspage.createProjectButtonWhenNoProject.click();
+
+        }
         log.info("User has clicked on ProjectSetUp Popup");
     }
 
@@ -155,11 +163,18 @@ public class createProjectSteps extends Baseclass {
 
     @Then("^user is able to verify \"([^\"]*)\" on Project Listing page$")
     public void userIsAbleToVerifyOnProjectListingPage(String createProjectTab) throws Throwable {
-        CommonFunction.getCustomisedWebElement(driver, projectspage.customisedCreateProjectTab, createProjectTab);
-        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, projectspage.customisedCreateProjectTab, createProjectTab).isDisplayed());
-        log.info("Varification of-->" + createProjectTab + "--is done");
+        if (projectspage.createdProjectsOnProjectListingPage.size() > 0) {
+            CommonFunction.waitForElementToAppear(driver, projectspage.createProjectButton);
+            CommonFunction.getCustomisedWebElement(driver, projectspage.customisedCreateProjectTab, createProjectTab);
+            Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, projectspage.customisedCreateProjectTab, createProjectTab).isDisplayed());
 
-    }
+        } else {
+            CommonFunction.waitForElementToAppear(driver, projectspage.createProjectButtonWhenNoProject);
+            CommonFunction.scrollToElement(driver,projectspage.createProjectButtonWhenNoProject);
+            Assert.assertTrue(projectspage.createProjectButtonWhenNoProject.isDisplayed());
+        }
 
+                log.info("Varification of-->" + createProjectTab + "--is done");
 
-}
+            }
+        }

@@ -33,19 +33,19 @@ public class ProjectsPage {
     public WebElement createProjectButtonWhenNoProject;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"input-text-field0\"]")
-    WebElement projectNameTextField;
+    public WebElement projectNameTextField;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"input-text-field0\"]")
-    WebElement projectSettingUpModelPanel;
+    public WebElement projectSettingUpModelPanel;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"input-textarea0\"]")
-    WebElement projectDescriptionTextField;
+    public WebElement projectDescriptionTextField;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"input-text-field1\"]")
-    WebElement projectTag;
+    public WebElement projectTag;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"input-dropdown0\"]")
-    WebElement dropDown_Engines;
+    public WebElement dropDown_Engines;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"create-btn\"]")
     public WebElement buttonCreateOnProjectSettingPopUp;
@@ -54,47 +54,50 @@ public class ProjectsPage {
     public WebElement buttonCancelOnProjectSettingPopUp;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//p[3]/button")
-    WebElement deleteButtonOnProjectListingPage;
+    public WebElement deleteButtonOnProjectListingPage;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div/div[2]/div/div/scale-modal/scale-button[1]")
     WebElement cancelButtonOnDeletePopUp;
 
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//p[3]/button")
-    List<WebElement> deleteButtonsOnProjectListingPage;
+    public List<WebElement> deleteButtonsOnProjectListingPage;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//div[2]/div/div/div[1]/div[1]/div[1]")
     WebElement project_Name;
 
     @FindBy(how = How.XPATH, using = "//*[text()=' Delete ']")
-    WebElement deleteButtonOnDeleteProjectPopUp;
+    public WebElement deleteButtonOnDeleteProjectPopUp;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"project-dashboard-header\"]/div[1]")
-    WebElement optionToSortByStatus;
+    public WebElement optionToSortByStatus;
 
     @FindBy(how = How.XPATH, using = "//*[@placeholder=\"Search\"]")
-    WebElement searchBoxOnProjectListingPage;
+    public WebElement searchBoxOnProjectListingPage;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"projectName\"]")
-    WebElement existingProjectOnProjectListingPage;
+    public WebElement existingProjectOnProjectListingPage;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"projectName\"]")
-    WebElement projectStatusOnProjectListingPage;
+    public WebElement projectStatusOnProjectListingPage;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"projectTag\"]")
     WebElement projectTagOnProjectListingPage;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"engineId\"]/p/span")
-    WebElement projectEngineOnProjectListingPage;
+    public WebElement projectEngineOnProjectListingPage;
+
+    @FindBy(how = How.XPATH, using = "//*[contains(text(),'Loading')]")
+    public WebElement iconLoading;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//div[5]//p[1]")
-    WebElement projectRunOnProjectListingPage;
+    public WebElement projectRunOnProjectListingPage;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//div[5]//p[2]")
-    WebElement projectCopyOnProjectListingPage;
+    public WebElement projectCopyOnProjectListingPage;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"projectName\"]")
-    List<WebElement> createdProjectsOnProjectListingPage;
+    public List<WebElement> createdProjectsOnProjectListingPage;
 
     public final String customisedProjectOnProjectListingPage = "//*[text()=' %s ']";
     public final String customisedCreateProjectTab = "//*[text()=' %s ']";
@@ -145,17 +148,19 @@ public class ProjectsPage {
     }
 
     public void enterDetailsIntoCreateProjectPopUp(String name, String description, String tag) throws InterruptedException {
-        CommonFunction.waitForElementToAppear(driver, projectNameTextField);
-        String uniqueProjectName = CommonFunction.generateRandomString(5) + name + DatesHelper.getTodayDateWithSeconds();
-        EnvSetUp.setDataValue(Constant.ProjectName, uniqueProjectName);
-        projectNameTextField.sendKeys(uniqueProjectName);
-        projectDescriptionTextField.sendKeys(description);
-        CommonFunction.waitForElementToAppear(driver, projectTag);
-        projectTag.sendKeys(tag);
-        projectTag.sendKeys(Keys.ENTER);
-        CommonFunction.waitForElementToAppear(driver, dropDown_Engines);
-        CommonFunction.scrollToElement(driver, dropDown_Engines);
-        CommonFunction.selectFromDropDownWithValue(dropDown_Engines, "1");
+
+            CommonFunction.waitForElementToAppear(driver, projectNameTextField);
+            String uniqueProjectName = CommonFunction.generateRandomString(5) + name + DatesHelper.getTodayDateWithSeconds();
+            EnvSetUp.setDataValue(Constant.ProjectName, uniqueProjectName);
+            projectNameTextField.sendKeys(uniqueProjectName);
+            projectDescriptionTextField.sendKeys(description);
+            CommonFunction.waitForElementToAppear(driver, projectTag);
+            projectTag.sendKeys(tag);
+            projectTag.sendKeys(Keys.ENTER);
+            CommonFunction.waitForElementToAppear(driver, dropDown_Engines);
+            CommonFunction.scrollToElement(driver, dropDown_Engines);
+            CommonFunction.selectFromDropDownWithValue(dropDown_Engines, "1");
+
 
     }
 

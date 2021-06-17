@@ -121,6 +121,13 @@ public class CommonFunction {
     }
 
     /**
+     * @method waitForElementToDisAppear to wait for element for a certain condition
+     */
+    public static void waitForElementToDisAppear(WebDriver driver, WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, 50);
+        wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+    /**
      * @method clickByHoveringMouse to click by use of Actions class to perform mouse actions
      */
     public static void clickByHoveringMouse(WebDriver driver, WebElement element) throws InterruptedException {
