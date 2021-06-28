@@ -116,7 +116,7 @@ public class CommonFunction {
      * @method waitForElementToAppear to wait for element for a certain condition
      */
     public static void waitForElementToAppear(WebDriver driver, WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, 50);
+        WebDriverWait wait = new WebDriverWait(driver, 50000);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 

@@ -1,7 +1,7 @@
 @CreatePipeLine
 Feature:Creation and Field level validation of pipelines
   As a user I want to Create a Pipeline,Validate the PipelineListing Page
-  and is able to validate indivisual pipelines for field level validation
+  and is able to validate individual pipelines for field level validation
 
   @Smoke @Reg @Positive @CP-Test1
   Scenario Outline: user is able to validate pipeline listing page when there is no pipeline created

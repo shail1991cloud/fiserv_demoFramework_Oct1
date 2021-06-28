@@ -46,7 +46,12 @@ public class PipeLIne_ListingPage {
     WebElement createPipelineIcon;
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]//scale-button[2]")
     WebElement buttonCreatePipeline;
-
+    @FindBy(how = How.XPATH, using = "//*[text()='Open']")
+    WebElement OpenButton;
+    @FindBy(how = How.XPATH, using = "//*[text()='LAST LAUNCH']")
+    WebElement LastLaunchButton;
+    @FindBy(how = How.XPATH, using = "//*[text()='Builder ']")
+    WebElement buttonBuilder;
 
     public void validateDetailsOnProjectListingPageWithNORecords(String message) throws InterruptedException {
         Assert.assertTrue(functions_leanPageObject.fetchProjectNameOnProjectListingORBuilderPage().isDisplayed());

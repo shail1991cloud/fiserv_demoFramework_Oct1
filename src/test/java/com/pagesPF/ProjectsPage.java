@@ -59,7 +59,6 @@ public class ProjectsPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div/div[2]/div/div/scale-modal/scale-button[1]")
     WebElement cancelButtonOnDeletePopUp;
 
-
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//p[3]/button")
     public List<WebElement> deleteButtonsOnProjectListingPage;
 

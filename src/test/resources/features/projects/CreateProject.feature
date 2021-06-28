@@ -13,8 +13,7 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
     Examples:
       | Create Project Tab |
       | Create Project     |
-
-  @Smoke @Reg @Positive @CRP-Test2
+  @Reg @Positive @CRP-Test2
   Scenario: user is able to get Project Setting pop up while selects Create Project Tab
     Given user is on DIL login page
     When  enter username and password
@@ -117,5 +116,4 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
     Given user is on DIL login page
     When  enter username and password
     Then  he should be able to delete all the Projects from Project Listing Page
-
 
