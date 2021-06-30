@@ -1,5 +1,6 @@
 package com.steps;
 
+import com.apicalls.RestFunctions;
 import com.baselibrary.Baseclass;
 import com.dataproviderUtilities.ConfigFileReader;
 import com.helperUtilities.LoggerHelper;
@@ -13,11 +14,13 @@ import org.openqa.selenium.support.PageFactory;
 public class commonSteps extends Baseclass {
     DIL_loginpage dil_loginpage;
     public ConfigFileReader configFileReader;
+    public RestFunctions restFunctions;
     Logger log = LoggerHelper.getLogger(commonSteps.class);
 
     public commonSteps() {
         dil_loginpage = PageFactory.initElements(driver, DIL_loginpage.class);
         configFileReader = new ConfigFileReader();
+        restFunctions =new RestFunctions();
 
     }
 
