@@ -1,7 +1,7 @@
-package com.apicalls;
+package com.callsapi;
 
-import com.api_engines.AuthorizationPojo;
 import com.dataproviderUtilities.ConfigFileReader;
+import com.enginesApi.AuthorizationPojo;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
@@ -11,10 +11,10 @@ import io.restassured.specification.RequestSpecification;
 import java.util.Map;
 
 public class RestFunctions {
-    private static final String BASE_URL = "https://bookstore.toolsqa.com";
     public static String token;
     public static Response response;
     public  ConfigFileReader configFileReader;
+
 
 
     public RestFunctions()
@@ -54,6 +54,7 @@ public class RestFunctions {
     public  Response getMethodRESTAPIWithUri(String uri) {
         RequestSpecification httpRequest = RestAssured.given();
         Response response = httpRequest.request(Method.GET, uri);
+
         return response;
     }
 

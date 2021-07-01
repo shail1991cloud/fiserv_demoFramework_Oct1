@@ -1,19 +1,25 @@
 package com.steps;
 
-import com.apicalls.RestFunctions;
 import com.baselibrary.Baseclass;
+import com.callsapi.RestFunctions;
 import com.dataproviderUtilities.ConfigFileReader;
 import com.helperUtilities.LoggerHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.restassured.path.json.JsonPath;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+
+import java.util.List;
+import java.util.Map;
 
 public class apiSteps extends Baseclass {
 
     public ConfigFileReader configFileReader;
     public RestFunctions restFunctions;
+    private static String jsonString;
+    private static String bookId;
     Logger log = LoggerHelper.getLogger(apiSteps.class);
 
     public apiSteps() {
@@ -48,6 +54,11 @@ public class apiSteps extends Baseclass {
     @Then("records size with {string} validated with {string}")
     public void recordsSizeWithValidatedWith(String code, String parameter) {
         Assert.assertEquals(restFunctions.getMethodRESTAPIWithPath(parameter).getStatusCode(),Integer.parseInt(code));
+        jsonString = restFunctions.getMethodRESTAPIWithPath(parameter).asString();
+        List<Map<String, String>> books = JsonPath.from(jsonString).get("books");
+        Assert.assertTrue(books.size() > 0);
+        bookId = books.get(0).get("isbn");
+        log.info("record is validate with status-->"+code+"and-->"+books.size());
 
     }
 }

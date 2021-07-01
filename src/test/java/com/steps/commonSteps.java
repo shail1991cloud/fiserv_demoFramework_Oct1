@@ -1,7 +1,7 @@
 package com.steps;
 
-import com.apicalls.RestFunctions;
 import com.baselibrary.Baseclass;
+import com.callsapi.RestFunctions;
 import com.dataproviderUtilities.ConfigFileReader;
 import com.helperUtilities.LoggerHelper;
 import com.managersUtilities.CommonFunction;
