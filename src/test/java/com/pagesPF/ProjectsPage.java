@@ -1,5 +1,6 @@
 package com.pagesPF;
 
+import com.callsapi.RestFunctions;
 import com.helperUtilities.Constant;
 import com.helperUtilities.DatesHelper;
 import com.helperUtilities.EnvSetUp;
@@ -19,9 +20,10 @@ public class ProjectsPage {
 
     WebDriver driver;
     public Functions_LeanPageObject functions_leanPageObject;
-
+    public RestFunctions restFunctions;
     public ProjectsPage(WebDriver driver) {
         this.driver = driver;
+        restFunctions = new RestFunctions();
         functions_leanPageObject = PageFactory.initElements(driver, Functions_LeanPageObject.class);
 
     }
@@ -184,6 +186,10 @@ public class ProjectsPage {
         String tagNameOnProjectListingPage = projectTagOnProjectListingPage.getText();
         Assert.assertEquals(tag, tagNameOnProjectListingPage);
 
+    }
+
+    public void validateProjectWithBackendApi(String query, String path) {
+        restFunctions.authenticateProject(query, EnvSetUp.getDataKeyValue(Constant.ProjectName), path);
     }
 
     public void navigateToProjectListing() throws InterruptedException {

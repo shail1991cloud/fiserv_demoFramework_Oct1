@@ -7,26 +7,30 @@ import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.junit.Assert;
 
 import java.util.Map;
+
+/**
+ * @author Shailendra PS Parihar
+ */
 
 public class RestFunctions {
     public static String token;
     public static Response response;
-    public  ConfigFileReader configFileReader;
+    public ConfigFileReader configFileReader;
 
 
-
-    public RestFunctions()
-    {
+    public RestFunctions() {
         configFileReader = new ConfigFileReader();
     }
+
     /**
-     * Used to authenticate user
+     * Used to authenticate user and generate bearer token
      */
 
-    public  Response authenticateUser(String username,String password,String path) {
-        AuthorizationPojo authorizationPojo = new AuthorizationPojo(username,password);
+    public Response authenticateUser(String username, String password, String path) {
+        AuthorizationPojo authorizationPojo = new AuthorizationPojo(username, password);
         RestAssured.baseURI = configFileReader.getProperties().getProperty("BASE_URL");
         RequestSpecification request = RestAssured.given();
         request.header("Content-Type", "application/json");
@@ -36,11 +40,25 @@ public class RestFunctions {
         return response;
     }
 
+    /**
+     * Used to validate created Project in dil-core backend api
+     */
+    public Response authenticateProject(String Query, String ProjectName, String path) {
+        RestAssured.baseURI = configFileReader.getProperties().getProperty("URI");
+        RequestSpecification request = RestAssured.given();
+        response = request.queryParam(Query, ProjectName).get(path);
+        String jsonString = response.asString();
+        System.out.println(response.getStatusCode());
+        Assert.assertEquals(jsonString.contains(ProjectName), true);
+        Assert.assertEquals(200, (response.getStatusCode()));
+        return response;
+    }
+
 
     /**
      * Used to call API using GET Method with base URI and path
      */
-    public  Response getMethodRESTAPIWithPath(String path) {
+    public Response getMethodRESTAPIWithPath(String path) {
         RestAssured.baseURI = configFileReader.getProperties().getProperty("BASE_URL");
         RequestSpecification httpRequest = RestAssured.given();
         response = httpRequest.request(Method.GET, path);

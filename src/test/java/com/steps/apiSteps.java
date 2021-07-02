@@ -4,12 +4,14 @@ import com.baselibrary.Baseclass;
 import com.callsapi.RestFunctions;
 import com.dataproviderUtilities.ConfigFileReader;
 import com.helperUtilities.LoggerHelper;
+import com.pagesPF.ProjectsPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.path.json.JsonPath;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -20,11 +22,13 @@ public class apiSteps extends Baseclass {
     public RestFunctions restFunctions;
     private static String jsonString;
     private static String bookId;
+    public ProjectsPage projectsPage;
     Logger log = LoggerHelper.getLogger(apiSteps.class);
 
     public apiSteps() {
         configFileReader = new ConfigFileReader();
-        restFunctions =new RestFunctions();
+        restFunctions = new RestFunctions();
+        projectsPage = PageFactory.initElements(driver, ProjectsPage.class);
 
     }
 
@@ -53,12 +57,18 @@ public class apiSteps extends Baseclass {
 
     @Then("records size with {string} validated with {string}")
     public void recordsSizeWithValidatedWith(String code, String parameter) {
-        Assert.assertEquals(restFunctions.getMethodRESTAPIWithPath(parameter).getStatusCode(),Integer.parseInt(code));
+        Assert.assertEquals(restFunctions.getMethodRESTAPIWithPath(parameter).getStatusCode(), Integer.parseInt(code));
         jsonString = restFunctions.getMethodRESTAPIWithPath(parameter).asString();
         List<Map<String, String>> books = JsonPath.from(jsonString).get("books");
         Assert.assertTrue(books.size() > 0);
         bookId = books.get(0).get("isbn");
-        log.info("record is validate with status-->"+code+"and-->"+books.size());
+        log.info("record is validate with status-->" + code + "and-->" + books.size());
 
+    }
+
+    @Then("user should be able to use {string} to validate project on {string}")
+    public void userShouldBeAbleToUseToValidateProjectOn(String query, String path) {
+        projectsPage.validateProjectWithBackendApi(query, path);
+        log.info("Project is validated with Backend Api");
     }
 }
