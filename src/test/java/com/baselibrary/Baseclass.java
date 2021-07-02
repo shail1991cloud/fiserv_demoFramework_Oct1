@@ -30,6 +30,7 @@ public class Baseclass {
             if (browser.equalsIgnoreCase(com.config.enums.Browsers.CHROME.name())) {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 WebDriverManager.chromedriver().setup();
+                chromeOptions.addArguments("--headless");
                 driver = new ChromeDriver(chromeOptions);
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             } else if (browser.equalsIgnoreCase(com.config.enums.Browsers.IE.name())) {
@@ -39,6 +40,7 @@ public class Baseclass {
                 driver = new InternetExplorerDriver(ieOptions);
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             }
+
         } else if (System.getProperty("os.name").toLowerCase().contains(OS.MAC.name().toLowerCase())) {
             if (browser.equalsIgnoreCase(com.config.enums.Browsers.CHROME.name())) {
                 ChromeOptions chromeOptions = new ChromeOptions();
@@ -65,7 +67,6 @@ public class Baseclass {
                 driver = new InternetExplorerDriver(ieOptions);
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             }
-
 
         }
         return driver;
