@@ -11,6 +11,6 @@ public enum Browsers {
 	CHROME,
 	FIREFOX,
 	IE,
-	HtmlUnitDriver
+	CHROME_HEADLESS
 
 }
