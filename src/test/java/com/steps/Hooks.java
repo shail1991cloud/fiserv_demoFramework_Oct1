@@ -19,12 +19,10 @@ public class Hooks {
 
 
     public Hooks() {
-        driver = Baseclass.selectBrowser(Browsers.CHROME.name());
+        driver = Baseclass.selectBrowser(Browsers.CHROME_HEADLESS.name());
         configFileReader = new ConfigFileReader();
 
     }
-
-
 
     @Before
     public void beforeScenario(Scenario scenario) {

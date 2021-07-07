@@ -142,3 +142,15 @@
 2021-07-07 14:07:427 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
 2021-07-07 14:07:459 INFO  createProjectSteps:52 - --Details entered for Project With--->Auto_Pro,CreatingPipeLine and Test
 2021-07-07 14:07:442 INFO  apiSteps:72 - Project is validated with Backend Api
+2021-07-07 14:07:564 INFO  commonSteps:32 - --Browser Launched--and user is navigated to DIL Login Page
+2021-07-07 14:07:224 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-07-07 14:07:226 INFO  commonSteps:39 - --user name and Password are entered--
+2021-07-07 14:07:139 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-07-07 14:07:817 INFO  createProjectSteps:52 - --Details entered for Project With--->Auto_Pro,CreatingPipeLine and Test
+2021-07-07 14:07:702 INFO  apiSteps:72 - Project is validated with Backend Api
+2021-07-07 14:07:835 INFO  commonSteps:32 - --Browser Launched--and user is navigated to DIL Login Page
+2021-07-07 14:07:664 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-07-07 14:07:665 INFO  commonSteps:39 - --user name and Password are entered--
+2021-07-07 14:07:452 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-07-07 14:07:123 INFO  createProjectSteps:52 - --Details entered for Project With--->Auto_Pro,CreatingPipeLine and Test
+2021-07-07 14:07:880 INFO  apiSteps:72 - Project is validated with Backend Api
