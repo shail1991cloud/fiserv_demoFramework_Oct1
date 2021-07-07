@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"com/steps"},
-        plugin = {"pretty", "html:test-output", "json:target/cucumber.json",
+        plugin = {"pretty", "html:test-output", "json:target/cucumber.json","html:target/cucumber.html",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         tags = "@PBE-API-Test1",
         monochrome = true
