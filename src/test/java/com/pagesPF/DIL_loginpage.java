@@ -22,21 +22,24 @@ public class DIL_loginpage {
 
     }
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"username\"]")
+    @FindBy(how = How.XPATH, using = "//*[text()='User name']/following-sibling::input")
     WebElement dilUserName;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"password\"]")
+    @FindBy(how = How.XPATH, using = "//*[text()='Password']/following-sibling::input")
     WebElement dilPassword;
-    @FindBy(how = How.XPATH, using = "//*[@value=\"Login\"]")
+    @FindBy(how = How.XPATH, using = "//*[text()=' Login ']")
     WebElement loginBtn;
 
+    String userName="document.querySelector(\"body > div > div:nth-child(2) > div > div > div.login-section-field > div:nth-child(1) > scale-text-field > div\")";
 
-    public void loginToDIL() {
-        CommonFunction.waitForElementToAppear(driver, dilUserName);
-        dilUserName.sendKeys(configFileReader.getProperties().getProperty("dilUsrNm"));
-        CommonFunction.waitForElementToAppear(driver, dilPassword);
-        dilPassword.sendKeys(configFileReader.getProperties().getProperty("dilPwd"));
-        CommonFunction.waitForElementToAppear(driver, loginBtn);
-        loginBtn.click();
+    public void loginToDIL() throws InterruptedException {
+       // JavascriptExecutor executor = (JavascriptExecutor)driver;
+       // executor.executeScript("document.body.style.zoom = '.8'");
+        System.out.println(driver.manage().window().getSize());
+         dilUserName.sendKeys(configFileReader.getProperties().getProperty("dilUsrNm"));
+         CommonFunction.waitForElementToAppear(driver, dilPassword);
+         dilPassword.sendKeys(configFileReader.getProperties().getProperty("dilPwd"));
+         CommonFunction.waitForElementToAppear(driver, loginBtn);
+         CommonFunction.clickForceFully(driver,loginBtn);
         log.info("User is logged into DIL UI with userId-->" + configFileReader.getProperties().getProperty("dilUsrNm"));
 
 

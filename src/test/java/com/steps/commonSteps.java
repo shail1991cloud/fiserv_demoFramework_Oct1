@@ -34,7 +34,7 @@ public class commonSteps extends Baseclass {
 
 
     @When("^enter username and password$")
-    public void enterUsernameAndPassword() {
+    public void enterUsernameAndPassword() throws InterruptedException {
         dil_loginpage.loginToDIL();
         log.info("--user name and Password are entered--");
 

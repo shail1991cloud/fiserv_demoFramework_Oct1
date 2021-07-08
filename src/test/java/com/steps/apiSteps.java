@@ -8,6 +8,7 @@ import com.pagesPF.ProjectsPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -70,5 +71,12 @@ public class apiSteps extends Baseclass {
     public void userShouldBeAbleToUseToValidateProjectOn(String query, String path) {
         projectsPage.validateProjectWithBackendApi(query, path);
         log.info("Project is validated with Backend Api");
+    }
+
+
+    @When("authenticated for backend api")
+    public void authenticatedForBackendApi() {
+        restFunctions.authenticateUserForDIL();
+
     }
 }

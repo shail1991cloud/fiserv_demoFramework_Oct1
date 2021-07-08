@@ -2,6 +2,7 @@ package com.callsapi;
 
 import com.dataproviderUtilities.ConfigFileReader;
 import com.enginesApi.AuthorizationPojo;
+import com.enginesApi.ProjectsAuthorizationPojo;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
@@ -17,7 +18,7 @@ import java.util.Map;
 
 public class RestFunctions {
     public static String token;
-    public static Response response;
+    public static  Response response;
     public ConfigFileReader configFileReader;
 
 
@@ -105,6 +106,17 @@ public class RestFunctions {
             request.body(body);
         }
         Response response = request.request(Method.PUT, path);
+        return response;
+    }
+
+    public Response authenticateUserForDIL() {
+        ProjectsAuthorizationPojo authorizationPojo = new ProjectsAuthorizationPojo("dil-ui","ovrzCm54Zu+q2SuJIhaOnA==","Lp4,mLd:","parihars");
+        RestAssured.baseURI = configFileReader.getProperties().getProperty("BASE_URL");
+        RequestSpecification request = RestAssured.given();
+        request.header("Content-Type", "application/json");
+        response = request.body(authorizationPojo).post("/authservice/login");
+        String jsonString = response.asString();
+        token = JsonPath.from(jsonString).get("access_token");
         return response;
     }
 

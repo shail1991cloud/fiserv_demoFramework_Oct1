@@ -34,7 +34,7 @@ public class ProjectsPage {
     @FindBy(how = How.XPATH, using = "//*[text()=' Create project ']")
     public WebElement createProjectButtonWhenNoProject;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"input-text-field0\"]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"input-text-field4\"]")
     public WebElement projectNameTextField;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"input-text-field0\"]")
@@ -43,7 +43,7 @@ public class ProjectsPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"input-textarea0\"]")
     public WebElement projectDescriptionTextField;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"input-text-field1\"]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"input-text-field5\"]")
     public WebElement projectTag;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"input-dropdown0\"]")
@@ -112,8 +112,8 @@ public class ProjectsPage {
 
 
     public void validateProjectSettingPopUp() {
-        CommonFunction.waitForElementToAppear(driver, projectSettingUpModelPanel);
-        Assert.assertTrue(projectSettingUpModelPanel.isDisplayed());
+        CommonFunction.waitForElementToAppear(driver, projectNameTextField);
+        Assert.assertTrue(projectNameTextField.isDisplayed());
     }
 
 

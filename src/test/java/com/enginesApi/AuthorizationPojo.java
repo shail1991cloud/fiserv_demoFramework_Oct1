@@ -2,8 +2,11 @@ package com.enginesApi;
 
 public class AuthorizationPojo {
 
-        public String userName;
+        public String clientID;
+        public String clientSecret;
         public String password;
+        public String userName;
+        
 
         /**
          * No args constructor for use in serialization

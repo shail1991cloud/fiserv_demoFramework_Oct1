@@ -26,6 +26,7 @@ public class CommonFunction {
 
     public static void maximiseBrowser(WebDriver driver) {
         driver.manage().window().maximize();
+
     }
 
     /**
@@ -112,11 +113,13 @@ public class CommonFunction {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", elementToClick);
     }
 
+
+
     /**
      * @method waitForElementToAppear to wait for element for a certain condition
      */
     public static void waitForElementToAppear(WebDriver driver, WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, 50000);
+        WebDriverWait wait = new WebDriverWait(driver, 500);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
