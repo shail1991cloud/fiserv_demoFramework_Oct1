@@ -74,9 +74,15 @@ public class apiSteps extends Baseclass {
     }
 
 
-    @When("authenticated for backend api")
-    public void authenticatedForBackendApi() {
-        restFunctions.authenticateUserForDIL();
+    @When("authenticated for backend api with {string},{string},{string},{string} and {string}")
+    public void authenticatedForBackendApiWithAnd(String clientID, String clientSecret, String passWord, String userName, String pathParam) {
+    restFunctions.authenticateUserWithOath2(clientID,clientSecret,passWord,userName,pathParam);
+        log.info("Details entered for OathAuthentication");
+    }
 
+    @And("fetches the response with {string} to get {string}")
+    public void fetchesTheResponseWithToGet(String jsonPath, String bearerToken) {
+        restFunctions.fetchBearerToken(jsonPath,bearerToken);
+        log.info("BearerTokenObtained");
     }
 }

@@ -47,6 +47,7 @@ public class RestFunctions {
     public Response authenticateProject(String Query, String ProjectName, String path) {
         RestAssured.baseURI = configFileReader.getProperties().getProperty("URI");
         RequestSpecification request = RestAssured.given();
+        request.header("authorization", "Bearer " + token);
         response = request.queryParam(Query, ProjectName).get(path);
         String jsonString = response.asString();
         System.out.println(response.getStatusCode());
@@ -109,15 +110,26 @@ public class RestFunctions {
         return response;
     }
 
-    public Response authenticateUserForDIL() {
-        ProjectsAuthorizationPojo authorizationPojo = new ProjectsAuthorizationPojo("dil-ui","ovrzCm54Zu+q2SuJIhaOnA==","Lp4,mLd:","parihars");
+    /**
+     * function to authenticate user with Oath2 Bearer token
+     */
+
+    public Response authenticateUserWithOath2(String clientId, String clientSecret, String password, String userName,String pathParam) {
+        ProjectsAuthorizationPojo authorizationPojo = new ProjectsAuthorizationPojo(clientId,clientSecret,password,userName);
         RestAssured.baseURI = configFileReader.getProperties().getProperty("BASE_URL");
         RequestSpecification request = RestAssured.given();
         request.header("Content-Type", "application/json");
-        response = request.body(authorizationPojo).post("/authservice/login");
-        String jsonString = response.asString();
-        token = JsonPath.from(jsonString).get("access_token");
+        response = request.body(authorizationPojo).post(pathParam);
         return response;
+    }
+    /**
+     * function to fetch bearer function
+     */
+    public String fetchBearerToken(String jsonPath,String tokenToFetch)
+    {
+        Map<String, String> JsonObject = response.jsonPath().getMap(jsonPath);
+        token=JsonObject.get(tokenToFetch);
+        return token;
     }
 
 }
