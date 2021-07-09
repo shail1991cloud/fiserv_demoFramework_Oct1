@@ -32,8 +32,7 @@ public class DIL_loginpage {
     String userName="document.querySelector(\"body > div > div:nth-child(2) > div > div > div.login-section-field > div:nth-child(1) > scale-text-field > div\")";
 
     public void loginToDIL() throws InterruptedException {
-       // JavascriptExecutor executor = (JavascriptExecutor)driver;
-       // executor.executeScript("document.body.style.zoom = '.8'");
+
         System.out.println(driver.manage().window().getSize());
          dilUserName.sendKeys(configFileReader.getProperties().getProperty("dilUsrNm"));
          CommonFunction.waitForElementToAppear(driver, dilPassword);

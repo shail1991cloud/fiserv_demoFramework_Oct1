@@ -23,7 +23,6 @@ Feature:Creation and Field level validation of pipelines
     When creates project with "<ProjectName>","<Description>","<Tag>" and engine
     And  creates a "<Pipeline>" with "<Description>" and "<Tag>"
     Then PipeLine listing page is validated for created Pipeline
-
     Examples:
       | ProjectName | Description          | Tag           | Pipeline |
       | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne |

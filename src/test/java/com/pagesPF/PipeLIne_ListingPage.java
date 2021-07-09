@@ -47,11 +47,11 @@ public class PipeLIne_ListingPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]//scale-button[2]")
     WebElement buttonCreatePipeline;
     @FindBy(how = How.XPATH, using = "//*[text()='Open']")
-    WebElement OpenButton;
+    WebElement buttonOpen;
     @FindBy(how = How.XPATH, using = "//*[text()='LAST LAUNCH']")
-    WebElement LastLaunchButton;
+    WebElement lastLaunch;
     @FindBy(how = How.XPATH, using = "//*[text()='Builder ']")
-    WebElement buttonBuilder;
+    WebElement tabBuilder;
 
     public void validateDetailsOnProjectListingPageWithNORecords(String message) throws InterruptedException {
         Assert.assertTrue(functions_leanPageObject.fetchProjectNameOnProjectListingORBuilderPage().isDisplayed());
@@ -76,6 +76,7 @@ public class PipeLIne_ListingPage {
 
     public void validatePipeLineRecord() throws InterruptedException {
         Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, recordPipeLine, EnvSetUp.getDataKeyValue(Constant.PipeLineName)).isDisplayed());
+
     }
 
 

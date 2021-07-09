@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * @author Shailendra PS Parihar
- * @Note-Very important class it has all the reusable functions
+ * @note   Very important class it has all the reusable functions
  */
 public class CommonFunction {
     /**
@@ -77,6 +77,14 @@ public class CommonFunction {
         executor.executeScript("arguments[0].click();", element);
     }
 
+    public static void scrollOnElement(WebDriver driver,WebElement element) throws IOException, InterruptedException {
+
+        Point location = element.getLocation();
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollBy(" + location.getX() + "," + location.getY() + ")");
+        element.click();
+
+    }
 
   /*  public static void getShadowElementOnScreen(WebDriver driver,String cssSelector) throws InterruptedException {
         waitForSomeTime();
@@ -152,6 +160,7 @@ public class CommonFunction {
     public static void waitForSomeTime() throws InterruptedException {
         Thread.sleep(5000);
     }
+
 
     public static void waitForMinimalTime() throws InterruptedException {
         Thread.sleep(200);
