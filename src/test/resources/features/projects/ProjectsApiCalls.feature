@@ -12,14 +12,3 @@ Feature: To validate created Project with backend API
       | ProjectName | Description      | Tag  | QueryParam  | BackendApiPath |clientId|clientSecret|passWord|userName|pathParam|jsonPath|bearerToken|
       | Auto_Pro    | CreatingPipeLine | Test | projectName | /projects      |dil-ui| ovrzCm54Zu+q2SuJIhaOnA==|Lp4,mLd:|parihars|/authservice/login|tokenDetails|access_token|
 
-
-  @SmokeReg @Reg @Api-Test2
-  Scenario Outline: user is an authorized user and validate record size
-    Given user is access api with "<username>" and "<password>" with "<path>"
-    Then  user should get validated with "<code>"
-    And   searches for records with "<parameter>"
-    Then  records size with "<code>" validated with "<parameter>"
-    Examples:
-      | username | password    | code | path                      | parameter           |
-      | apiUser  | apiPassword | 200  | /Account/v1/GenerateToken | /BookStore/v1/Books |
-
