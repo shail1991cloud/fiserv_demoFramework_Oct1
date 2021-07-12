@@ -9,6 +9,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
@@ -32,7 +33,7 @@ public class createSourceAndDestination extends Baseclass {
 
     }
     @And("creates a {string} having {string} and {string}")
-    public void createsAHavingAnd(String pipelineName, String description, String tag) throws InterruptedException {
+    public void createsAHavingAnd(String pipelineName, String description, String tag) throws InterruptedException, IOException {
         pipeLIne_listingPage.createPipeLine(pipelineName, description, tag);
         log.info("Pipe line is created with name-->" + pipelineName);
 
@@ -42,18 +43,23 @@ public class createSourceAndDestination extends Baseclass {
     @And("clicks on {string}")
     public void clicksOn(String Icon) throws InterruptedException {
         pipeLIne_builderPage.clickOnAddSourceORDestinationIcon(Icon);
+        log.info("Icon is clicked-->" + Icon);
+
     }
 
 
-    @Then("Source should get created")
-    public void sourceShouldGetCreated() throws InterruptedException {
-        CommonFunction.waitForSomeTime();
+
+    @When("Enters {string},{string},{string},{string},{string},{string},{string}")
+    public void enters(String Name, String type, String connection, String fileType, String filePath, String separator, String schemaSource) throws IOException, InterruptedException {
+        pipeLIne_builderPage.createSourceWithNoSchema(Name,type,connection,fileType,filePath,separator,schemaSource);
+        log.info("Details entered-->" + filePath+"--"+connection);
+
     }
 
+    @Then("Source should get created with {string}")
+    public void sourceShouldGetCreatedWith(String sourceName) throws InterruptedException {
+        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,pipeLIne_builderPage.sourceName,sourceName).isDisplayed());
+        log.info("DRecord validated-->" + sourceName);
 
-    @When("Enters {string},{string}{string},{string}")
-    public void enters(String Name,String type, String Filepath, String Seperator) throws IOException, InterruptedException {
-        pipeLIne_builderPage.createSourceWithNoSchema(Name,type);
-        CommonFunction.waitForSomeTime();
     }
 }

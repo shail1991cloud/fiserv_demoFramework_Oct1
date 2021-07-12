@@ -12,6 +12,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
+
 
 public class PipeLIne_ListingPage {
 
@@ -25,6 +27,9 @@ public class PipeLIne_ListingPage {
         projectspage = PageFactory.initElements(driver, ProjectsPage.class);
         functions_leanPageObject = PageFactory.initElements(driver, Functions_LeanPageObject.class);
     }
+
+    @FindBy(how = How.XPATH, using = "//*[text()=\"STREAMING \"]")
+    WebElement executionType;
 
     String tSystemsJSPath = "return document.querySelector(\"#header\").shadowRoot.querySelector(\"div > scale-app-header > header > div > div > div.header__brand-branding > app-logo > a > svg > g > g > path:nth-child(2)\")";
 
@@ -59,7 +64,7 @@ public class PipeLIne_ListingPage {
         Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, noPipeLIneText, message).isDisplayed());
     }
 
-    public void createPipeLine(String piplineName, String description, String tag) throws InterruptedException {
+    public void createPipeLine(String piplineName, String description, String tag) throws InterruptedException, IOException {
         CommonFunction.waitForElementToAppear(driver, createPipelineIcon);
         createPipelineIcon.click();
         String uniquePipeLineName = CommonFunction.generateRandomString(5) + piplineName + DatesHelper.getTodayDateWithSeconds();
@@ -69,6 +74,7 @@ public class PipeLIne_ListingPage {
         CommonFunction.waitForElementToAppear(driver, textFieldDescription);
         textFieldDescription.sendKeys(description);
         textFieldTag.sendKeys(tag, Keys.ENTER);
+        CommonFunction.scrollOnElement(driver,executionType);
         CommonFunction.scrollToElement(driver, buttonCreatePipeline);
         buttonCreatePipeline.click();
 
