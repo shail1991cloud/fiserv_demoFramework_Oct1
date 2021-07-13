@@ -60,4 +60,12 @@ public class createSourceAndDestination extends Baseclass {
         pipeLIne_builderPage.createSource(Name,type,connection,fileType,filePath,separator,schemaSource,manualSchema);
         log.info("Details entered-->" + filePath+"--"+connection);
     }
+
+    @And("click on {string} to delete")
+    public void clickOnToDeleteSource(String arg0) {
+    }
+
+    @Then("source should get deleted")
+    public void sourceShouldGetDeleted() {
+    }
 }

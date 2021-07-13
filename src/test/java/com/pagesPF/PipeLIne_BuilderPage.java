@@ -37,9 +37,10 @@ public class PipeLIne_BuilderPage {
    public WebElement manualSchema;
     @FindBy(how = How.XPATH, using = "//*[text()=' + ']")
    public WebElement addButtonOnSource;
-
     @FindBy(how = How.XPATH, using = "//*[text()=' Destination ']")
     public WebElement selectDestination;
+    @FindBy(how = How.XPATH, using = "//*[text()=' Delete ']")
+    public WebElement deleteButtonOnDeleteSourcePopUp;
 
 
     String type="//*[text()='%s ']";
@@ -47,6 +48,7 @@ public class PipeLIne_BuilderPage {
     String fileType="//*[text()='%s ']";
     String schemaSource="//*[text()='%s ']";
     String manualSchemaConnection="//*[text()='%s ']";
+    String deleteSourceORDestORTransformation="//*[text()=' %s ']";
     public String sourceName="//*[@title='%s']";
 
     String iconOnPipeLineBuilderPage="//*[text()='%s']";
