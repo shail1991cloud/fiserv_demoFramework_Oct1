@@ -10,7 +10,7 @@ Feature:Creation of Sources and Destination
     When creates project with "<ProjectName>","<Description>","<Tag>" and engine
     And  creates a "<Pipeline>" having "<Description>" and "<Tag>"
     And  clicks on "<Icon>"
-    When Enters "<Name>","<Type>","<connection>","<fileType>","<FilePath>","<Separator>","<sourceSchema>"
+    When Enters "<Name>","<Type>","<connection>","<fileType>","<FilePath>","<Separator>","<sourceSchema>","<SchemaValue>"
     Then Source should get created with "<Name>"
     Examples:
       | ProjectName | Description          | Tag           | Pipeline |Icon|Name|Type|connection|fileType|FilePath|Separator|sourceSchema|
@@ -24,8 +24,8 @@ Feature:Creation of Sources and Destination
     When creates project with "<ProjectName>","<Description>","<Tag>" and engine
     And  creates a "<Pipeline>" having "<Description>" and "<Tag>"
     And  clicks on "<Icon>"
-    When Enters "<Name>","<Type>","<connection>","<fileType>","<FilePath>","<Separator>","<sourceSchema>"
+    When Enters "<Name>","<Type>","<connection>","<fileType>","<FilePath>","<Separator>","<sourceSchema>","<SchemaValue>"
     Then Source should get created with "<Name>"
     Examples:
-      | ProjectName | Description          | Tag           | Pipeline |Icon|Name|Type|connection|fileType|FilePath|Separator|sourceSchema|
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne |Add a Source|DemoSource|File System|AUTOMATION_DONOTDELETE|CSV|.csv|,|Manual Schema|
+      | ProjectName | Description          | Tag           | Pipeline |Icon|Name|Type|connection|fileType|FilePath|Separator|sourceSchema|SchemaValue|
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne |Add a Source|DemoSource|File System|AUTOMATION_DONOTDELETE|CSV|.csv|,|Manual Schema|H_JSON|

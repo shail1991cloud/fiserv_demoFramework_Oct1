@@ -24,17 +24,23 @@ public class PipeLIne_BuilderPage {
     }
 
     @FindBy(how = How.XPATH, using = "//*[text()='Name*']/following::input")
-    WebElement enterSourceNameField;
+   public WebElement enterSourceNameField;
     @FindBy(how = How.XPATH, using = "//*[text()=\"File path*\"]/following::input[@maxlength='200']")
-    WebElement filePath;
+   public WebElement filePath;
     @FindBy(how = How.XPATH, using = "//*[text()=\"Column seperator*\"]/following::input[1]")
-    WebElement columnSeparator;
+   public WebElement columnSeparator;
     @FindBy(how = How.XPATH, using = "//*[text()=\"Add \"]")
-    WebElement buttonAdd;
+   public WebElement buttonAdd;
     @FindBy(how = How.XPATH, using = "//*[text()=\"Status\"]")
-    WebElement status;
+   public WebElement status;
     @FindBy(how = How.XPATH, using = "//*[@id=\"base-layout-sidebar\"]//div[2]//div//scale-dropdown[3]/div")
-    WebElement manualSchema;
+   public WebElement manualSchema;
+    @FindBy(how = How.XPATH, using = "//*[text()=' + ']")
+   public WebElement addButtonOnSource;
+
+    @FindBy(how = How.XPATH, using = "//*[text()=' Destination ']")
+    public WebElement selectDestination;
+
 
     String type="//*[text()='%s ']";
     String connection="//*[text()='%s ']";
@@ -51,7 +57,7 @@ public class PipeLIne_BuilderPage {
         CommonFunction.getCustomisedWebElement(driver,iconOnPipeLineBuilderPage,icon).click();
     }
 
-    public void createSourceWithNoSchema(String sourceName,String typeToAdd,String connectionToAdd,String fileTypeToAdd,String filepath,String colSeparator,String schemaSourceToAdd) throws InterruptedException, IOException {
+    public void createSource(String sourceName, String typeToAdd, String connectionToAdd, String fileTypeToAdd, String filepath, String colSeparator, String schemaSourceToAdd,String manualSchema) throws InterruptedException, IOException {
         CommonFunction.waitForElementToAppear(driver,enterSourceNameField);
         enterSourceNameField.sendKeys(sourceName);
         CommonFunction.scrollOnElement(driver,CommonFunction.getCustomisedWebElement(driver,type,typeToAdd));
@@ -63,7 +69,7 @@ public class PipeLIne_BuilderPage {
         CommonFunction.waitForElementToAppear(driver,columnSeparator);
         columnSeparator.sendKeys(colSeparator);
         CommonFunction.scrollOnElement(driver,CommonFunction.getCustomisedWebElement(driver,schemaSource,schemaSourceToAdd));
-        selectManualSchema("H_JSON");
+        selectManualSchema(manualSchema);
         CommonFunction.waitForElementToAppear(driver,buttonAdd);
         buttonAdd.click();
         CommonFunction.waitForSomeTime();

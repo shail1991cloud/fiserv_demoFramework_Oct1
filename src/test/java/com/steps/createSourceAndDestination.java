@@ -47,19 +47,17 @@ public class createSourceAndDestination extends Baseclass {
 
     }
 
-
-
-    @When("Enters {string},{string},{string},{string},{string},{string},{string}")
-    public void enters(String Name, String type, String connection, String fileType, String filePath, String separator, String schemaSource) throws IOException, InterruptedException {
-        pipeLIne_builderPage.createSourceWithNoSchema(Name,type,connection,fileType,filePath,separator,schemaSource);
-        log.info("Details entered-->" + filePath+"--"+connection);
-
-    }
-
     @Then("Source should get created with {string}")
     public void sourceShouldGetCreatedWith(String sourceName) throws InterruptedException {
         Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,pipeLIne_builderPage.sourceName,sourceName).isDisplayed());
+        (CommonFunction.getCustomisedWebElement(driver,pipeLIne_builderPage.sourceName,sourceName)).click();
         log.info("DRecord validated-->" + sourceName);
 
+    }
+
+    @When("Enters {string},{string},{string},{string},{string},{string},{string},{string}")
+    public void enters(String Name, String type, String connection, String fileType, String filePath, String separator, String schemaSource,String manualSchema) throws IOException, InterruptedException {
+        pipeLIne_builderPage.createSource(Name,type,connection,fileType,filePath,separator,schemaSource,manualSchema);
+        log.info("Details entered-->" + filePath+"--"+connection);
     }
 }
