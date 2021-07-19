@@ -237,6 +237,8 @@ public class ProjectsPage {
         for (WebElement dele : deleteButtonsOnProjectListingPage) {
             try {
                 Thread.sleep(500);
+
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -245,6 +247,11 @@ public class ProjectsPage {
                 dele.click();
                 CommonFunction.waitForElementToAppear(driver, deleteButtonOnDeleteProjectPopUp);
                 deleteButtonOnDeleteProjectPopUp.click();
+
+          /*      String records=dele.getText();
+                String resultFromDatsbase=resultset;
+                Assert.assertEquals(records,resultFromDatsbase);*/
+
                 CommonFunction.waitForSomeTime();
             } catch (Exception e) {
                 System.out.println(e.getMessage());

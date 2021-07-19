@@ -7,6 +7,7 @@ import com.helperUtilities.EnvSetUp;
 import com.helperUtilities.LoggerHelper;
 import com.managersUtilities.CommonFunction;
 import org.apache.log4j.Logger;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -32,6 +33,25 @@ public class Functions_LeanPageObject {
         CommonFunction.getCustomisedWebElement(driver, pages, pageName).click();
         log.info("User is switched to-->" + pageName);
 
+    }
+
+    public void deleteRecord(String record,String recordToAdd) throws InterruptedException {
+        CommonFunction.waitForElementToAppear(driver,CommonFunction.getCustomisedWebElement(driver,record,recordToAdd));
+        CommonFunction.getCustomisedWebElement(driver,record,recordToAdd).click();
+        log.info("User click on record for button-->" + recordToAdd);
+
+    }
+
+    public void validatePresenceOfRecord(String record,String recordToAdd)
+    {
+        if(CommonFunction.getCustomisedWebElements(driver,record,recordToAdd).size()>0)
+        {
+            Assert.fail("Record is present");
+            log.info("Record is present");
+        }
+        else {
+            log.info("Record is not present");
+        }
     }
 
     public void fetchProjectsRecordsOnProjectListingPage(String projectName) throws InterruptedException {

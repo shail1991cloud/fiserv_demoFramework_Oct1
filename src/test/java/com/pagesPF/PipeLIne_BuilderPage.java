@@ -43,12 +43,12 @@ public class PipeLIne_BuilderPage {
     public WebElement deleteButtonOnDeleteSourcePopUp;
 
 
-    String type="//*[text()='%s ']";
-    String connection="//*[text()='%s ']";
-    String fileType="//*[text()='%s ']";
-    String schemaSource="//*[text()='%s ']";
-    String manualSchemaConnection="//*[text()='%s ']";
-    String deleteSourceORDestORTransformation="//*[text()=' %s ']";
+    public String type="//*[text()='%s ']";
+    public String connection="//*[text()='%s ']";
+    public String fileType="//*[text()='%s ']";
+    public String schemaSource="//*[text()='%s ']";
+    public String manualSchemaConnection="//*[text()='%s ']";
+    public String deleteRecord="//*[text()=' %s ']";
     public String sourceName="//*[@title='%s']";
 
     String iconOnPipeLineBuilderPage="//*[text()='%s']";

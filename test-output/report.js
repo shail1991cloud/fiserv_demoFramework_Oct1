@@ -1,16 +1,11 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/projects/CreateSourceAndDestination.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/projects/ProjectsApiCalls.feature");
 formatter.feature({
-  "name": "Creation of Sources and Destination",
-  "description": "  As a user I want to Create a Source and Destination,Validate Source and Destination attributes",
-  "keyword": "Feature",
-  "tags": [
-    {
-      "name": "@CreateSourceAndDestination"
-    }
-  ]
+  "name": "To validate created Project with backend API",
+  "description": "",
+  "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "name": "user is able to create source for NoSchema",
+  "name": "user is able to create a Project and is able to validate it in backend Api",
   "description": "",
   "keyword": "Scenario Outline",
   "tags": [
@@ -24,7 +19,7 @@ formatter.scenarioOutline({
       "name": "@Positive"
     },
     {
-      "name": "@CSource-Test1"
+      "name": "@PBE-API-Test1"
     }
   ]
 });
@@ -45,19 +40,15 @@ formatter.step({
   "keyword": "When "
 });
 formatter.step({
-  "name": "creates a \"\u003cPipeline\u003e\" having \"\u003cDescription\u003e\" and \"\u003cTag\u003e\"",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "clicks on \"\u003cIcon\u003e\"",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "Enters \"\u003cName\u003e\",\"\u003cType\u003e\",\"\u003cconnection\u003e\",\"\u003cfileType\u003e\",\"\u003cFilePath\u003e\",\"\u003cSeparator\u003e\",\"\u003csourceSchema\u003e\",\"\u003cSchemaValue\u003e\"",
+  "name": "authenticated for backend api with \"\u003cclientId\u003e\",\"\u003cclientSecret\u003e\",\"\u003cpassWord\u003e\",\"\u003cuserName\u003e\" and \"\u003cpathParam\u003e\"",
   "keyword": "When "
 });
 formatter.step({
-  "name": "Source should get created with \"\u003cName\u003e\"",
+  "name": "fetches the response with \"\u003cjsonPath\u003e\" to get \"\u003cbearerToken\u003e\"",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "user should be able to use \"\u003cQueryParam\u003e\" to validate project on \"\u003cBackendApiPath\u003e\"",
   "keyword": "Then "
 });
 formatter.examples({
@@ -70,43 +61,40 @@ formatter.examples({
         "ProjectName",
         "Description",
         "Tag",
-        "Pipeline",
-        "Icon",
-        "Name",
-        "Type",
-        "connection",
-        "fileType",
-        "FilePath",
-        "Separator",
-        "sourceSchema"
+        "QueryParam",
+        "BackendApiPath",
+        "clientId",
+        "clientSecret",
+        "passWord",
+        "userName",
+        "pathParam",
+        "jsonPath",
+        "bearerToken"
       ]
     },
     {
       "cells": [
-        "AutoDIL",
-        "ProjectForAutomation",
-        "Test_Pipeline",
-        "PipeLIne",
-        "Add a Source",
-        "DemoSource",
-        "File System",
-        "AUTOMATION_DONOTDELETE",
-        "CSV",
-        ".csv",
-        ",",
-        "No Schema"
+        "Auto_Pro",
+        "CreatingPipeLine",
+        "Test",
+        "projectName",
+        "/projects",
+        "dil-ui",
+        "ovrzCm54Zu+q2SuJIhaOnA\u003d\u003d",
+        "Lp4,mLd:",
+        "parihars",
+        "/authservice/login",
+        "tokenDetails",
+        "access_token"
       ]
     }
   ]
 });
 formatter.scenario({
-  "name": "user is able to create source for NoSchema",
+  "name": "user is able to create a Project and is able to validate it in backend Api",
   "description": "",
   "keyword": "Scenario Outline",
   "tags": [
-    {
-      "name": "@CreateSourceAndDestination"
-    },
     {
       "name": "@Smoke"
     },
@@ -117,7 +105,7 @@ formatter.scenario({
       "name": "@Positive"
     },
     {
-      "name": "@CSource-Test1"
+      "name": "@PBE-API-Test1"
     }
   ]
 });
@@ -156,7 +144,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "creates project with \"AutoDIL\",\"ProjectForAutomation\",\"Test_Pipeline\" and engine",
+  "name": "creates project with \"Auto_Pro\",\"CreatingPipeLine\",\"Test\" and engine",
   "keyword": "When "
 });
 formatter.match({
@@ -166,246 +154,31 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "creates a \"PipeLIne\" having \"ProjectForAutomation\" and \"Test_Pipeline\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.steps.createSourceAndDestination.createsAHavingAnd(java.lang.String,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "clicks on \"Add a Source\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.steps.createSourceAndDestination.clicksOn(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Enters \"DemoSource\",\"File System\",\"AUTOMATION_DONOTDELETE\",\"CSV\",\".csv\",\",\",\"No Schema\",\"\u003cSchemaValue\u003e\"",
+  "name": "authenticated for backend api with \"dil-ui\",\"ovrzCm54Zu+q2SuJIhaOnA\u003d\u003d\",\"Lp4,mLd:\",\"parihars\" and \"/authservice/login\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.steps.createSourceAndDestination.enters(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+  "location": "com.steps.apiSteps.authenticatedForBackendApiWithAnd(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Source should get created with \"DemoSource\"",
+  "name": "fetches the response with \"tokenDetails\" to get \"access_token\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "com.steps.apiSteps.fetchesTheResponseWithToGet(java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user should be able to use \"projectName\" to validate project on \"/projects\"",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.steps.createSourceAndDestination.sourceShouldGetCreatedWith(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.after({
-  "status": "passed"
-});
-formatter.write("---Closing the Browser---");
-formatter.after({
-  "status": "passed"
-});
-formatter.scenarioOutline({
-  "name": "user is able to create source for ManualSchema",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@Smoke"
-    },
-    {
-      "name": "@Reg"
-    },
-    {
-      "name": "@Positive"
-    },
-    {
-      "name": "@CSource-Test2"
-    }
-  ]
-});
-formatter.step({
-  "name": "user is on DIL login page",
-  "keyword": "Given "
-});
-formatter.step({
-  "name": "enter username and password",
-  "keyword": "When "
-});
-formatter.step({
-  "name": "clicks on createProject tab",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "creates project with \"\u003cProjectName\u003e\",\"\u003cDescription\u003e\",\"\u003cTag\u003e\" and engine",
-  "keyword": "When "
-});
-formatter.step({
-  "name": "creates a \"\u003cPipeline\u003e\" having \"\u003cDescription\u003e\" and \"\u003cTag\u003e\"",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "clicks on \"\u003cIcon\u003e\"",
-  "keyword": "And "
-});
-formatter.step({
-  "name": "Enters \"\u003cName\u003e\",\"\u003cType\u003e\",\"\u003cconnection\u003e\",\"\u003cfileType\u003e\",\"\u003cFilePath\u003e\",\"\u003cSeparator\u003e\",\"\u003csourceSchema\u003e\",\"\u003cSchemaValue\u003e\"",
-  "keyword": "When "
-});
-formatter.step({
-  "name": "Source should get created with \"\u003cName\u003e\"",
-  "keyword": "Then "
-});
-formatter.examples({
-  "name": "",
-  "description": "",
-  "keyword": "Examples",
-  "rows": [
-    {
-      "cells": [
-        "ProjectName",
-        "Description",
-        "Tag",
-        "Pipeline",
-        "Icon",
-        "Name",
-        "Type",
-        "connection",
-        "fileType",
-        "FilePath",
-        "Separator",
-        "sourceSchema",
-        "SchemaValue"
-      ]
-    },
-    {
-      "cells": [
-        "AutoDIL",
-        "ProjectForAutomation",
-        "Test_Pipeline",
-        "PipeLIne",
-        "Add a Source",
-        "DemoSource",
-        "File System",
-        "AUTOMATION_DONOTDELETE",
-        "CSV",
-        ".csv",
-        ",",
-        "Manual Schema",
-        "H_JSON"
-      ]
-    }
-  ]
-});
-formatter.scenario({
-  "name": "user is able to create source for ManualSchema",
-  "description": "",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "name": "@CreateSourceAndDestination"
-    },
-    {
-      "name": "@Smoke"
-    },
-    {
-      "name": "@Reg"
-    },
-    {
-      "name": "@Positive"
-    },
-    {
-      "name": "@CSource-Test2"
-    }
-  ]
-});
-formatter.write("--Starting the Execution--");
-formatter.before({
-  "status": "passed"
-});
-formatter.step({
-  "name": "user is on DIL login page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "com.steps.commonSteps.userIsOnDILLoginPage()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "enter username and password",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "com.steps.commonSteps.enterUsernameAndPassword()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "clicks on createProject tab",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.steps.createProjectSteps.clicksOnCreateProjectTab()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "creates project with \"AutoDIL\",\"ProjectForAutomation\",\"Test_Pipeline\" and engine",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "com.steps.createProjectSteps.entersAndSelectEngine(java.lang.String,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "creates a \"PipeLIne\" having \"ProjectForAutomation\" and \"Test_Pipeline\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.steps.createSourceAndDestination.createsAHavingAnd(java.lang.String,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "clicks on \"Add a Source\"",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "com.steps.createSourceAndDestination.clicksOn(java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Enters \"DemoSource\",\"File System\",\"AUTOMATION_DONOTDELETE\",\"CSV\",\".csv\",\",\",\"Manual Schema\",\"H_JSON\"",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "com.steps.createSourceAndDestination.enters(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Source should get created with \"DemoSource\"",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "com.steps.createSourceAndDestination.sourceShouldGetCreatedWith(java.lang.String)"
+  "location": "com.steps.apiSteps.userShouldBeAbleToUseToValidateProjectOn(java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"

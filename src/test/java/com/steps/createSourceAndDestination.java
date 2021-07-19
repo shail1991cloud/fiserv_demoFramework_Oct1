@@ -62,10 +62,17 @@ public class createSourceAndDestination extends Baseclass {
     }
 
     @And("click on {string} to delete")
-    public void clickOnToDeleteSource(String arg0) {
+    public void clickOnToDeleteSource(String deleteSource) throws InterruptedException {
+        functions_leanPageObject.deleteRecord(pipeLIne_builderPage.deleteRecord,deleteSource);
+        CommonFunction.waitForElementToAppear(driver,pipeLIne_builderPage.deleteButtonOnDeleteSourcePopUp);
+        pipeLIne_builderPage.deleteButtonOnDeleteSourcePopUp.click();
+        CommonFunction.waitForSomeTime();
     }
 
-    @Then("source should get deleted")
-    public void sourceShouldGetDeleted() {
+
+
+    @Then("source {string} should get deleted")
+    public void sourceShouldGetDeleted(String name) {
+        functions_leanPageObject.validatePresenceOfRecord(pipeLIne_builderPage.sourceName,name);
     }
 }

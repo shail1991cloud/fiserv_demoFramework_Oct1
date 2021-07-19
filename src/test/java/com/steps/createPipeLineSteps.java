@@ -9,6 +9,7 @@ import com.pagesPF.Project_BuilderPage;
 import com.pagesPF.ProjectsPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 
@@ -60,5 +61,13 @@ public class createPipeLineSteps extends Baseclass {
     }
 
 
+    @When("deletes pipeline")
+    public void deletesPipeline() {
 
+    }
+
+    @Then("{string} should get disappeared")
+    public void shouldGetDisappeared(String pipeLine) {
+
+    }
 }
