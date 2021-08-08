@@ -1,5 +1,6 @@
 /home/pihu/dil_automation/src/test/java/com/pagesPF/DIL_loginpage.java
 /home/pihu/dil_automation/src/test/java/com/steps/Hooks.java
+/home/pihu/dil_automation/src/test/java/com/steps/createSourceAndDestination.java
 /home/pihu/dil_automation/src/test/java/com/managersUtilities/CommonFunction.java
 /home/pihu/dil_automation/src/test/java/com/managersUtilities/FileReaderManager.java
 /home/pihu/dil_automation/src/test/java/com/pagesPF/Functions_LeanPageObject.java
@@ -7,9 +8,11 @@
 /home/pihu/dil_automation/src/test/java/com/helperUtilities/Database_Connections.java
 /home/pihu/dil_automation/src/test/java/com/helperUtilities/LoggerHelper.java
 /home/pihu/dil_automation/src/test/java/com/callsapi/RestFunctions.java
+/home/pihu/dil_automation/src/test/java/com/enginesApi/ProjectsAuthorizationPojo.java
 /home/pihu/dil_automation/src/test/java/com/pagesPF/ProjectsPage.java
 /home/pihu/dil_automation/src/test/java/com/helperUtilities/CaptureScreenShots.java
 /home/pihu/dil_automation/src/test/java/com/pagesPF/Project_BuilderPage.java
+/home/pihu/dil_automation/src/test/java/com/pagesPF/PipeLIne_BuilderPage.java
 /home/pihu/dil_automation/src/test/java/com/steps/commonSteps.java
 /home/pihu/dil_automation/src/test/java/com/steps/apiSteps.java
 /home/pihu/dil_automation/src/test/java/com/helperUtilities/EnvSetUp.java

@@ -40,12 +40,13 @@ public class Project_BuilderPage {
         CommonFunction.waitForElementToAppear(driver, projectspage.existingProjectOnProjectListingPage);
         projectspage.existingProjectOnProjectListingPage.click();
         CommonFunction.clickByHoveringMouse(driver, editProjectToolTipOnProjectBuilder);
-        CommonFunction.clickByHoveringMouse(driver, deleteTagToolTipOnProjectBuilderPage);
+       CommonFunction.clickByHoveringMouse(driver, deleteTagToolTipOnProjectBuilderPage);
         textFieldTagName.sendKeys(Keys.ENTER);
         textFieldTagName.sendKeys(tagName);
         textFieldTagName.sendKeys(Keys.ENTER);
         CommonFunction.scrollToElement(driver, buttonSaveOnProjectBuilderPage);
         CommonFunction.waitForElementToAppear(driver, buttonSaveOnProjectBuilderPage);
+        CommonFunction.waitForMinimalTime();
         buttonSaveOnProjectBuilderPage.click();
 
     }

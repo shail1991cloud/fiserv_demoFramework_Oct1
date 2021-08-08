@@ -48,7 +48,6 @@ public class createProjectSteps extends Baseclass {
     public void entersAndSelectEngine(String name, String description, String tag) throws InterruptedException {
         projectspage.enterDetailsIntoCreateProjectPopUp(name, description, tag);
         CommonFunction.submitDetails(projectspage.buttonCreateOnProjectSettingPopUp);
-        CommonFunction.submitDetails(projectspage.buttonCreateOnProjectSettingPopUp);
         log.info("--Details entered for Project With--->" + name + "," + description + " and " + tag);
 
     }

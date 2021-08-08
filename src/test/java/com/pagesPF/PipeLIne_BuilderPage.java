@@ -25,6 +25,11 @@ public class PipeLIne_BuilderPage {
 
     @FindBy(how = How.XPATH, using = "//*[text()='Name*']/following::input")
    public WebElement enterSourceNameField;
+
+    @FindBy(how = How.XPATH, using = "//scale-text-field[@label=\"Name*\"]//input[@type=\"text\"]")
+    public WebElement enterTransformationName;
+
+
     @FindBy(how = How.XPATH, using = "//*[text()=\"File path*\"]/following::input[@maxlength='200']")
    public WebElement filePath;
     @FindBy(how = How.XPATH, using = "//*[text()=\"Column seperator*\"]/following::input[1]")
@@ -39,6 +44,26 @@ public class PipeLIne_BuilderPage {
    public WebElement addButtonOnSource;
     @FindBy(how = How.XPATH, using = "//*[text()=' Destination ']")
     public WebElement selectDestination;
+    @FindBy(how = How.XPATH, using = "//*[text()=' Transformation ']")
+    public WebElement selectTransformation;
+    @FindBy(how = How.XPATH, using = "//*[text()='Column ']")
+    public WebElement selectCategory;
+
+    @FindBy(how = How.XPATH, using = "//*[text()='GroupBy ']")
+    public WebElement selectTransformationType;
+
+    @FindBy(how = How.XPATH, using = "//p[normalize-space()=\"Columns\"]")
+    public WebElement selectColumn;
+
+    @FindBy(how = How.XPATH, using = "//scale-accordion[@expanded=\"true\"]//option[normalize-space()=\"age\"]")
+    public WebElement selectValueAge;
+
+    @FindBy(how = How.XPATH, using = "//scale-accordion[@expanded=\"true\"]//scale-button[@variant=\"secondary\"][normalize-space()=\"+ Add Column\"]")
+    public WebElement selectAddColumn;
+
+    @FindBy(how = How.XPATH, using = "//scale-button[normalize-space()=\"Add\"]")
+    public WebElement selectAddButton;
+
     @FindBy(how = How.XPATH, using = "//*[text()=' Delete ']")
     public WebElement deleteButtonOnDeleteSourcePopUp;
 
@@ -87,7 +112,26 @@ public class PipeLIne_BuilderPage {
           e.printStackTrace();
       }
    }
+public void selectTransformation() throws InterruptedException, IOException {
+        CommonFunction.waitForElementToAppear(driver,addButtonOnSource);
+        addButtonOnSource.click();
+        CommonFunction.waitForElementToAppear(driver,selectTransformation);
+        selectTransformation.click();
+        CommonFunction.waitForElementToAppear(driver,enterTransformationName);
+        enterTransformationName.sendKeys("MyTransformation");
+        CommonFunction.waitForElementToAppear(driver,selectCategory);
+        selectCategory.click();
+        CommonFunction.waitForElementToAppear(driver,selectTransformationType);
+        selectTransformationType.click();
+        CommonFunction.waitForSomeTime();
+       // CommonFunction.clickByHoveringMouse(driver,selectColumn);
+        CommonFunction.scrollOnElement(driver,selectValueAge);
+        selectAddColumn.click();
+        CommonFunction.scrollToElement(driver,selectAddButton);
+        CommonFunction.waitForElementToAppear(driver,selectAddButton);
+        selectAddButton.click();
 
+    }
 
 
 

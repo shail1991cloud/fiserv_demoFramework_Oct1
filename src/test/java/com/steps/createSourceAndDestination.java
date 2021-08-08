@@ -48,7 +48,7 @@ public class createSourceAndDestination extends Baseclass {
     }
 
     @Then("Source should get created with {string}")
-    public void sourceShouldGetCreatedWith(String sourceName) throws InterruptedException {
+    public void sourceShouldGetCreatedWith(String sourceName) throws InterruptedException, IOException {
         Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,pipeLIne_builderPage.sourceName,sourceName).isDisplayed());
         (CommonFunction.getCustomisedWebElement(driver,pipeLIne_builderPage.sourceName,sourceName)).click();
         log.info("DRecord validated-->" + sourceName);
@@ -74,5 +74,11 @@ public class createSourceAndDestination extends Baseclass {
     @Then("source {string} should get deleted")
     public void sourceShouldGetDeleted(String name) {
         functions_leanPageObject.validatePresenceOfRecord(pipeLIne_builderPage.sourceName,name);
+    }
+
+    @Then("Destination is created")
+    public void destinationIsCreated() throws IOException, InterruptedException {
+        pipeLIne_builderPage.selectTransformation();
+
     }
 }

@@ -24,6 +24,7 @@ public class Baseclass {
      * @method selectBrowser is used provide driver instance
      */
 
+
     public static WebDriver selectBrowser(String browser) {
 
         if (System.getProperty("os.name").toLowerCase().contains(OS.LINUX.name().toLowerCase())) {

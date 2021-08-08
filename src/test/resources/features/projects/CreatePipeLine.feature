@@ -13,7 +13,7 @@ Feature:Creation and Field level validation of pipelines
     Then PipeLine listing page is validated for ProjectName,PipelineTag and "<Message>"
     Examples:
       | ProjectName | Description          | Tag           | Tab      | Message                             |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | Overview | There is no pipelines in this proje |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | Overview | There is no pipelines in this project |
 
   @Smoke @Reg @Positive @CP-Test2 @TC2
   Scenario Outline: user is able to create pipeline and validate the same in Pipeline Listing page
@@ -28,7 +28,7 @@ Feature:Creation and Field level validation of pipelines
       | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne |
 
   @Smoke @Reg @Positive @CP-Test3 @TC17
-  Scenario Outline: user is able to create pipeline and validate the same in Pipeline Listing page
+  Scenario Outline: user is able to delete pipeline and validate the same in Pipeline Listing page
     Given user is on DIL login page
     When enter username and password
     And  clicks on createProject tab

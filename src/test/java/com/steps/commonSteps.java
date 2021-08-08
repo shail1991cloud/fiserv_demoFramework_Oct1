@@ -28,6 +28,7 @@ public class commonSteps extends Baseclass {
     @Given("^user is on DIL login page$")
     public void userIsOnDILLoginPage() {
         driver.get(configFileReader.getProperties().getProperty("dil_Url"));
+        CommonFunction.deleteAllCookies(driver);
         CommonFunction.maximiseBrowser(driver);
         log.info("--Browser Launched--and user is navigated to DIL Login Page");
     }

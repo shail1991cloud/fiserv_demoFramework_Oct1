@@ -29,6 +29,11 @@ public class CommonFunction {
 
     }
 
+    public static void deleteAllCookies(WebDriver driver) {
+        driver.manage().deleteAllCookies();
+
+    }
+
     /**
      * @method scrollToAxis is used to scroll the window vertically
      */

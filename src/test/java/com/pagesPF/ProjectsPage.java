@@ -49,13 +49,16 @@ public class ProjectsPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"input-dropdown0\"]")
     public WebElement dropDown_Engines;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"create-btn\"]")
+ /*   @FindBy(how = How.XPATH, using = "//*[@id=\"create-btn\"]")
+    public WebElement buttonCreateOnProjectSettingPopUp;*/
+
+    @FindBy(how = How.XPATH, using = "//*[text()=\" Create \"]")
     public WebElement buttonCreateOnProjectSettingPopUp;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"cancel-btn\"]")
+    @FindBy(how = How.XPATH, using = "//scale-button[@id=\"cancelBtn\"]")
     public WebElement buttonCancelOnProjectSettingPopUp;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//p[3]/button")
+    @FindBy(how = How.XPATH, using = "//div[4]//scale-icon-action-remove[1]//*[local-name()=\"svg\"]")
     public WebElement deleteButtonOnProjectListingPage;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div/div[2]/div/div/scale-modal/scale-button[1]")
@@ -163,6 +166,7 @@ public class ProjectsPage {
             CommonFunction.selectFromDropDownWithValue(dropDown_Engines, "1");
 
 
+
     }
 
     public void validateProjectRecord(String projectName) throws InterruptedException {
@@ -226,7 +230,7 @@ public class ProjectsPage {
         CommonFunction.waitForSomeTime();
         CommonFunction.clickForceFully(driver, deleteButtonOnDeleteProjectPopUp);
         CommonFunction.waitForMinimalTime();
-        deleteButtonOnDeleteProjectPopUp.click();
+
 
     }
 

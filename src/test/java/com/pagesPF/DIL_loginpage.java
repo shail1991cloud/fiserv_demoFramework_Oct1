@@ -39,7 +39,7 @@ public class DIL_loginpage {
          dilPassword.sendKeys(configFileReader.getProperties().getProperty("dilPwd"));
          CommonFunction.waitForElementToAppear(driver, loginBtn);
          CommonFunction.clickForceFully(driver,loginBtn);
-        log.info("User is logged into DIL UI with userId-->" + configFileReader.getProperties().getProperty("dilUsrNm"));
+         log.info("User is logged into DIL UI with userId-->" + configFileReader.getProperties().getProperty("dilUsrNm"));
 
 
     }
