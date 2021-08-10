@@ -88,11 +88,15 @@ public class createSourceDestAndTransform extends Baseclass {
 
     }
 
-    @When("enters {string},{string},{string},{string} ,{string} and click add")
-    public void entersAndClickAdd(String arg0, String arg1, String arg2, String arg3, String arg4) {
+    @When("enters {string},{string},{string},{string} ,{string},{string} and click add")
+    public void entersAndClickAdd(String DestinationName, String DestinationType, String DestConnection, String fileType,String filePath, String TopicName) throws IOException, InterruptedException {
+        pipeLIne_builderPage.createDestination(DestinationName,DestinationType,DestConnection,fileType,filePath,TopicName);
     }
 
     @Then("Destination with {string} should get created")
-    public void destinationWithShouldGetCreated(String arg0) {
+    public void destinationWithShouldGetCreated(String DestinationName) {
+
     }
+
+
 }

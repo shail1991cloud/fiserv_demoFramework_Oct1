@@ -25,6 +25,9 @@ formatter.scenarioOutline({
     },
     {
       "name": "@CTransformation-Test1"
+    },
+    {
+      "name": "@TC18"
     }
   ]
 });
@@ -136,6 +139,9 @@ formatter.scenario({
     },
     {
       "name": "@CTransformation-Test1"
+    },
+    {
+      "name": "@TC18"
     }
   ]
 });
@@ -188,7 +194,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "com.steps.createSourceAndDestination.createsAHavingAnd(java.lang.String,java.lang.String,java.lang.String)"
+  "location": "com.steps.createSourceDestAndTransform.createsAHavingAnd(java.lang.String,java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -198,7 +204,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.match({
-  "location": "com.steps.createSourceAndDestination.clicksOn(java.lang.String)"
+  "location": "com.steps.createSourceDestAndTransform.clicksOn(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -208,7 +214,7 @@ formatter.step({
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.steps.createSourceAndDestination.enters(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+  "location": "com.steps.createSourceDestAndTransform.enters(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -218,7 +224,7 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.steps.createSourceAndDestination.sourceShouldGetCreatedWith(java.lang.String)"
+  "location": "com.steps.createSourceDestAndTransform.sourceShouldGetCreatedWith(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -228,7 +234,7 @@ formatter.step({
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.steps.createSourceAndDestination.entersAndClick(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+  "location": "com.steps.createSourceDestAndTransform.entersAndClick(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -238,7 +244,7 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.steps.createSourceAndDestination.transformationWithShouldGetCreated(java.lang.String)"
+  "location": "com.steps.createSourceDestAndTransform.transformationWithShouldGetCreated(java.lang.String)"
 });
 formatter.result({
   "status": "passed"

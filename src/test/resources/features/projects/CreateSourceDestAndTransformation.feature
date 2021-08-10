@@ -63,6 +63,22 @@ Feature:Creation of Sources and Destination
       | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | Manual Schema | H_JSON      | TestTrans          | Column   | GroupBy            | age         |
 
   @Smoke @Reg @Positive @CDestination-Test1 @TC19
+  Scenario Outline: user is able to create File System type Destination
+    Given user is on DIL login page
+    When enter username and password
+    And  clicks on createProject tab
+    When creates project with "<ProjectName>","<Description>","<Tag>" and engine
+    And  creates a "<Pipeline>" having "<Description>" and "<Tag>"
+    And  clicks on "<Icon>"
+    When Enters "<SourceName>","<SourceType>","<SourceConnection>","<fileType>","<FilePath>","<Separator>","<sourceSchema>","<SchemaValue>"
+    Then Source should get created with "<SourceName>"
+    When enters "<DestinationName>","<DestinationType>","<DestConnection>","<fileType>" ,"<FilePath>","<TopicName>" and click add
+    Then Destination with "<DestinationName>" should get created
+    Examples:
+      | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName | SourceType  | SourceConnection       | fileType | FilePath | Separator | sourceSchema  | SchemaValue | DestinationName | DestinationType | DestConnection         | TopicName |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | Manual Schema | H_JSON      | DemoDestination | File System     | AUTOMATION_DONOTDELETE | CDR       |
+
+  @Smoke @Reg @Positive @CDestination-Test1 @TC20
   Scenario Outline: user is able to create Kafka type Destination
     Given user is on DIL login page
     When enter username and password
@@ -72,9 +88,9 @@ Feature:Creation of Sources and Destination
     And  clicks on "<Icon>"
     When Enters "<SourceName>","<SourceType>","<SourceConnection>","<fileType>","<FilePath>","<Separator>","<sourceSchema>","<SchemaValue>"
     Then Source should get created with "<SourceName>"
-    When enters "<DestinationName>","<DestinationType>","<DestConnection>","<fileType>" ,"<TopicName>" and click add
+    When enters "<DestinationName>","<DestinationType>","<DestConnection>","<fileType>" ,"<FilePath>","<TopicName>" and click add
     Then Destination with "<DestinationName>" should get created
     Examples:
-      | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName | SourceType  | SourceConnection             | fileType | FilePath | Separator | sourceSchema  | SchemaValue | DestinationName | DestinationType | DestConnection | TopicName |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | Manual Schema | H_JSON      |                       |                 |                |            |
+      | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName | SourceType  | SourceConnection       | fileType | FilePath | Separator | sourceSchema  | SchemaValue | DestinationName | DestinationType | DestConnection   | TopicName |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | Manual Schema | H_JSON      | DemoDestination | KAFKA           | Kafka_plain  | testkafkacmp|
 

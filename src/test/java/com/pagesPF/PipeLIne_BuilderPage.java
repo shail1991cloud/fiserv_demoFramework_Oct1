@@ -8,6 +8,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
+import java.util.List;
 
 
 public class PipeLIne_BuilderPage {
@@ -16,14 +17,16 @@ public class PipeLIne_BuilderPage {
     WebDriver driver;
 
     public Functions_LeanPageObject functions_leanPageObject;
-    @FindBy(how = How.XPATH, using = "//*[text()='Name*']/following::input")
-    public WebElement enterSourceNameField;
     @FindBy(how = How.XPATH, using = "//scale-text-field[@label=\"Name*\"]//input[@type=\"text\"]")
-    public WebElement enterTransformationName;
+    public WebElement FieldEnterName;
     @FindBy(how = How.XPATH, using = "//*[text()=\"File path*\"]/following::input[@maxlength='200']")
     public WebElement filePath;
+    @FindBy(how = How.XPATH, using = "//*[text()=\"File path*\"]/following::input[@maxlength='200']")
+    public List<WebElement> filePathOnDest;
     @FindBy(how = How.XPATH, using = "//*[text()=\"Column seperator*\"]/following::input[1]")
-    public WebElement columnSeparator;
+    public WebElement columnSeparatorOnSource;
+    @FindBy(how = How.XPATH, using = "//scale-text-field[@label=\"Column separator*\"]//input[@type=\"text\"]")
+    public WebElement columnSeparatorOnDest;
     @FindBy(how = How.XPATH, using = "//*[text()=\"Add \"]")
     public WebElement buttonAdd;
     @FindBy(how = How.XPATH, using = "//*[text()=\"Status\"]")
@@ -54,7 +57,7 @@ public class PipeLIne_BuilderPage {
     public String sourceName = "//*[@title='%s']";
     public String transformation = "//*[@title='%s']";
     public String iconOnPipeLineBuilderPage = "//*[text()='%s']";
-
+    public String topicName = "//*[text()='%s ']";
 
 
     public PipeLIne_BuilderPage(WebDriver driver) {
@@ -71,16 +74,16 @@ public class PipeLIne_BuilderPage {
     }
 
     public void createSourceWithFile(String sourceName, String typeToAdd, String connectionToAdd, String fileTypeToAdd, String filepath, String colSeparator, String schemaSourceToAdd, String manualSchema) throws InterruptedException, IOException {
-        CommonFunction.waitForElementToAppear(driver, enterSourceNameField);
-        enterSourceNameField.sendKeys(sourceName);
+        CommonFunction.waitForElementToAppear(driver, FieldEnterName);
+        FieldEnterName.sendKeys(sourceName);
         CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, type, typeToAdd));
         CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, connection, connectionToAdd));
         CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, fileType, fileTypeToAdd));
         CommonFunction.waitForElementToAppear(driver, filePath);
         CommonFunction.scrollToElement(driver, filePath);
         filePath.sendKeys(filepath);
-        CommonFunction.waitForElementToAppear(driver, columnSeparator);
-        columnSeparator.sendKeys(colSeparator);
+        CommonFunction.waitForElementToAppear(driver, columnSeparatorOnSource);
+        columnSeparatorOnSource.sendKeys(colSeparator);
         CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, schemaSource, schemaSourceToAdd));
         selectManualSchema(manualSchema);
         CommonFunction.waitForElementToAppear(driver, buttonAdd);
@@ -104,8 +107,8 @@ public class PipeLIne_BuilderPage {
         addButtonOnSource.click();
         CommonFunction.waitForElementToAppear(driver, selectTransformation);
         selectTransformation.click();
-        CommonFunction.waitForElementToAppear(driver, enterTransformationName);
-        enterTransformationName.sendKeys(transformationName);
+        CommonFunction.waitForElementToAppear(driver, FieldEnterName);
+        FieldEnterName.sendKeys(transformationName);
         CommonFunction.waitForElementToAppear(driver, CommonFunction.getCustomisedWebElement(driver, categoryToSelect, category));
         CommonFunction.getCustomisedWebElement(driver, categoryToSelect, category).click();
         CommonFunction.waitForElementToAppear(driver, CommonFunction.getCustomisedWebElement(driver, transformationTypeToSelect, transformationType));
@@ -120,12 +123,42 @@ public class PipeLIne_BuilderPage {
 
     }
 
-    public void addDestination()
-    {
+    public void createDestination(String destName, String typeToAdd, String connectionToAdd,String fileToAdd ,String filePath, String topicToAdd) throws InterruptedException, IOException {
+        CommonFunction.waitForElementToAppear(driver, addButtonOnSource);
+        addButtonOnSource.click();
+        CommonFunction.waitForElementToAppear(driver, selectDestination);
+        selectDestination.click();
+        CommonFunction.waitForElementToAppear(driver, FieldEnterName);
+        FieldEnterName.sendKeys(destName);
+        CommonFunction.scrollOnElement(driver,CommonFunction.getCustomisedWebElement(driver,type,typeToAdd));
+        CommonFunction.scrollOnElement(driver,CommonFunction.getCustomisedWebElement(driver,connection,connectionToAdd));
+        CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, fileType, fileToAdd));
+        CommonFunction.scrollToElement(driver,selectAddButton);
+        selectDestType(filePath,topicToAdd);
+        CommonFunction.waitForElementToAppear(driver,selectAddButton);
+        selectAddButton.click();
+
+
+    }
+
+    public void selectDestType(String filePathToAdd,String topicToAdd) throws InterruptedException, IOException {
+
+            if (filePathOnDest.size()>0) {
+
+                CommonFunction.scrollToElement(driver,filePath);
+                filePath.sendKeys(filePathToAdd);
+                columnSeparatorOnDest.sendKeys(",");
+            }
+            else {
+                CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, topicName, topicToAdd));
+            }
+            }
+
+
+
 
     }
 
 
-}
 
 
