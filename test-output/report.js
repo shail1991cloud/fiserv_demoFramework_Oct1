@@ -1,4 +1,4 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/projects/CreateSourceAndDestination.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/projects/CreateSourceDestAndTransformation.feature");
 formatter.feature({
   "name": "Creation of Sources and Destination",
   "description": "  As a user I want to Create a Source and Destination,Validate Source and Destination attributes",
@@ -10,7 +10,7 @@ formatter.feature({
   ]
 });
 formatter.scenarioOutline({
-  "name": "user is able to create source for ManualSchema",
+  "name": "user is able to create Transformation",
   "description": "",
   "keyword": "Scenario Outline",
   "tags": [
@@ -24,10 +24,7 @@ formatter.scenarioOutline({
       "name": "@Positive"
     },
     {
-      "name": "@CSource-Test2"
-    },
-    {
-      "name": "@TC15"
+      "name": "@CTransformation-Test1"
     }
   ]
 });
@@ -56,11 +53,19 @@ formatter.step({
   "keyword": "And "
 });
 formatter.step({
-  "name": "Enters \"\u003cName\u003e\",\"\u003cType\u003e\",\"\u003cconnection\u003e\",\"\u003cfileType\u003e\",\"\u003cFilePath\u003e\",\"\u003cSeparator\u003e\",\"\u003csourceSchema\u003e\",\"\u003cSchemaValue\u003e\"",
+  "name": "Enters \"\u003cSourceName\u003e\",\"\u003cType\u003e\",\"\u003cconnection\u003e\",\"\u003cfileType\u003e\",\"\u003cFilePath\u003e\",\"\u003cSeparator\u003e\",\"\u003csourceSchema\u003e\",\"\u003cSchemaValue\u003e\"",
   "keyword": "When "
 });
 formatter.step({
-  "name": "Source should get created with \"\u003cName\u003e\"",
+  "name": "Source should get created with \"\u003cSourceName\u003e\"",
+  "keyword": "Then "
+});
+formatter.step({
+  "name": "enters \"\u003cTransformationName\u003e\",\"\u003cCategory\u003e\",\"\u003cTransformationType\u003e\",\"\u003ccolumnValue\u003e\" and click add",
+  "keyword": "When "
+});
+formatter.step({
+  "name": "Transformation with \"\u003cTransformationName\u003e\" should get created",
   "keyword": "Then "
 });
 formatter.examples({
@@ -75,14 +80,18 @@ formatter.examples({
         "Tag",
         "Pipeline",
         "Icon",
-        "Name",
+        "SourceName",
         "Type",
         "connection",
         "fileType",
         "FilePath",
         "Separator",
         "sourceSchema",
-        "SchemaValue"
+        "SchemaValue",
+        "TransformationName",
+        "Category",
+        "TransformationType",
+        "columnValue"
       ]
     },
     {
@@ -99,13 +108,17 @@ formatter.examples({
         ".csv",
         ",",
         "Manual Schema",
-        "H_JSON"
+        "H_JSON",
+        "TestTrans",
+        "Column",
+        "GroupBy",
+        "age"
       ]
     }
   ]
 });
 formatter.scenario({
-  "name": "user is able to create source for ManualSchema",
+  "name": "user is able to create Transformation",
   "description": "",
   "keyword": "Scenario Outline",
   "tags": [
@@ -122,10 +135,7 @@ formatter.scenario({
       "name": "@Positive"
     },
     {
-      "name": "@CSource-Test2"
-    },
-    {
-      "name": "@TC15"
+      "name": "@CTransformation-Test1"
     }
   ]
 });
@@ -209,6 +219,26 @@ formatter.step({
 });
 formatter.match({
   "location": "com.steps.createSourceAndDestination.sourceShouldGetCreatedWith(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "enters \"TestTrans\",\"Column\",\"GroupBy\",\"age\" and click add",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "com.steps.createSourceAndDestination.entersAndClick(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Transformation with \"TestTrans\" should get created",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "com.steps.createSourceAndDestination.transformationWithShouldGetCreated(java.lang.String)"
 });
 formatter.result({
   "status": "passed"

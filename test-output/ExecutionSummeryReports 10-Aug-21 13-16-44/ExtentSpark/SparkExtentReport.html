@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">DILTest</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 6, 2021 02:19:46 PM</span></a>
+<a href="#"><span class="badge badge-primary">Aug 10, 2021 01:16:44 PM</span></a>
 </li>
 </ul>
 </div>
@@ -79,7 +79,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@CP-Test2</a><a class="dropdown-item" href="#">@Positive</a><a class="dropdown-item" href="#">@Reg</a><a class="dropdown-item" href="#">@TC2</a><a class="dropdown-item" href="#">@Smoke</a><a class="dropdown-item" href="#">@CreatePipeLine</a>
+<a class="dropdown-item" href="#">@Smoke</a><a class="dropdown-item" href="#">@CreateSourceAndDestination</a><a class="dropdown-item" href="#">@Reg</a><a class="dropdown-item" href="#">@CTransformation-Test1</a><a class="dropdown-item" href="#">@Positive</a>
 </ul>
 </li>
 </ul>
@@ -90,9 +90,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Creation and Field level validation of pipelines</p>
+            <p class="name">Creation of Sources and Destination</p>
             <p class="text-sm">
-              <span>14:19:46 PM</span> / <span>00:00:24:243</span>
+              <span>13:16:44 PM</span> / <span>00:00:32:749</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -100,28 +100,27 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Creation and Field level validation of pipelines</h5>
-<span class='badge badge-success'>08.06.2021 14:19:46</span>
-<span class='badge badge-danger'>08.06.2021 14:20:10</span>
-<span class='badge badge-default'>00:00:24:243</span>
+<h5 class="test-status text-pass">Creation of Sources and Destination</h5>
+<span class='badge badge-success'>08.10.2021 13:16:44</span>
+<span class='badge badge-danger'>08.10.2021 13:17:17</span>
+<span class='badge badge-default'>00:00:32:749</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
-<div class="m-t-10 m-l-5"> As a user I want to Create a Pipeline,Validate the PipelineListing Page
-and is able to validate individual pipelines for field level validation</div>
+<div class="m-t-10 m-l-5"> As a user I want to Create a Source and Destination,Validate Source and Destination attributes</div>
 </div>
 </div>
 <div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>user is able to create pipeline and validate the same in Pipeline Listing page</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>user is able to create Transformation</div>
       </div>
     </div>
         <div class="scenario_outline collapse">
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>user is able to create pipeline and validate the same in Pipeline Listing page</div>
+                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>user is able to create Transformation</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
@@ -153,12 +152,32 @@ and is able to validate individual pipelines for field level validation</div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>And creates a "PipeLIne" with "ProjectForAutomation" and "Test_Pipeline"</span>
+                    <span>And creates a "PipeLIne" having "ProjectForAutomation" and "Test_Pipeline"</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then PipeLine listing page is validated for created Pipeline</span>
+                    <span>And clicks on "Add a Source"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Enters "DemoSource","File System","AUTOMATION_DONOTDELETE","CSV",".csv",",","Manual Schema","H_JSON"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Source should get created with "DemoSource"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When enters "TestTrans","Column","GroupBy","age" and click add</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Transformation with "TestTrans" should get created</span>
       <div>
       </div>
                   </div>
@@ -189,7 +208,7 @@ and is able to validate individual pipelines for field level validation</div>
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">6</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">5</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -198,12 +217,12 @@ and is able to validate individual pipelines for field level validation</div>
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@CP-Test2</p>
+<p class="name">@Smoke</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@CP-Test2</h4>
+<h4>@Smoke</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -217,11 +236,11 @@ and is able to validate individual pipelines for field level validation</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>14:19:46 PM</td>
+<td>13:16:44 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>user is able to create pipeline and validate the same in Pipeline Listing page</a>
+<a href="#" class="linked" test-id='1' id='3'>user is able to create Transformation</a>
 <div class="">
-<span class="badge badge-default">Creation and Field level validation of pipelines.user is able to create pipeline and validate the same in Pipeline Listing page</span>
+<span class="badge badge-default">Creation of Sources and Destination.user is able to create Transformation</span>
 </div>
 </td>
 </tr>
@@ -234,12 +253,12 @@ and is able to validate individual pipelines for field level validation</div>
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@Positive</p>
+<p class="name">@CreateSourceAndDestination</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@Positive</h4>
+<h4>@CreateSourceAndDestination</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -253,11 +272,11 @@ and is able to validate individual pipelines for field level validation</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>14:19:46 PM</td>
+<td>13:16:44 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>user is able to create pipeline and validate the same in Pipeline Listing page</a>
+<a href="#" class="linked" test-id='1' id='3'>user is able to create Transformation</a>
 <div class="">
-<span class="badge badge-default">Creation and Field level validation of pipelines.user is able to create pipeline and validate the same in Pipeline Listing page</span>
+<span class="badge badge-default">Creation of Sources and Destination.user is able to create Transformation</span>
 </div>
 </td>
 </tr>
@@ -289,11 +308,11 @@ and is able to validate individual pipelines for field level validation</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>14:19:46 PM</td>
+<td>13:16:44 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>user is able to create pipeline and validate the same in Pipeline Listing page</a>
+<a href="#" class="linked" test-id='1' id='3'>user is able to create Transformation</a>
 <div class="">
-<span class="badge badge-default">Creation and Field level validation of pipelines.user is able to create pipeline and validate the same in Pipeline Listing page</span>
+<span class="badge badge-default">Creation of Sources and Destination.user is able to create Transformation</span>
 </div>
 </td>
 </tr>
@@ -306,12 +325,12 @@ and is able to validate individual pipelines for field level validation</div>
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@TC2</p>
+<p class="name">@CTransformation-Test1</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@TC2</h4>
+<h4>@CTransformation-Test1</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -325,11 +344,11 @@ and is able to validate individual pipelines for field level validation</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>14:19:46 PM</td>
+<td>13:16:44 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>user is able to create pipeline and validate the same in Pipeline Listing page</a>
+<a href="#" class="linked" test-id='1' id='3'>user is able to create Transformation</a>
 <div class="">
-<span class="badge badge-default">Creation and Field level validation of pipelines.user is able to create pipeline and validate the same in Pipeline Listing page</span>
+<span class="badge badge-default">Creation of Sources and Destination.user is able to create Transformation</span>
 </div>
 </td>
 </tr>
@@ -342,12 +361,12 @@ and is able to validate individual pipelines for field level validation</div>
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@Smoke</p>
+<p class="name">@Positive</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@Smoke</h4>
+<h4>@Positive</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -361,47 +380,11 @@ and is able to validate individual pipelines for field level validation</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>14:19:46 PM</td>
+<td>13:16:44 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>user is able to create pipeline and validate the same in Pipeline Listing page</a>
+<a href="#" class="linked" test-id='1' id='3'>user is able to create Transformation</a>
 <div class="">
-<span class="badge badge-default">Creation and Field level validation of pipelines.user is able to create pipeline and validate the same in Pipeline Listing page</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
-<p class="name">@CreatePipeLine</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@CreatePipeLine</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>14:19:46 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='3'>user is able to create pipeline and validate the same in Pipeline Listing page</a>
-<div class="">
-<span class="badge badge-default">Creation and Field level validation of pipelines.user is able to create pipeline and validate the same in Pipeline Listing page</span>
+<span class="badge badge-default">Creation of Sources and Destination.user is able to create Transformation</span>
 </div>
 </td>
 </tr>
@@ -422,13 +405,13 @@ and is able to validate individual pipelines for field level validation</div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 6, 2021 02:19:46 PM</h3>
+<h3>Aug 10, 2021 01:16:44 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 6, 2021 02:20:10 PM</h3>
+<h3>Aug 10, 2021 01:17:17 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -499,7 +482,7 @@ and is able to validate individual pipelines for field level validation</div>
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>8</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>12</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -518,7 +501,7 @@ and is able to validate individual pipelines for field level validation</div>
 </div></div>
 <script>
 var timeline = {
-"Creation and Field level validation of pipelines":24.243
+"Creation of Sources and Destination":32.749
 };
 </script>
 <div class="row">
@@ -528,7 +511,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@CP-Test2</td>
+<td>@Smoke</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -536,7 +519,7 @@ var timeline = {
 <td>100%</td>
 </tr>
 <tr>
-<td>@Positive</td>
+<td>@CreateSourceAndDestination</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -552,7 +535,7 @@ var timeline = {
 <td>100%</td>
 </tr>
 <tr>
-<td>@TC2</td>
+<td>@CTransformation-Test1</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -560,15 +543,7 @@ var timeline = {
 <td>100%</td>
 </tr>
 <tr>
-<td>@Smoke</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@CreatePipeLine</td>
+<td>@Positive</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -595,7 +570,7 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 8,
+passGrandChild: 12,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,

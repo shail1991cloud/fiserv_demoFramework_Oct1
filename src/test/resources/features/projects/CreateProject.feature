@@ -5,7 +5,7 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
 
   #------Positive Scenarios------#
 
-  @Smoke @Reg @Positive @CRP-Test1 @TC3
+  @Smoke @Reg @Positive @CRP-Test1 @TC4
   Scenario Outline: user is able to get Create Project Tab on Project Listing page
     Given user is on DIL login page
     When  enter username and password
@@ -13,21 +13,21 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
     Examples:
       | Create Project Tab |
       | Create Project     |
-  @Reg @Positive @CRP-Test2  @TC4
+  @Reg @Positive @CRP-Test2  @TC5
   Scenario: user is able to get Project Setting pop up while selects Create Project Tab
     Given user is on DIL login page
     When  enter username and password
     And   clicks on createProject tab
     Then  user is able to get Project Setting PopUp
 
-  @Smoke @Reg @Positive @CRP-Test3 @TC5
+  @Smoke @Reg @Positive @CRP-Test3 @TC6
   Scenario: user is able to validate Project Setting PopUp
     Given user is on DIL login page
     When  enter username and password
     And   clicks on createProject tab
     Then  all the fields on Project Setting up page are validated
 
-  @Smoke @Reg @Positive @CRP-Test4 @TC6
+  @Smoke @Reg @Positive @CRP-Test4 @TC7
   Scenario Outline: user is able to create a Project and is able to validate it in ProjectListing Page
     Given user is on DIL login page
     When  enter username and password
@@ -38,7 +38,7 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
       | ProjectName | Description      | Tag  |
       | Auto_Pro    | CreatingPipeLine | Test |
 
-  @Smoke @Reg @Positive @CRP-Test5 @TC7
+  @Smoke @Reg @Positive @CRP-Test5 @TC8
   Scenario Outline: user is able to validate details for project on project listing page
     Given user is on DIL login page
     When enter username and password
@@ -50,7 +50,7 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
 
 
 
-  @Smoke @Reg @Positive @CRP-Test6 @TC8
+  @Smoke @Reg @Positive @CRP-Test6 @TC9
   Scenario Outline: user is able to Search Project on Project Listing by the use of Search Functionality
     Given user is on DIL login page
     When  enter username and password
@@ -59,7 +59,7 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
       | ProjectName | Description      | Tag  |
       | Auto-Pro    | CreatingPipeLine | Test |
 
-  @Smoke @Reg @Positive @CRP-Test7 @TC9
+  @Smoke @Reg @Positive @CRP-Test7 @TC10
   Scenario Outline: user is able to validate updated project on Project Listing page
     Given user is on DIL login page
     When enter username and password
@@ -74,7 +74,7 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
 
     #-------Negative Scenarios-------#
 
-  @Smoke @Reg @Negative @CRP-Test8 @TC10
+  @Smoke @Reg @Negative @CRP-Test8 @TC11
   Scenario Outline: user is not able to create Project when left mandatory field blank
     Given user is on DIL login page
     When  enter username and password
@@ -85,7 +85,7 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
       | ProjectName      | Description | Tag  |
       | Auto-DemoProject |             | Test |
 
-  @Smoke @Reg @Negative @CRP-Test9 @TC11
+  @Smoke @Reg @Negative @CRP-Test9 @TC12
   Scenario Outline: user should not be able to validate cancelled project in ProjectListing Page
     Given user is on DIL login page
     When  enter username and password
@@ -96,7 +96,7 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
       | ProjectName      | Description      | Tag  |
       | Auto-DemoProject | CreatingPipeLine | Test |
 
-  @Smoke @Reg @Negative @CRP-Test10 @TC12
+  @Smoke @Reg @Negative @CRP-Test10 @TC13
   Scenario Outline: user is not able to find deleted project on ProjectListing Page
     Given user is on DIL login page
     When  enter username and password
@@ -111,7 +111,7 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
 
 
     # Do not run it *****
-  @SmokeInNotScope @Test11 @TC13
+  @SmokeInNotScope @Test11 @TC14
   Scenario: user is able to delete all Projects from Project listing page
     Given user is on DIL login page
     When  enter username and password

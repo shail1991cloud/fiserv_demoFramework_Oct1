@@ -27,7 +27,7 @@ Feature:Creation and Field level validation of pipelines
       | ProjectName | Description          | Tag           | Pipeline |
       | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne |
 
-  @Smoke @Reg @Positive @CP-Test3 @TC17
+  @Smoke @Reg @Positive @CP-Test3 @TC3
   Scenario Outline: user is able to delete pipeline and validate the same in Pipeline Listing page
     Given user is on DIL login page
     When enter username and password

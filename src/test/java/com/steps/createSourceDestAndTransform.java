@@ -14,16 +14,16 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 
-public class createSourceAndDestination extends Baseclass {
+public class createSourceDestAndTransform extends Baseclass {
     ProjectsPage projectspage;
     Project_BuilderPage projectBuilderpage;
     public ConfigFileReader configFileReader;
     Functions_LeanPageObject functions_leanPageObject;
     PipeLIne_ListingPage pipeLIne_listingPage;
     PipeLIne_BuilderPage pipeLIne_builderPage;
-    Logger log = LoggerHelper.getLogger(createSourceAndDestination.class);
+    Logger log = LoggerHelper.getLogger(createSourceDestAndTransform.class);
 
-    public createSourceAndDestination() {
+    public createSourceDestAndTransform() {
         projectspage = PageFactory.initElements(driver, ProjectsPage.class);
         projectBuilderpage = PageFactory.initElements(driver, Project_BuilderPage.class);
         functions_leanPageObject = PageFactory.initElements(driver, Functions_LeanPageObject.class);
@@ -57,7 +57,7 @@ public class createSourceAndDestination extends Baseclass {
 
     @When("Enters {string},{string},{string},{string},{string},{string},{string},{string}")
     public void enters(String Name, String type, String connection, String fileType, String filePath, String separator, String schemaSource,String manualSchema) throws IOException, InterruptedException {
-        pipeLIne_builderPage.createSource(Name,type,connection,fileType,filePath,separator,schemaSource,manualSchema);
+        pipeLIne_builderPage.createSourceWithFile(Name,type,connection,fileType,filePath,separator,schemaSource,manualSchema);
         log.info("Details entered-->" + filePath+"--"+connection);
     }
 
@@ -76,9 +76,23 @@ public class createSourceAndDestination extends Baseclass {
         functions_leanPageObject.validatePresenceOfRecord(pipeLIne_builderPage.sourceName,name);
     }
 
-    @Then("Destination is created")
-    public void destinationIsCreated() throws IOException, InterruptedException {
-        pipeLIne_builderPage.selectTransformation();
+    @When("enters {string},{string},{string},{string} and click add")
+    public void entersAndClick(String TransformationName, String Category, String TransformationType, String columnValue) throws IOException, InterruptedException {
+     pipeLIne_builderPage.createTransformation(TransformationName,Category,TransformationType,columnValue);
+    }
 
+    @Then("Transformation with {string} should get created")
+    public void transformationWithShouldGetCreated(String TransformationName) throws InterruptedException {
+        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,pipeLIne_builderPage.transformation,TransformationName).isDisplayed());
+
+
+    }
+
+    @When("enters {string},{string},{string},{string} ,{string} and click add")
+    public void entersAndClickAdd(String arg0, String arg1, String arg2, String arg3, String arg4) {
+    }
+
+    @Then("Destination with {string} should get created")
+    public void destinationWithShouldGetCreated(String arg0) {
     }
 }
