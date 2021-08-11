@@ -14,8 +14,6 @@ import java.util.List;
 public class PipeLIne_BuilderPage {
 
     public ProjectsPage projectspage;
-    WebDriver driver;
-
     public Functions_LeanPageObject functions_leanPageObject;
     @FindBy(how = How.XPATH, using = "//scale-text-field[@label=\"Name*\"]//input[@type=\"text\"]")
     public WebElement FieldEnterName;
@@ -34,7 +32,7 @@ public class PipeLIne_BuilderPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"base-layout-sidebar\"]//div[2]//div//scale-dropdown[3]/div")
     public WebElement manualSchema;
     @FindBy(how = How.XPATH, using = "//*[text()=' + ']")
-    public WebElement addButtonOnSource;
+    public WebElement addButtonOnSourceOrTrans;
     @FindBy(how = How.XPATH, using = "//*[text()=' Destination ']")
     public WebElement selectDestination;
     @FindBy(how = How.XPATH, using = "//*[text()=' Transformation ']")
@@ -58,6 +56,7 @@ public class PipeLIne_BuilderPage {
     public String transformation = "//*[@title='%s']";
     public String iconOnPipeLineBuilderPage = "//*[text()='%s']";
     public String topicName = "//*[text()='%s ']";
+    WebDriver driver;
 
 
     public PipeLIne_BuilderPage(WebDriver driver) {
@@ -103,8 +102,8 @@ public class PipeLIne_BuilderPage {
     }
 
     public void createTransformation(String transformationName, String category, String transformationType, String columnValue) throws InterruptedException, IOException {
-        CommonFunction.waitForElementToAppear(driver, addButtonOnSource);
-        addButtonOnSource.click();
+        CommonFunction.waitForElementToAppear(driver, addButtonOnSourceOrTrans);
+        addButtonOnSourceOrTrans.click();
         CommonFunction.waitForElementToAppear(driver, selectTransformation);
         selectTransformation.click();
         CommonFunction.waitForElementToAppear(driver, FieldEnterName);
@@ -123,41 +122,38 @@ public class PipeLIne_BuilderPage {
 
     }
 
-    public void createDestination(String destName, String typeToAdd, String connectionToAdd,String fileToAdd ,String filePath, String topicToAdd) throws InterruptedException, IOException {
-        CommonFunction.waitForElementToAppear(driver, addButtonOnSource);
-        addButtonOnSource.click();
+    public void createDestination(String destName, String typeToAdd, String connectionToAdd, String fileToAdd, String filePath, String topicToAdd) throws InterruptedException, IOException {
+        CommonFunction.waitForElementToAppear(driver, addButtonOnSourceOrTrans);
+        addButtonOnSourceOrTrans.click();
         CommonFunction.waitForElementToAppear(driver, selectDestination);
         selectDestination.click();
         CommonFunction.waitForElementToAppear(driver, FieldEnterName);
         FieldEnterName.sendKeys(destName);
-        CommonFunction.scrollOnElement(driver,CommonFunction.getCustomisedWebElement(driver,type,typeToAdd));
-        CommonFunction.scrollOnElement(driver,CommonFunction.getCustomisedWebElement(driver,connection,connectionToAdd));
+        CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, type, typeToAdd));
+        CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, connection, connectionToAdd));
         CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, fileType, fileToAdd));
-        CommonFunction.scrollToElement(driver,selectAddButton);
-        selectDestType(filePath,topicToAdd);
-        CommonFunction.waitForElementToAppear(driver,selectAddButton);
+        CommonFunction.scrollToElement(driver, selectAddButton);
+        selectDestType(filePath, topicToAdd);
+        CommonFunction.waitForElementToAppear(driver, selectAddButton);
         selectAddButton.click();
 
 
     }
 
-    public void selectDestType(String filePathToAdd,String topicToAdd) throws InterruptedException, IOException {
+    public void selectDestType(String filePathToAdd, String topicToAdd) throws InterruptedException, IOException {
 
-            if (filePathOnDest.size()>0) {
+        if (filePathOnDest.size() > 0) {
 
-                CommonFunction.scrollToElement(driver,filePath);
-                filePath.sendKeys(filePathToAdd);
-                columnSeparatorOnDest.sendKeys(",");
-            }
-            else {
-                CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, topicName, topicToAdd));
-            }
-            }
-
-
-
-
+            CommonFunction.scrollToElement(driver, filePath);
+            filePath.sendKeys(filePathToAdd);
+            columnSeparatorOnDest.sendKeys(",");
+        } else {
+            CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, topicName, topicToAdd));
+        }
     }
+
+
+}
 
 
 

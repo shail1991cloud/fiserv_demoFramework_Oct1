@@ -86,4 +86,12 @@ public class createPipeLineSteps extends Baseclass {
         log.info("PipeLines Properties is validated with details-->"+Description+"--"+Tag+"--"+ExecutionType+"--"+PKey+PValue+"--"+SKey+SValue);
 
     }
+
+    @Then("PipeLine with status {string} is validated")
+    public void pipelineWithStatusIsValidated(String status) throws InterruptedException {
+        projectspage.navigateToProjectListing();
+        pipeLIne_listingPage.validatePipeLineRecord();
+        pipeLIne_listingPage.validatePipeLineStatus(status);
+        log.info("Pipeline listing page is validated for  created Pipeline with Status-->"+status);
+    }
 }

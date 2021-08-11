@@ -14,20 +14,17 @@ import org.openqa.selenium.WebElement;
 
 public class Functions_LeanPageObject {
 
-    WebDriver driver;
+    public final String pages = "//*[contains(text(),'%s ')]";
+    public final String customisedCreateProjectRecord = "//*[text()=' %s ']";
+    public final String projectNameOnProjectBuilderORListingPage = "//*[contains(text(),' %s ')]";
     public ConfigFileReader configFileReader;
+    WebDriver driver;
     Logger log = LoggerHelper.getLogger(DIL_loginpage.class);
-
     public Functions_LeanPageObject(WebDriver driver) {
         this.driver = driver;
         configFileReader = new ConfigFileReader();
 
     }
-
-    public final String pages = "//*[contains(text(),'%s ')]";
-    public final String customisedCreateProjectRecord = "//*[text()=' %s ']";
-    public final String projectNameOnProjectBuilderORListingPage = "//*[contains(text(),' %s ')]";
-
 
     public void switchBetweenPages(String pageName) throws InterruptedException {
         CommonFunction.getCustomisedWebElement(driver, pages, pageName).click();
@@ -35,21 +32,18 @@ public class Functions_LeanPageObject {
 
     }
 
-    public void deleteRecord(String record,String recordToAdd) throws InterruptedException {
-        CommonFunction.waitForElementToAppear(driver,CommonFunction.getCustomisedWebElement(driver,record,recordToAdd));
-        CommonFunction.getCustomisedWebElement(driver,record,recordToAdd).click();
+    public void deleteRecord(String record, String recordToAdd) throws InterruptedException {
+        CommonFunction.waitForElementToAppear(driver, CommonFunction.getCustomisedWebElement(driver, record, recordToAdd));
+        CommonFunction.getCustomisedWebElement(driver, record, recordToAdd).click();
         log.info("User click on record for button-->" + recordToAdd);
 
     }
 
-    public void validatePresenceOfRecord(String record,String recordToAdd)
-    {
-        if(CommonFunction.getCustomisedWebElements(driver,record,recordToAdd).size()>0)
-        {
+    public void validatePresenceOfRecord(String record, String recordToAdd) {
+        if (CommonFunction.getCustomisedWebElements(driver, record, recordToAdd).size() > 0) {
             Assert.fail("Record is present");
             log.info("Record is present");
-        }
-        else {
+        } else {
             log.info("Record is not present");
         }
     }

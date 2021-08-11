@@ -18,52 +18,29 @@ import java.util.List;
 
 public class PipeLIne_ListingPage {
 
-    WebDriver driver;
+    private final String recordPipeLine = "//*[text()=' %s ']";
     public ProjectsPage projectspage;
     public Functions_LeanPageObject functions_leanPageObject;
-
-    public PipeLIne_ListingPage(WebDriver driver) {
-
-        this.driver = driver;
-        projectspage = PageFactory.initElements(driver, ProjectsPage.class);
-        functions_leanPageObject = PageFactory.initElements(driver, Functions_LeanPageObject.class);
-    }
-
-
-
+    public String pipeLineNameOnPipelineProperties = "//div[@title=\"%s\"]";
+    public String descriptionOnPipeLineProperties = "//p[@title=\"%s\"]";
+    public String tagOnPipeLineProperties = "//span[normalize-space()=\"%s\"]";
+    public String executionTypeOnPipeLineProperties = "//span[normalize-space()=\"%s\"]";
+    public String executionTypeToSelect = "//*[text()='%s ']";
+    public String pipeLineStatus = "//*[text()=' %s ']";
+    WebDriver driver;
     String tSystemsJSPath = "return document.querySelector(\"#header\").shadowRoot.querySelector(\"div > scale-app-header > header > div > div > div.header__brand-branding > app-logo > a > svg > g > g > path:nth-child(2)\")";
-
     String labelDIJSPath = "document.querySelector(\"#header\").shadowRoot.querySelector(\"div > scale-app-header > header > div > div > div.header__brand-sector > ul > li\")";
-
     String noPipeLIneText = "//*[text()=\" %s \"]";
-    private final String recordPipeLine = "//*[text()=' %s ']";
-
-    public String pipeLineNameOnPipelineProperties="//div[@title=\"%s\"]";
-
-    public String descriptionOnPipeLineProperties="//p[@title=\"%s\"]";
-
-    public String tagOnPipeLineProperties="//span[normalize-space()=\"%s\"]";
-
-    public String executionTypeOnPipeLineProperties="//span[normalize-space()=\"%s\"]";
-
-
-    public String executionTypeToSelect="//*[text()='%s ']";
-
     @FindBy(how = How.XPATH, using = "//button[1]")
     List<WebElement> buttonsAdd;
-
     @FindBy(how = How.XPATH, using = "//*[text()=\"STREAMING \"]")
     WebElement executionType;
-
     @FindBy(how = How.XPATH, using = "//fieldset[@data-test-id=\"pipeline-creator\"]//div")
     WebElement pipeLineCreator;
-
     @FindBy(how = How.XPATH, using = "//fieldset[@data-test-id=\"creation-date\"]//div")
     WebElement pipeLineCreationDate;
-
     @FindBy(how = How.XPATH, using = "//input[1][@name='keyAdd']")
     List<WebElement> keysForPipeLine;
-
     @FindBy(how = How.XPATH, using = "//input[1][@name='valueAdd']")
     List<WebElement> valuesForPipeLine;
     @FindBy(how = How.XPATH, using = "//*[text()='Pipelines']")
@@ -92,6 +69,12 @@ public class PipeLIne_ListingPage {
     WebElement lastLaunch;
     @FindBy(how = How.XPATH, using = "//*[text()='Builder ']")
     WebElement tabBuilder;
+    public PipeLIne_ListingPage(WebDriver driver) {
+
+        this.driver = driver;
+        projectspage = PageFactory.initElements(driver, ProjectsPage.class);
+        functions_leanPageObject = PageFactory.initElements(driver, Functions_LeanPageObject.class);
+    }
 
     public void validateDetailsOnProjectListingPageWithNORecords(String message) throws InterruptedException {
         Assert.assertTrue(functions_leanPageObject.fetchProjectNameOnProjectListingORBuilderPage().isDisplayed());
@@ -109,12 +92,13 @@ public class PipeLIne_ListingPage {
         CommonFunction.waitForElementToAppear(driver, textFieldDescription);
         textFieldDescription.sendKeys(description);
         textFieldTag.sendKeys(tag, Keys.ENTER);
-        CommonFunction.scrollOnElement(driver,executionType);
+        CommonFunction.scrollOnElement(driver, executionType);
         CommonFunction.scrollToElement(driver, buttonCreatePipeline);
         buttonCreatePipeline.click();
 
     }
-    public void createPipeLineWithKeyAndValues(String piplineName,String description, String tag,String execution,String pKey,String pValue,String sKey,String sValue) throws InterruptedException, IOException {
+
+    public void createPipeLineWithKeyAndValues(String piplineName, String description, String tag, String execution, String pKey, String pValue, String sKey, String sValue) throws InterruptedException, IOException {
         CommonFunction.waitForElementToAppear(driver, createPipelineIcon);
         createPipelineIcon.click();
         String uniquePipeLineName = CommonFunction.generateRandomString(5) + piplineName + DatesHelper.getTodayDateWithSeconds();
@@ -124,34 +108,32 @@ public class PipeLIne_ListingPage {
         CommonFunction.waitForElementToAppear(driver, textFieldDescription);
         textFieldDescription.sendKeys(description);
         textFieldTag.sendKeys(tag, Keys.ENTER);
-        CommonFunction.scrollOnElement(driver,CommonFunction.getCustomisedWebElement(driver,executionTypeToSelect,execution));
+        CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, executionTypeToSelect, execution));
         CommonFunction.scrollToElement(driver, buttonCreatePipeline);
         keysForPipeLine.get(0).sendKeys(pKey);
         valuesForPipeLine.get(0).sendKeys(pValue);
-       CommonFunction.waitForElementToBeClickable(driver,buttonsAdd.get(0));
+        CommonFunction.waitForElementToBeClickable(driver, buttonsAdd.get(0));
         buttonsAdd.get(0).click();
         keysForPipeLine.get(1).sendKeys(sKey);
         valuesForPipeLine.get(1).sendKeys(sValue);
-        CommonFunction.waitForElementToBeClickable(driver,buttonsAdd.get(1));
+        CommonFunction.waitForElementToBeClickable(driver, buttonsAdd.get(1));
         buttonsAdd.get(1).click();
-        CommonFunction.waitForElementToBeClickable(driver,buttonCreatePipeline);
+        CommonFunction.waitForElementToBeClickable(driver, buttonCreatePipeline);
         buttonCreatePipeline.click();
         CommonFunction.waitForSomeTime();
     }
 
-    public void validatePipeLineProperties(String description,String tag,String executionT,String pKey,String pValue,String sKey,String sValue) throws InterruptedException {
-    Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,pipeLineNameOnPipelineProperties,EnvSetUp.getDataKeyValue(Constant.PipeLineName)).isDisplayed());
-    Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,descriptionOnPipeLineProperties,description).isDisplayed());
-    Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,tagOnPipeLineProperties,tag).isDisplayed());
-    Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,executionTypeOnPipeLineProperties,executionT).isDisplayed());
-    Assert.assertTrue(pipeLineCreationDate.isDisplayed());
-    Assert.assertTrue(pipeLineCreator.isDisplayed());
-    Assert.assertEquals(pipelineValue.getText(),pValue);
-    Assert.assertEquals(sparkValue.getText(),sValue);
-    Assert.assertEquals(pipeLineKey.getText().substring(0,2),pKey);
-    Assert.assertEquals(sparkKey.getText().substring(0,2),sKey);
-
-
+    public void validatePipeLineProperties(String description, String tag, String executionT, String pKey, String pValue, String sKey, String sValue) throws InterruptedException {
+        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, pipeLineNameOnPipelineProperties, EnvSetUp.getDataKeyValue(Constant.PipeLineName)).isDisplayed());
+        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, descriptionOnPipeLineProperties, description).isDisplayed());
+        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, tagOnPipeLineProperties, tag).isDisplayed());
+        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, executionTypeOnPipeLineProperties, executionT).isDisplayed());
+        Assert.assertTrue(pipeLineCreationDate.isDisplayed());
+        Assert.assertTrue(pipeLineCreator.isDisplayed());
+        Assert.assertEquals(pipelineValue.getText(), pValue);
+        Assert.assertEquals(sparkValue.getText(), sValue);
+        Assert.assertEquals(pipeLineKey.getText().substring(0, 2), pKey);
+        Assert.assertEquals(sparkKey.getText().substring(0, 2), sKey);
 
 
     }
@@ -159,6 +141,11 @@ public class PipeLIne_ListingPage {
     public void validatePipeLineRecord() throws InterruptedException {
         Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, recordPipeLine, EnvSetUp.getDataKeyValue(Constant.PipeLineName)).isDisplayed());
 
+    }
+
+    public void validatePipeLineStatus(String status) throws InterruptedException {
+        CommonFunction.waitForElementToAppear(driver, CommonFunction.getCustomisedWebElement(driver, pipeLineStatus, status));
+        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, pipeLineStatus, status).isDisplayed());
     }
 
 

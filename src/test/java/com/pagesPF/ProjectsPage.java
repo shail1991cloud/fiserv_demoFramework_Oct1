@@ -18,16 +18,10 @@ import java.util.List;
 
 public class ProjectsPage {
 
-    WebDriver driver;
+    public final String customisedProjectOnProjectListingPage = "//*[text()=' %s ']";
+    public final String customisedCreateProjectTab = "//*[text()=' %s ']";
     public Functions_LeanPageObject functions_leanPageObject;
     public RestFunctions restFunctions;
-    public ProjectsPage(WebDriver driver) {
-        this.driver = driver;
-        restFunctions = new RestFunctions();
-        functions_leanPageObject = PageFactory.initElements(driver, Functions_LeanPageObject.class);
-
-    }
-
     @FindBy(how = How.XPATH, using = "//*[@id=\"create-project-btn\"]")
     public WebElement createProjectButton;
 
@@ -60,54 +54,43 @@ public class ProjectsPage {
 
     @FindBy(how = How.XPATH, using = "//div[4]//scale-icon-action-remove[1]//*[local-name()=\"svg\"]")
     public WebElement deleteButtonOnProjectListingPage;
-
-    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div/div[2]/div/div/scale-modal/scale-button[1]")
-    WebElement cancelButtonOnDeletePopUp;
-
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//p[3]/button")
     public List<WebElement> deleteButtonsOnProjectListingPage;
-
-    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//div[2]/div/div/div[1]/div[1]/div[1]")
-    WebElement project_Name;
-
     @FindBy(how = How.XPATH, using = "//*[text()=' Delete ']")
     public WebElement deleteButtonOnDeleteProjectPopUp;
-
     @FindBy(how = How.XPATH, using = "//*[@id=\"project-dashboard-header\"]/div[1]")
     public WebElement optionToSortByStatus;
-
     @FindBy(how = How.XPATH, using = "//*[@placeholder=\"Search\"]")
     public WebElement searchBoxOnProjectListingPage;
-
     @FindBy(how = How.XPATH, using = "//*[@id=\"projectName\"]")
     public WebElement existingProjectOnProjectListingPage;
-
     @FindBy(how = How.XPATH, using = "//*[@id=\"projectName\"]")
     public WebElement projectStatusOnProjectListingPage;
-
-    @FindBy(how = How.XPATH, using = "//*[@id=\"projectTag\"]")
-    WebElement projectTagOnProjectListingPage;
-
     @FindBy(how = How.XPATH, using = "//*[@id=\"engineId\"]/p/span")
     public WebElement projectEngineOnProjectListingPage;
-
     @FindBy(how = How.XPATH, using = "//*[contains(text(),'Loading')]")
     public WebElement iconLoading;
-
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//div[5]//p[1]")
     public WebElement projectRunOnProjectListingPage;
-
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//div[5]//p[2]")
     public WebElement projectCopyOnProjectListingPage;
-
     @FindBy(how = How.XPATH, using = "//*[@id=\"projectName\"]")
     public List<WebElement> createdProjectsOnProjectListingPage;
-
-    public final String customisedProjectOnProjectListingPage = "//*[text()=' %s ']";
-    public final String customisedCreateProjectTab = "//*[text()=' %s ']";
-
+    WebDriver driver;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div/div[2]/div/div/scale-modal/scale-button[1]")
+    WebElement cancelButtonOnDeletePopUp;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//div[2]/div/div/div[1]/div[1]/div[1]")
+    WebElement project_Name;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"projectTag\"]")
+    WebElement projectTagOnProjectListingPage;
     String projectJsPath = "return document.querySelector(\"#header\").shadowRoot.querySelector(\"div > scale-app-header > header > nav.header__nav > div > div.header__nav-menu-wrapper > div.header__nav-menu-main > ul > scale-nav-main:nth-child(1) > li > a > span.main-navigation__item-link-text\")";
-    String cssSelector="div > scale-app-header > header > nav.header__nav > div > div.header__nav-menu-wrapper > div.header__nav-menu-main > ul > scale-nav-main:nth-child(1) > li > a > span.main-navigation__item-link-text";
+    String cssSelector = "div > scale-app-header > header > nav.header__nav > div > div.header__nav-menu-wrapper > div.header__nav-menu-main > ul > scale-nav-main:nth-child(1) > li > a > span.main-navigation__item-link-text";
+    public ProjectsPage(WebDriver driver) {
+        this.driver = driver;
+        restFunctions = new RestFunctions();
+        functions_leanPageObject = PageFactory.initElements(driver, Functions_LeanPageObject.class);
+
+    }
 
     public void enterDetailsInProjectSetting() {
         createProjectButton.click();
@@ -153,18 +136,17 @@ public class ProjectsPage {
 
     public void enterDetailsIntoCreateProjectPopUp(String name, String description, String tag) throws InterruptedException {
 
-            CommonFunction.waitForElementToAppear(driver, projectNameTextField);
-            String uniqueProjectName = CommonFunction.generateRandomString(5) + name + DatesHelper.getTodayDateWithSeconds();
-            EnvSetUp.setDataValue(Constant.ProjectName, uniqueProjectName);
-            projectNameTextField.sendKeys(uniqueProjectName);
-            projectDescriptionTextField.sendKeys(description);
-            CommonFunction.waitForElementToAppear(driver, projectTag);
-            projectTag.sendKeys(tag);
-            projectTag.sendKeys(Keys.ENTER);
-            CommonFunction.waitForElementToAppear(driver, dropDown_Engines);
-            CommonFunction.scrollToElement(driver, dropDown_Engines);
-            CommonFunction.selectFromDropDownWithValue(dropDown_Engines, "1");
-
+        CommonFunction.waitForElementToAppear(driver, projectNameTextField);
+        String uniqueProjectName = CommonFunction.generateRandomString(5) + name + DatesHelper.getTodayDateWithSeconds();
+        EnvSetUp.setDataValue(Constant.ProjectName, uniqueProjectName);
+        projectNameTextField.sendKeys(uniqueProjectName);
+        projectDescriptionTextField.sendKeys(description);
+        CommonFunction.waitForElementToAppear(driver, projectTag);
+        projectTag.sendKeys(tag);
+        projectTag.sendKeys(Keys.ENTER);
+        CommonFunction.waitForElementToAppear(driver, dropDown_Engines);
+        CommonFunction.scrollToElement(driver, dropDown_Engines);
+        CommonFunction.selectFromDropDownWithValue(dropDown_Engines, "1");
 
 
     }
@@ -201,7 +183,7 @@ public class ProjectsPage {
         CommonFunction.clickOnShadowElement(driver, projectJsPath);
         CommonFunction.waitForElementToAppear(driver, searchBoxOnProjectListingPage);
         searchBoxOnProjectListingPage.sendKeys(EnvSetUp.getDataKeyValue(Constant.ProjectName));
-        CommonFunction.waitForMinimalTime();
+        CommonFunction.waitForSomeTime();
         CommonFunction.getCustomisedWebElement(driver, customisedProjectOnProjectListingPage, EnvSetUp.getDataKeyValue(Constant.ProjectName)).click();
 
 

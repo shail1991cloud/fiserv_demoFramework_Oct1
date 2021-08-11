@@ -84,7 +84,7 @@ public class createSourceDestAndTransform extends Baseclass {
     @Then("Transformation with {string} should get created")
     public void transformationWithShouldGetCreated(String TransformationName) throws InterruptedException {
         Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,pipeLIne_builderPage.transformation,TransformationName).isDisplayed());
-
+        CommonFunction.getCustomisedWebElement(driver,pipeLIne_builderPage.transformation,TransformationName).click();
 
     }
 

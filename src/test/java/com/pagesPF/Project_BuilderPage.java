@@ -11,8 +11,17 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Project_BuilderPage {
 
-    WebDriver driver;
     public ProjectsPage projectspage;
+    WebDriver driver;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//scale-icon-action-edit")
+    WebElement editProjectToolTipOnProjectBuilder;
+    @FindBy(how = How.XPATH, using = "//*[@aria-keyshortcuts='Delete']")
+    WebElement deleteTagToolTipOnProjectBuilderPage;
+    @FindBy(how = How.XPATH, using = "//*[@placeholder='Create new tag']")
+    WebElement textFieldTagName;
+    @FindBy(how = How.XPATH, using = "//*[text()='Save']")
+    WebElement buttonSaveOnProjectBuilderPage;
+    String projectNameOnProjectBuilderPage = "//*[contains(text(),' %s ')]";
 
     public Project_BuilderPage(WebDriver driver) {
 
@@ -21,26 +30,11 @@ public class Project_BuilderPage {
 
     }
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//scale-icon-action-edit")
-    WebElement editProjectToolTipOnProjectBuilder;
-
-    @FindBy(how = How.XPATH, using = "//*[@aria-keyshortcuts='Delete']")
-    WebElement deleteTagToolTipOnProjectBuilderPage;
-
-    @FindBy(how = How.XPATH, using = "//*[@placeholder='Create new tag']")
-    WebElement textFieldTagName;
-
-    @FindBy(how = How.XPATH, using = "//*[text()='Save']")
-    WebElement buttonSaveOnProjectBuilderPage;
-
-    String projectNameOnProjectBuilderPage = "//*[contains(text(),' %s ')]";
-
-
     public void editProjectDetailsOnProjectBuilder(String tagName, String Description) throws InterruptedException {
         CommonFunction.waitForElementToAppear(driver, projectspage.existingProjectOnProjectListingPage);
         projectspage.existingProjectOnProjectListingPage.click();
         CommonFunction.clickByHoveringMouse(driver, editProjectToolTipOnProjectBuilder);
-       CommonFunction.clickByHoveringMouse(driver, deleteTagToolTipOnProjectBuilderPage);
+        CommonFunction.clickByHoveringMouse(driver, deleteTagToolTipOnProjectBuilderPage);
         textFieldTagName.sendKeys(Keys.ENTER);
         textFieldTagName.sendKeys(tagName);
         textFieldTagName.sendKeys(Keys.ENTER);

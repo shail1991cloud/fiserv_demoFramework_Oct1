@@ -2869,3 +2869,48 @@
 2021-08-11 13:08:216 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
 2021-08-11 13:08:299 INFO  createProjectSteps:79 - PipeLines is created with-->PipeLIne--ProjectForAutomation--Test_Pipeline--STREAMING--k1v1--s1v2
 2021-08-11 13:08:504 INFO  createProjectSteps:86 - PipeLines Properties is validated with details-->ProjectForAutomation--Test_Pipeline--STREAMING--k1v1--s1v2
+2021-08-11 13:08:590 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-11 13:08:966 INFO  DIL_loginpage:42 - User is logged into DIL UI with userId-->parihars
+2021-08-11 13:08:966 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-11 13:08:19 INFO  createProjectSteps:176 - Varification of-->Create Project--is done
+2021-08-11 14:08:287 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-11 14:08:716 INFO  DIL_loginpage:42 - User is logged into DIL UI with userId-->parihars
+2021-08-11 14:08:716 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-11 14:08:855 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-11 14:08:469 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-11 14:08:201 INFO  createProjectSteps:79 - PipeLines is created with-->PipeLIne--ProjectForAutomation--Test_Pipeline--STREAMING--k1v1--s1v2
+2021-08-11 14:08:28 INFO  createSourceDestAndTransform:46 - Icon is clicked-->Add a Source
+2021-08-11 14:08:341 INFO  createSourceDestAndTransform:61 - Details entered-->.csv--AUTOMATION_DONOTDELETE
+2021-08-11 14:08:18 INFO  createSourceDestAndTransform:54 - DRecord validated-->DemoSource
+2021-08-11 14:08:539 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-11 14:08:314 INFO  DIL_loginpage:42 - User is logged into DIL UI with userId-->parihars
+2021-08-11 14:08:315 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-11 14:08:770 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-11 14:08:120 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-11 14:08:653 INFO  createProjectSteps:79 - PipeLines is created with-->PipeLIne--ProjectForAutomation--Test_Pipeline--STREAMING--k1v1--s1v2
+2021-08-11 14:08:514 INFO  createSourceDestAndTransform:46 - Icon is clicked-->Add a Source
+2021-08-11 14:08:916 INFO  createSourceDestAndTransform:61 - Details entered-->.csv--AUTOMATION_DONOTDELETE
+2021-08-11 14:08:515 INFO  createSourceDestAndTransform:54 - DRecord validated-->DemoSource
+2021-08-11 14:08:879 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-11 14:08:303 INFO  DIL_loginpage:42 - User is logged into DIL UI with userId-->parihars
+2021-08-11 14:08:303 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-11 14:08:13 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-11 14:08:746 INFO  DIL_loginpage:42 - User is logged into DIL UI with userId-->parihars
+2021-08-11 14:08:747 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-11 14:08:268 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-11 14:08:454 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-11 14:08:171 INFO  createProjectSteps:79 - PipeLines is created with-->PipeLIne--ProjectForAutomation--Test_Pipeline--STREAMING--k1v1--s1v2
+2021-08-11 14:08:957 INFO  createSourceDestAndTransform:46 - Icon is clicked-->Add a Source
+2021-08-11 14:08:301 INFO  createSourceDestAndTransform:61 - Details entered-->.csv--AUTOMATION_DONOTDELETE
+2021-08-11 14:08:954 INFO  createSourceDestAndTransform:54 - DRecord validated-->DemoSource
+2021-08-11 14:08:313 INFO  createProjectSteps:95 - Pipeline listing page is validated for  created Pipeline
+2021-08-11 15:08:60 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-11 15:08:90 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-08-11 15:08:90 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-11 15:08:809 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-11 15:08:468 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-11 15:08:613 INFO  createProjectSteps:79 - PipeLines is created with-->PipeLIne--ProjectForAutomation--Test_Pipeline--STREAMING--k1v1--s1v2
+2021-08-11 15:08:403 INFO  createSourceDestAndTransform:46 - Icon is clicked-->Add a Source
+2021-08-11 15:08:82 INFO  createSourceDestAndTransform:61 - Details entered-->.csv--AUTOMATION_DONOTDELETE
+2021-08-11 15:08:746 INFO  createSourceDestAndTransform:54 - DRecord validated-->DemoSource
+2021-08-11 15:08:942 INFO  createProjectSteps:95 - Pipeline listing page is validated for  created Pipeline with Status-->READY

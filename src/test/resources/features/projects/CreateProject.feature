@@ -3,8 +3,6 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
   As a user I want to Create a Project,Validate the Project Setting Pop Up
   and validate the Project Listing Page with different fields
 
-  #------Positive Scenarios------#
-
   @Smoke @Reg @Positive @CRP-Test1 @TC5
   Scenario Outline: user is able to get Create Project Tab on Project Listing page
     Given user is on DIL login page
@@ -13,6 +11,7 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
     Examples:
       | Create Project Tab |
       | Create Project     |
+
   @Reg @Positive @CRP-Test2  @TC6
   Scenario: user is able to get Project Setting pop up while selects Create Project Tab
     Given user is on DIL login page
@@ -49,7 +48,6 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
       | Auto-Test   | CreatingPipeLine | Test |
 
 
-
   @Smoke @Reg @Positive @CRP-Test6 @TC10
   Scenario Outline: user is able to Search Project on Project Listing by the use of Search Functionality
     Given user is on DIL login page
@@ -70,9 +68,6 @@ Feature:Creation of Projects and validation of Project Setting Pop Up
     Examples:
       | ProjectName   | Description      | Tag  | NewTag  | Description     |
       | Auto-Pro_Test | CreatingPipeLine | Test | TestTag | Updated Project |
-
-
-    #-------Negative Scenarios-------#
 
   @Smoke @Reg @Negative @CRP-Test8 @TC12
   Scenario Outline: user is not able to create Project when left mandatory field blank

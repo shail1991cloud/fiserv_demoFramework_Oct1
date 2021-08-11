@@ -1,4 +1,5 @@
 Feature: To validate created Project with backend API
+
   @Smoke @Reg @Positive @PBE-API-Test1 @TC22
   Scenario Outline: user is able to create a Project and is able to validate it in backend Api
     Given user is on DIL login page
@@ -9,6 +10,6 @@ Feature: To validate created Project with backend API
     And   fetches the response with "<jsonPath>" to get "<bearerToken>"
     Then  user should be able to use "<QueryParam>" to validate project on "<BackendApiPath>"
     Examples:
-      | ProjectName | Description      | Tag  | QueryParam  | BackendApiPath |clientId|clientSecret|passWord|userName|pathParam|jsonPath|bearerToken|
-      | Auto_Pro    | CreatingPipeLine | Test | projectName | /projects      |dil-ui| ovrzCm54Zu+q2SuJIhaOnA==|Lp4,mLd:|parihars|/authservice/login|tokenDetails|access_token|
+      | ProjectName | Description      | Tag  | QueryParam  | BackendApiPath | clientId | clientSecret             | passWord | userName | pathParam          | jsonPath     | bearerToken  |
+      | Auto_Pro    | CreatingPipeLine | Test | projectName | /projects      | dil-ui   | ovrzCm54Zu+q2SuJIhaOnA== | Lp4,mLd: | parihars | /authservice/login | tokenDetails | access_token |
 
