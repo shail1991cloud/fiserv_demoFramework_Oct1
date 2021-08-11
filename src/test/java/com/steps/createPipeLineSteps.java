@@ -13,6 +13,8 @@ import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
+
 public class createPipeLineSteps extends Baseclass {
     ProjectsPage projectspage;
     Project_BuilderPage projectBuilderpage;
@@ -68,6 +70,20 @@ public class createPipeLineSteps extends Baseclass {
 
     @Then("{string} should get disappeared")
     public void shouldGetDisappeared(String pipeLine) {
+
+    }
+
+    @And("creates a {string} with {string},{string},{string},{string},{string},{string} and {string}")
+    public void createsAWithAnd(String Pipeline, String Description, String Tag,String ExecutionType,String PKey, String PValue, String SKey, String SValue) throws IOException, InterruptedException {
+        pipeLIne_listingPage.createPipeLineWithKeyAndValues(Pipeline,Description,Tag,ExecutionType,PKey,PValue,SKey,SValue);
+        log.info("PipeLines is created with-->"+Pipeline +"--"+Description+"--"+Tag+"--"+ExecutionType+"--"+PKey+PValue+"--"+SKey+SValue);
+    }
+
+
+    @Then("PipeLine properties is validated for {string},{string},{string},{string},{string},{string} and {string}")
+    public void pipelinePropertiesIsValidatedForAnd(String Description, String Tag,String ExecutionType, String PKey, String PValue, String SKey, String SValue) throws InterruptedException {
+        pipeLIne_listingPage.validatePipeLineProperties(Description,Tag,ExecutionType,PKey,PValue,SKey,SValue);
+        log.info("PipeLines Properties is validated with details-->"+Description+"--"+Tag+"--"+ExecutionType+"--"+PKey+PValue+"--"+SKey+SValue);
 
     }
 }

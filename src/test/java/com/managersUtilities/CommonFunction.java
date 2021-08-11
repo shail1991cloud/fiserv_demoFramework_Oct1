@@ -137,6 +137,14 @@ public class CommonFunction {
     }
 
     /**
+     * @method waitForElementToAppear to wait for element for a certain condition
+     */
+    public static void waitForElementToBeClickable(WebDriver driver, WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, 500);
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    /**
      * @method waitForElementToDisAppear to wait for element for a certain condition
      */
     public static void waitForElementToDisAppear(WebDriver driver, WebElement element) {
