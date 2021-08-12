@@ -66,7 +66,8 @@ public class createSourceDestAndTransform extends Baseclass {
         functions_leanPageObject.deleteRecord(pipeLIne_builderPage.deleteRecord,deleteSource);
         CommonFunction.waitForElementToAppear(driver,pipeLIne_builderPage.deleteButtonOnDeleteSourcePopUp);
         pipeLIne_builderPage.deleteButtonOnDeleteSourcePopUp.click();
-        CommonFunction.waitForSomeTime();
+        log.info("Button Clicked-->" + deleteSource);
+
     }
 
 
@@ -74,29 +75,40 @@ public class createSourceDestAndTransform extends Baseclass {
     @Then("source {string} should get deleted")
     public void sourceShouldGetDeleted(String name) {
         functions_leanPageObject.validatePresenceOfRecord(pipeLIne_builderPage.sourceName,name);
+        log.info("Source Is not Present with Name-->" + name);
+
     }
 
     @When("enters {string},{string},{string},{string} and click add")
     public void entersAndClick(String TransformationName, String Category, String TransformationType, String columnValue) throws IOException, InterruptedException {
      pipeLIne_builderPage.createTransformation(TransformationName,Category,TransformationType,columnValue);
+        log.info("Transformation is Created with Name-->" + TransformationName);
+
     }
 
     @Then("Transformation with {string} should get created")
     public void transformationWithShouldGetCreated(String TransformationName) throws InterruptedException {
         Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,pipeLIne_builderPage.transformation,TransformationName).isDisplayed());
         CommonFunction.getCustomisedWebElement(driver,pipeLIne_builderPage.transformation,TransformationName).click();
-
+        log.info("Transformation is validated with Name-->" + TransformationName);
     }
 
     @When("enters {string},{string},{string},{string} ,{string},{string} and click add")
     public void entersAndClickAdd(String DestinationName, String DestinationType, String DestConnection, String fileType,String filePath, String TopicName) throws IOException, InterruptedException {
         pipeLIne_builderPage.createDestination(DestinationName,DestinationType,DestConnection,fileType,filePath,TopicName);
+        log.info("Destination is Created with Name-->" + DestinationName);
     }
 
     @Then("Destination with {string} should get created")
     public void destinationWithShouldGetCreated(String DestinationName) {
-
+        log.info("Transformation is validated with Name-->" + DestinationName);
     }
 
 
+    @When("Enters {string},{string},{string},{string},{string},{string},{string},{string},{string} and clicks on add")
+    public void entersAndClicksOnAdd(String SourceName, String SourceType, String SourceConnection, String TopicName, String SourceSchema, String RegistryName, String Offset, String Key,String Value) throws IOException, InterruptedException {
+        pipeLIne_builderPage.createSourceWithKafka(SourceName,SourceType,SourceConnection,TopicName,SourceSchema,RegistryName,Offset,Key,Value);
+        log.info("Kafka Source  is created with Name-->" + SourceName);
+
+    }
 }

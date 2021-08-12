@@ -30,7 +30,9 @@ public class PipeLIne_BuilderPage {
     @FindBy(how = How.XPATH, using = "//*[text()=\"Status\"]")
     public WebElement status;
     @FindBy(how = How.XPATH, using = "//*[@id=\"base-layout-sidebar\"]//div[2]//div//scale-dropdown[3]/div")
-    public WebElement manualSchema;
+    public WebElement manualSchemaConnectionDropDown;
+    @FindBy(how = How.XPATH, using = "//scale-dropdown[@label=\"Registry Name*\"]//div//select")
+    public WebElement RegistryNameDropDown;
     @FindBy(how = How.XPATH, using = "//*[text()=' + ']")
     public WebElement addButtonOnSourceOrTrans;
     @FindBy(how = How.XPATH, using = "//*[text()=' Destination ']")
@@ -43,6 +45,12 @@ public class PipeLIne_BuilderPage {
     public WebElement selectAddButton;
     @FindBy(how = How.XPATH, using = "//*[text()=' Delete ']")
     public WebElement deleteButtonOnDeleteSourcePopUp;
+    @FindBy(how = How.XPATH, using = "//input[1][@name='keyAdd']")
+    public WebElement keyForSource;
+    @FindBy(how = How.XPATH, using = "//input[1][@name='valueAdd']")
+    public WebElement valueForSource;
+    @FindBy(how = How.XPATH, using = "//button[1]")
+    public WebElement buttonAddForKeyValue;
     public String categoryToSelect = "//*[text()='%s ']";
     public String transformationTypeToSelect = "//*[text()='%s ']";
     public String columnOptionToSelect = "//scale-accordion[@expanded=\"true\"]//option[normalize-space()=\"%s\"]";
@@ -56,6 +64,8 @@ public class PipeLIne_BuilderPage {
     public String transformation = "//*[@title='%s']";
     public String iconOnPipeLineBuilderPage = "//*[text()='%s']";
     public String topicName = "//*[text()='%s ']";
+    public String offSet = "//*[text()='%s ']";
+    public String registryName = "//*[text()=' %s '] ";
     WebDriver driver;
 
 
@@ -84,16 +94,16 @@ public class PipeLIne_BuilderPage {
         CommonFunction.waitForElementToAppear(driver, columnSeparatorOnSource);
         columnSeparatorOnSource.sendKeys(colSeparator);
         CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, schemaSource, schemaSourceToAdd));
-        selectManualSchema(manualSchema);
+        selectManualSchemaConnectionForFile(manualSchema);
         CommonFunction.waitForElementToAppear(driver, buttonAdd);
         buttonAdd.click();
         CommonFunction.waitForSomeTime();
         CommonFunction.scrollToElement(driver, status);
     }
 
-    public void selectManualSchema(String schemaName) throws InterruptedException, IOException {
+    public void selectManualSchemaConnectionForFile(String schemaName) throws InterruptedException, IOException {
         try {
-            if (manualSchema.isDisplayed()) {
+            if (manualSchemaConnectionDropDown.isDisplayed()) {
                 CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, manualSchemaConnection, schemaName));
             }
         } catch (Exception e) {
@@ -149,6 +159,39 @@ public class PipeLIne_BuilderPage {
             columnSeparatorOnDest.sendKeys(",");
         } else {
             CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, topicName, topicToAdd));
+        }
+    }
+
+
+    public void createSourceWithKafka(String sourceName, String typeToAdd, String connectionToAdd, String topicToAdd, String schemaToAdd,String registryNameToAdd, String offsetToAdd, String key, String value) throws InterruptedException, IOException {
+        CommonFunction.waitForElementToAppear(driver, FieldEnterName);
+        FieldEnterName.sendKeys(sourceName);
+        CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, type, typeToAdd));
+        CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, connection, connectionToAdd));
+        CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, topicName, topicToAdd));
+        CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, schemaSource, schemaToAdd));
+        selectRegistryForManualSchemaKafka(registryNameToAdd);
+        CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, offSet, offsetToAdd));
+        CommonFunction.scrollToElement(driver,keyForSource);
+        CommonFunction.waitForElementToAppear(driver,keyForSource);
+        keyForSource.sendKeys(key);
+        valueForSource.sendKeys(value);
+        CommonFunction.waitForElementToBeClickable(driver,buttonAddForKeyValue);
+        CommonFunction.waitForElementToAppear(driver, buttonAdd);
+        CommonFunction.waitForElementToBeClickable(driver,buttonAdd);
+        buttonAdd.click();
+        CommonFunction.waitForSomeTime();
+        CommonFunction.scrollToElement(driver, status);
+    }
+
+    public void selectRegistryForManualSchemaKafka(String registryNameToAdd)
+    {
+        try {
+            if (RegistryNameDropDown.isDisplayed()) {
+                CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, registryName, registryNameToAdd));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

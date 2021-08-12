@@ -91,6 +91,32 @@ Feature:Creation of Sources and Destination
     When enters "<DestinationName>","<DestinationType>","<DestConnection>","<fileType>" ,"<FilePath>","<TopicName>" and click add
     Then Destination with "<DestinationName>" should get created
     Examples:
-      | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName | SourceType  | SourceConnection       | fileType | FilePath | Separator | sourceSchema  | SchemaValue | DestinationName | DestinationType | DestConnection   | TopicName |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | Manual Schema | H_JSON      | DemoDestination | KAFKA           | Kafka_plain  | testkafkacmp|
+      | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName | SourceType  | SourceConnection       | fileType | FilePath | Separator | sourceSchema  | SchemaValue | DestinationName | DestinationType | DestConnection | TopicName    |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | Manual Schema | H_JSON      | DemoDestination | KAFKA           | Kafka_plain    | testkafkacmp |
 
+  @Smoke @Reg @Positive @CSource-Test1 @TC24
+  Scenario Outline: user is able to create Kafka source for Manual Schema
+    Given user is on DIL login page
+    When enter username and password
+    And  clicks on createProject tab
+    When creates project with "<ProjectName>","<Description>","<Tag>" and engine
+    And  creates a "<Pipeline>" having "<Description>" and "<Tag>"
+    And  clicks on "<Icon>"
+    When Enters "<SourceName>","<SourceType>","<SourceConnection>","<TopicName>","<SourceSchema>","<RegistryName>","<Offset>","<Key>","<Value>" and clicks on add
+    Then Source should get created with "<SourceName>"
+    Examples:
+      | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName      | SourceType | SourceConnection | TopicName | SourceSchema | RegistryName            | Offset|Key | Value |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSourceKafka | KAFKA      | Kafka_plain      | CDR       | Manual    | AAA_Automation_DoNotDEl | Earlier |K   | v     |
+  @Smoke @Reg @Positive @CSource-Test1 @TC25
+  Scenario Outline: user is able to create Kafka source for NoSchema
+    Given user is on DIL login page
+    When enter username and password
+    And  clicks on createProject tab
+    When creates project with "<ProjectName>","<Description>","<Tag>" and engine
+    And  creates a "<Pipeline>" having "<Description>" and "<Tag>"
+    And  clicks on "<Icon>"
+    When Enters "<SourceName>","<SourceType>","<SourceConnection>","<TopicName>","<SourceSchema>","<RegistryName>","<Offset>","<Key>","<Value>" and clicks on add
+    Then Source should get created with "<SourceName>"
+    Examples:
+      | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName      | SourceType | SourceConnection | TopicName | SourceSchema | RegistryName            | Offset|Key | Value |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSourceKafka | KAFKA      | Kafka_plain      | CDR       | No_Schema    | AAA_Automation_DoNotDEl | Earlier |K   | v     |

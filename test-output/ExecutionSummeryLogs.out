@@ -2914,3 +2914,44 @@
 2021-08-11 15:08:82 INFO  createSourceDestAndTransform:61 - Details entered-->.csv--AUTOMATION_DONOTDELETE
 2021-08-11 15:08:746 INFO  createSourceDestAndTransform:54 - DRecord validated-->DemoSource
 2021-08-11 15:08:942 INFO  createProjectSteps:95 - Pipeline listing page is validated for  created Pipeline with Status-->READY
+2021-08-11 15:08:332 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-11 15:08:323 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-08-11 15:08:324 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-11 15:08:822 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-11 15:08:01 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-11 15:08:679 INFO  createProjectSteps:61 - Pipe line is created with name-->PipeLIne
+2021-08-11 15:08:122 INFO  createProjectSteps:52 - Pipeline listing page is validated for  created Pipeline
+2021-08-12 12:08:518 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-12 12:08:824 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-08-12 12:08:825 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-12 12:08:353 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-12 12:08:902 INFO  createProjectSteps:51 - --Details entered for Project With--->Auto_Pro,CreatingPipeLine and Test
+2021-08-12 12:08:872 INFO  apiSteps:80 - Details entered for OathAuthentication
+2021-08-12 12:08:123 INFO  apiSteps:86 - BearerTokenObtained
+2021-08-12 12:08:130 INFO  apiSteps:73 - Project is validated with Backend Api
+2021-08-12 12:08:309 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-12 12:08:682 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-08-12 12:08:683 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-12 12:08:196 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-12 12:08:678 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-12 12:08:498 INFO  createSourceDestAndTransform:38 - Pipe line is created with name-->PipeLIne
+2021-08-12 12:08:566 INFO  createSourceDestAndTransform:46 - Icon is clicked-->Add a Source
+2021-08-12 13:08:153 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-12 13:08:502 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-08-12 13:08:502 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-12 13:08:51 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-12 13:08:559 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-12 13:08:788 INFO  createSourceDestAndTransform:38 - Pipe line is created with name-->PipeLIne
+2021-08-12 13:08:848 INFO  createSourceDestAndTransform:46 - Icon is clicked-->Add a Source
+2021-08-12 13:08:235 INFO  createSourceDestAndTransform:54 - DRecord validated-->DemoSourceKafka
+2021-08-12 13:08:918 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-12 13:08:295 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-08-12 13:08:295 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-12 13:08:988 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-12 13:08:932 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-08-12 13:08:933 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-12 13:08:400 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-12 13:08:741 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-12 13:08:568 INFO  createSourceDestAndTransform:38 - Pipe line is created with name-->PipeLIne
+2021-08-12 13:08:609 INFO  createSourceDestAndTransform:46 - Icon is clicked-->Add a Source
+2021-08-12 13:08:357 INFO  createSourceDestAndTransform:54 - DRecord validated-->DemoSourceKafka
