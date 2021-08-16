@@ -94,7 +94,7 @@ Feature:Creation of Sources and Destination
       | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName | SourceType  | SourceConnection       | fileType | FilePath | Separator | sourceSchema  | SchemaValue | DestinationName | DestinationType | DestConnection | TopicName    |
       | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | Manual Schema | H_JSON      | DemoDestination | KAFKA           | Kafka_plain    | testkafkacmp |
 
-  @Smoke @Reg @Positive @CSource-Test1 @TC24
+  @Smoke @Reg @Positive @CSource-Test1 @TC22
   Scenario Outline: user is able to create Kafka source for Manual Schema
     Given user is on DIL login page
     When enter username and password
@@ -107,7 +107,7 @@ Feature:Creation of Sources and Destination
     Examples:
       | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName      | SourceType | SourceConnection | TopicName | SourceSchema | RegistryName            | Offset|Key | Value |
       | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSourceKafka | KAFKA      | Kafka_plain      | CDR       | Manual    | AAA_Automation_DoNotDEl | Earlier |K   | v     |
-  @Smoke @Reg @Positive @CSource-Test1 @TC25
+  @Smoke @Reg @Positive @CSource-Test1 @TC23
   Scenario Outline: user is able to create Kafka source for NoSchema
     Given user is on DIL login page
     When enter username and password

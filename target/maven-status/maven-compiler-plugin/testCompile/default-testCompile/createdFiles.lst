@@ -1,6 +1,5 @@
 com/helperUtilities/ExcelUtility.class
 com/dataproviderUtilities/ConfigFileReader.class
-com/steps/createSourceAndDestination.class
 com/steps/Hooks.class
 com/managersUtilities/FileReaderManager.class
 com/helperUtilities/Database_Connections.class
@@ -13,6 +12,7 @@ com/pagesPF/PipeLIne_BuilderPage.class
 com/enginesApi/AuthorizationPojo.class
 com/helperUtilities/EnvSetUp.class
 com/steps/apiSteps.class
+com/steps/createSourceDestAndTransform.class
 com/helperUtilities/ExcelUtility$1.class
 com/steps/createPipeLineSteps.class
 com/pagesPF/Project_BuilderPage.class

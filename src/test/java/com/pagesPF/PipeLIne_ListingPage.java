@@ -95,6 +95,7 @@ public class PipeLIne_ListingPage {
         CommonFunction.scrollOnElement(driver, executionType);
         CommonFunction.scrollToElement(driver, buttonCreatePipeline);
         buttonCreatePipeline.click();
+        CommonFunction.waitForSomeTime();
 
     }
 
