@@ -3094,3 +3094,38 @@
 2021-08-16 11:08:831 INFO  createSourceDestAndTransform:93 - Transformation is validated with Name-->TestTrans
 2021-08-16 11:08:668 INFO  createSourceDestAndTransform:99 - Destination is Created with Name-->DemoDestination
 2021-08-16 11:08:483 INFO  createProjectSteps:95 - Pipeline listing page is validated for  created Pipeline with Status-->READY
+2021-08-16 12:08:671 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-16 12:08:124 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-08-16 12:08:124 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-16 12:08:578 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-16 12:08:61 INFO  createProjectSteps:51 - --Details entered for Project With--->Auto_Pro,CreatingPipeLine and Test
+2021-08-16 12:08:63 INFO  apiSteps:80 - Details entered for OathAuthentication
+2021-08-16 12:08:270 INFO  apiSteps:86 - BearerTokenObtained
+2021-08-16 12:08:203 INFO  apiSteps:73 - Project is validated with Backend Api
+2021-08-16 13:08:660 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-16 13:08:169 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-08-16 13:08:169 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-16 13:08:806 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-16 13:08:375 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-16 13:08:950 INFO  createProjectSteps:79 - PipeLines is created with-->PipeLIne--ProjectForAutomation--Test_Pipeline--STREAMING--k1v1--s1v2
+2021-08-16 13:08:78 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-16 13:08:490 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-08-16 13:08:491 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-16 13:08:987 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-16 13:08:532 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-16 13:08:280 INFO  createProjectSteps:79 - PipeLines is created with-->PipeLIne--ProjectForAutomation--Test_Pipeline--STREAMING--k1v1--s1v2
+2021-08-16 13:08:520 INFO  createProjectSteps:86 - PipeLines Properties is validated with details-->ProjectForAutomation--Edit Pipeline--BATCH--k1v1--s1v2
+2021-08-16 13:08:111 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-16 13:08:463 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-08-16 13:08:464 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-16 13:08:830 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-16 13:08:363 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-16 13:08:971 INFO  createProjectSteps:79 - PipeLines is created with-->PipeLIne--ProjectForAutomation--Test_Pipeline--STREAMING--k1v1--s1v2
+2021-08-16 13:08:919 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-16 13:08:322 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-08-16 13:08:322 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-16 13:08:757 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-16 13:08:305 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-16 13:08:772 INFO  createProjectSteps:79 - PipeLines is created with-->PipeLIne--ProjectForAutomation--Test_Pipeline--STREAMING--k1v1--s1v2
+2021-08-16 13:08:616 INFO  createProjectSteps:101 - Pipeline is edited for-->BATCH ,Tag
+2021-08-16 13:08:21 INFO  createProjectSteps:86 - PipeLines Properties is validated with details-->ProjectForAutomation--Edit Pipeline--BATCH--k1v1--s1v2

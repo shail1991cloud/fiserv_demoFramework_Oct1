@@ -55,3 +55,18 @@ Feature:Creation and Field level validation of pipelines
     Examples:
       | ProjectName | Description          | Tag           | Pipeline |
       | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne |
+
+
+  @Smoke @Reg @Positive @CP-Test1 @TC5
+  Scenario Outline: user is able to edit the pipeline and validate the same
+    Given user is on DIL login page
+    When enter username and password
+    And  clicks on createProject tab
+    When creates project with "<ProjectName>","<Description>","<Tag>" and engine
+    And  creates a "<Pipeline>" with "<Description>","<Tag>","<ExecutionType>","<PKey>","<PValue>","<SKey>" and "<SValue>"
+    When changes the "<NewExecutionType>","<NTag>"
+    Then PipeLine properties is validated for "<Description>","<NTag>","<NewExecutionType>","<PKey>","<PValue>","<SKey>" and "<SValue>"
+    Examples:
+      | ProjectName | Description          | Tag           | Pipeline | ExecutionType | PKey | PValue | SKey | SValue |NewExecutionType|NTag          |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | STREAMING     | k1   | v1     | s1   | v2     |BATCH           |Edit Pipeline|
+

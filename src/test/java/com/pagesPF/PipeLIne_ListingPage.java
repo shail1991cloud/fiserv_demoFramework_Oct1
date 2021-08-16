@@ -69,6 +69,13 @@ public class PipeLIne_ListingPage {
     WebElement lastLaunch;
     @FindBy(how = How.XPATH, using = "//*[text()='Builder ']")
     WebElement tabBuilder;
+    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]//scale-icon-action-edit")
+    WebElement editPipelineToolTip;
+    @FindBy(how = How.XPATH, using = "//button[normalize-space()=\"×\"]")
+    WebElement deleteTagIcon;
+    @FindBy(how = How.XPATH, using = "//*[text()=' Save ']")
+    WebElement buttonSave;
+
     public PipeLIne_ListingPage(WebDriver driver) {
 
         this.driver = driver;
@@ -147,6 +154,18 @@ public class PipeLIne_ListingPage {
     public void validatePipeLineStatus(String status) throws InterruptedException {
         CommonFunction.waitForElementToAppear(driver, CommonFunction.getCustomisedWebElement(driver, pipeLineStatus, status));
         Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, pipeLineStatus, status).isDisplayed());
+    }
+
+    public void editPipeline(String executionType,String tag) throws InterruptedException, IOException {
+      CommonFunction.clickByHoveringMouse(driver,editPipelineToolTip);
+      CommonFunction.clickByHoveringMouse(driver,deleteTagIcon);
+        textFieldTag.sendKeys(tag);
+        textFieldTag.sendKeys(Keys.ENTER);
+      CommonFunction.scrollToElement(driver,buttonSave);
+        CommonFunction.scrollOnElement(driver, CommonFunction.getCustomisedWebElement(driver, executionTypeToSelect, executionType));
+        CommonFunction.waitForElementToBeClickable(driver,buttonSave);
+        buttonSave.click();
+
     }
 
 

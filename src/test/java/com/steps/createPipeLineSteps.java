@@ -94,4 +94,11 @@ public class createPipeLineSteps extends Baseclass {
         pipeLIne_listingPage.validatePipeLineStatus(status);
         log.info("Pipeline listing page is validated for  created Pipeline with Status-->"+status);
     }
+
+    @When("changes the {string},{string}")
+    public void changesThe(String NewExecutionType, String Tag) throws IOException, InterruptedException {
+        pipeLIne_listingPage.editPipeline(NewExecutionType,Tag);
+        log.info("Pipeline is edited for-->"+NewExecutionType +" ,"+"Tag");
+
+    }
 }
