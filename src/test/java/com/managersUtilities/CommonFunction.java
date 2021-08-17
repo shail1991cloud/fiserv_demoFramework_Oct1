@@ -203,6 +203,8 @@ public class CommonFunction {
         if (scenario.isFailed()) {
             String screenshotName = scenario.getName().replaceAll(" ", "_");
             try {
+
+
                 //This takes a screenshot from the driver at save it to the specified location
                 TakesScreenshot ts = (TakesScreenshot) driver;
                 File sourcePath = ts.getScreenshotAs(OutputType.FILE);
