@@ -8,12 +8,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 
 public class DIL_loginpage {
 
     public ConfigFileReader configFileReader;
     WebDriver driver;
+    ConnectionsPage connectionsPage;
     Logger log = LoggerHelper.getLogger(DIL_loginpage.class);
     @FindBy(how = How.XPATH, using = "//*[text()='User name']/following-sibling::input")
     WebElement dilUserName;
@@ -26,6 +28,7 @@ public class DIL_loginpage {
     public DIL_loginpage(WebDriver driver) {
         this.driver = driver;
         configFileReader = new ConfigFileReader();
+        connectionsPage = PageFactory.initElements(driver, ConnectionsPage.class);
 
     }
 
@@ -38,7 +41,6 @@ public class DIL_loginpage {
         CommonFunction.waitForElementToAppear(driver, loginBtn);
         CommonFunction.clickForceFully(driver, loginBtn);
         log.info("User is logged into DIL UI with userId-->" + configFileReader.getProperties().getProperty("dilUsrNm"));
-
 
     }
 

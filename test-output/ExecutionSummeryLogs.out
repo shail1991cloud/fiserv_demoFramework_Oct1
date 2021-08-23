@@ -3350,3 +3350,96 @@
 2021-08-16 15:08:94 INFO  apiSteps:80 - Details entered for OathAuthentication
 2021-08-16 15:08:282 INFO  apiSteps:86 - BearerTokenObtained
 2021-08-16 15:08:249 INFO  apiSteps:73 - Project is validated with Backend Api
+2021-08-17 16:08:813 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-17 16:08:226 INFO  DIL_loginpage:40 - User is logged into DIL UI with userId-->parihars
+2021-08-17 16:08:227 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-17 16:08:169 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-17 16:08:629 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-17 16:08:759 INFO  createProjectSteps:61 - Pipe line is created with name-->PipeLIne
+2021-08-18 11:08:402 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 11:08:528 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 11:08:55 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 11:08:449 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 11:08:486 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 13:08:155 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 13:08:530 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 13:08:531 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 13:08:570 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-18 13:08:164 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-18 13:08:905 INFO  DIL_loginpage:31 - User is switched to-->Overview
+2021-08-18 13:08:905 INFO  createProjectSteps:39 - User navigated to tab-->Overview
+2021-08-18 13:08:247 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 13:08:969 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 13:08:969 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 13:08:443 INFO  createProjectSteps:44 - User has clicked on ProjectSetUp Popup
+2021-08-18 13:08:964 INFO  createProjectSteps:51 - --Details entered for Project With--->AutoDIL,ProjectForAutomation and Test_Pipeline
+2021-08-18 13:08:458 INFO  createProjectSteps:61 - Pipe line is created with name-->PipeLIne
+2021-08-18 15:08:653 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 15:08:967 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 15:08:967 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 15:08:26 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 15:08:374 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 15:08:374 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 16:08:571 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 16:08:969 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 16:08:969 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 16:08:678 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 16:08:742 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 16:08:742 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 16:08:972 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 16:08:752 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 16:08:752 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 16:08:403 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 16:08:759 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 16:08:760 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 16:08:494 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 16:08:948 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 16:08:948 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 16:08:266 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 16:08:666 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 16:08:666 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 16:08:801 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 16:08:166 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 16:08:166 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 16:08:289 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 16:08:652 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 16:08:653 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 16:08:828 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 16:08:212 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 16:08:213 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 16:08:849 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 16:08:220 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 16:08:220 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 17:08:423 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 17:08:817 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 17:08:818 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 17:08:599 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 17:08:67 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 17:08:68 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 17:08:889 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 17:08:324 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 17:08:324 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 17:08:462 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 17:08:838 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 17:08:839 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 17:08:585 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 17:08:919 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 17:08:920 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 17:08:361 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 17:08:743 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 17:08:743 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 17:08:390 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 17:08:737 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 17:08:737 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 17:08:573 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 17:08:937 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 17:08:937 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 17:08:443 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 17:08:828 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 17:08:828 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 17:08:203 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 17:08:535 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 17:08:536 INFO  commonSteps:40 - --user name and Password are entered--
+2021-08-18 17:08:915 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-08-18 17:08:325 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-08-18 17:08:325 INFO  commonSteps:40 - --user name and Password are entered--
