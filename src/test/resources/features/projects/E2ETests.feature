@@ -16,8 +16,8 @@ Feature:Creation of a End to End scenarios
     When enters "<DestinationName>","<DestinationType>","<DestConnection>","<fileType>" ,"<FilePath>","<TopicName>" and click add
     Then PipeLine with status "<Status>" is validated
     Examples:
-      | ProjectName | Description          | Tag           | ExecutionType | Key | Value | SKey | SValue | Pipeline | Icon         | SourceName | SourceType  | SourceConnection       | fileType | FilePath | Separator | sourceSchema  | SchemaValue | TransformationName | Category | TransformationType | columnValue | DestinationName | DestinationType | DestConnection         | TopicName | Status |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | STREAMING     | k1  | v1    | s1   | v2     | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | Manual Schema | H_JSON      | TestTrans          | Column   | GroupBy            | age         | DemoDestination | File System     | AUTOMATION_DONOTDELETE | CDR       | READY  |
+      | ProjectName | Description          | Tag           | ExecutionType | Key | Value | SKey | SValue | Pipeline | Icon         | SourceName | SourceType  | SourceConnection | fileType | FilePath | Separator | sourceSchema  | SchemaValue       | TransformationName | Category | TransformationType | columnValue | DestinationName | DestinationType | DestConnection | TopicName | Status |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | STREAMING     | k1  | v1    | s1   | v2     | PipeLIne | Add a Source | DemoSource | File System | Auto_Kerb_DND    | CSV      | .csv     | ,         | Manual Schema | Auto_ManualSchema | TestTrans          | Column   | GroupBy            | m_boolean   | DemoDestination | File System     | Auto_Kerb_DND  | CDR       | READY  |
 
   @Smoke @Reg @Positive @E2ETest1 @TC26
   Scenario Outline: user is able to create a project with a pipeline in ready status with Kafka as source and Destination as FileSystem
@@ -34,8 +34,8 @@ Feature:Creation of a End to End scenarios
     When enters "<DestinationName>","<DestinationType>","<DestConnection>","<fileType>" ,"<FilePath>","<TopicName>" and click add
     Then PipeLine with status "<Status>" is validated
     Examples:
-      | ProjectName | Description          | Tag           | ExecutionType | Key | Value | SKey | SValue | Pipeline | Icon         | SourceName | SourceType | SourceConnection | fileType | FilePath | SourceSchema | RegistryName            | Offset  | TransformationName | Category | TransformationType | columnValue | DestinationName | DestinationType | DestConnection         | TopicName | Status |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | STREAMING     | k1  | v1    | s1   | v2     | PipeLIne | Add a Source | DemoSource | KAFKA      | Kafka_plain      | CSV      | .csv     | Manual       | AAA_Automation_DoNotDEl | Earlier | TestTrans          | Column   | GroupBy            | m_id        | DemoDestination | File System     | AUTOMATION_DONOTDELETE | CDR       | READY  |
+      | ProjectName | Description          | Tag           | ExecutionType | Key | Value | SKey | SValue | Pipeline | Icon         | SourceName | SourceType | SourceConnection | fileType | FilePath | SourceSchema | RegistryName      | Offset  | TransformationName | Category | TransformationType | columnValue | DestinationName | DestinationType | DestConnection | TopicName | Status |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | STREAMING     | k1  | v1    | s1   | v2     | PipeLIne | Add a Source | DemoSource | KAFKA      | Auto_KAFKA_DND   | CSV      | .csv     | Manual       | Auto_ManualSchema | Earlier | TestTrans          | Column   | GroupBy            | m_boolean   | DemoDestination | File System     | Auto_Kerb_DND  | CDR       | READY  |
 
   @Smoke @Reg @Positive @E2ETest1 @TC27
   Scenario Outline: user is able to create a project with a pipeline in ready status with FileSystem as source and Destination as Kafka
@@ -52,8 +52,8 @@ Feature:Creation of a End to End scenarios
     When enters "<DestinationName>","<DestinationType>","<DestConnection>","<fileType>" ,"<FilePath>","<TopicName>" and click add
     Then PipeLine with status "<Status>" is validated
     Examples:
-      | ProjectName | Description          | Tag           | ExecutionType | Key | Value | SKey | SValue | Pipeline | Icon         | SourceName | SourceType  | SourceConnection       | fileType | FilePath | Separator | sourceSchema  | SchemaValue | TransformationName   | Category | TransformationType | columnValue | DestinationName | DestinationType | DestConnection | TopicName    | Status |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | STREAMING     | k1  | v1    | s1   | v2     | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | Manual Schema | H_JSON      | TestTransFileToKafka | Column   | GroupBy            | age         | DemoDestination | KAFKA           | Kafka_plain    | testkafkacmp | READY  |
+      | ProjectName | Description          | Tag           | ExecutionType | Key | Value | SKey | SValue | Pipeline | Icon         | SourceName | SourceType  | SourceConnection | fileType | FilePath | Separator | sourceSchema  | SchemaValue       | TransformationName   | Category | TransformationType | columnValue | DestinationName | DestinationType | DestConnection | TopicName | Status |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | STREAMING     | k1  | v1    | s1   | v2     | PipeLIne | Add a Source | DemoSource | File System | Auto_Kerb_DND    | CSV      | .csv     | ,         | Manual Schema | Auto_ManualSchema | TestTransFileToKafka | Column   | GroupBy            | m_boolean   | DemoDestination | KAFKA           | Auto_KAFKA_DND | CDR       | READY  |
 
   @Smoke @Reg @Positive @E2ETest1 @TC28
   Scenario Outline: user is able to create a project with a pipeline in ready status with Kafka as source and Destination as kafka
@@ -70,5 +70,5 @@ Feature:Creation of a End to End scenarios
     When enters "<DestinationName>","<DestinationType>","<DestConnection>","<fileType>" ,"<FilePath>","<TopicName>" and click add
     Then PipeLine with status "<Status>" is validated
     Examples:
-      | ProjectName | Description          | Tag           | ExecutionType | Key | Value | SKey | SValue | Pipeline | Icon         | SourceName | SourceType | SourceConnection | fileType | FilePath | SourceSchema | RegistryName            | Offset  | TransformationName | Category | TransformationType | columnValue | DestinationName | DestinationType | DestConnection | TopicName    | Status |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | STREAMING     | k1  | v1    | s1   | v2     | PipeLIne | Add a Source | DemoSource | KAFKA      | Kafka_plain      | CSV      | .csv     | Manual       | AAA_Automation_DoNotDEl | Earlier | TestTrans          | Column   | GroupBy            | m_id        | DemoDestination | KAFKA           | Kafka_plain    | testkafkacmp | READY  |
+      | ProjectName | Description          | Tag           | ExecutionType | Key | Value | SKey | SValue | Pipeline | Icon         | SourceName | SourceType | SourceConnection | fileType | FilePath | SourceSchema | RegistryName      | Offset  | TransformationName | Category | TransformationType | columnValue | DestinationName | DestinationType | DestConnection | TopicName | Status |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | STREAMING     | k1  | v1    | s1   | v2     | PipeLIne | Add a Source | DemoSource | KAFKA      | Auto_KAFKA_DND   | CSV      | .csv     | Manual       | Auto_ManualSchema | Earlier | TestTrans          | Column   | GroupBy            | m_id        | DemoDestination | KAFKA           | Auto_KAFKA_DND | CDR       | READY  |

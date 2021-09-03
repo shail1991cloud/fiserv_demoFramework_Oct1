@@ -15,7 +15,7 @@ Feature:Creation of Sources and Destination
     Then Source should get created with "<Name>"
     Examples:
       | ProjectName | Description          | Tag           | Pipeline | Icon         | Name       | Type        | connection             | fileType | FilePath | Separator | sourceSchema  | SchemaValue |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | Manual Schema | H_JSON      |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | Auto_Kerb_DND | CSV      | .csv     | ,         | Manual Schema | Auto_ManualSchema      |
 
   @Smoke @Reg @Positive @CSource-Test3 @TC19
   Scenario Outline: user is able to delete created source
@@ -31,7 +31,7 @@ Feature:Creation of Sources and Destination
     Then source "<Name>" should get deleted
     Examples:
       | ProjectName | Description          | Tag           | Pipeline | Icon         | Name       | Type        | connection             | fileType | FilePath | Separator | sourceSchema | DeleteButton  |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | No Schema    | Delete Source |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | Auto_Kerb_DND | CSV      | .csv     | ,         | No Schema    | Delete Source |
 
   @Smoke @Reg @Positive @CTransformation-Test1 @TC20
   Scenario Outline: user is able to create Transformation
@@ -47,7 +47,7 @@ Feature:Creation of Sources and Destination
     Then Transformation with "<TransformationName>" should get created
     Examples:
       | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName | Type        | connection             | fileType | FilePath | Separator | sourceSchema  | SchemaValue | TransformationName | Category | TransformationType | columnValue |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | Manual Schema | H_JSON      | TestTrans          | Column   | GroupBy            | age         |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | Auto_Kerb_DND | CSV      | .csv     | ,         | Manual Schema | Auto_ManualSchema      | TestTrans          | Column   | GroupBy            | m_boolean         |
 
   @Smoke @Reg @Positive @CDestination-Test1 @TC21
   Scenario Outline: user is able to create File System type Destination
@@ -63,9 +63,9 @@ Feature:Creation of Sources and Destination
     Then Destination with "<DestinationName>" should get created
     Examples:
       | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName | SourceType  | SourceConnection       | fileType | FilePath | Separator | sourceSchema  | SchemaValue | DestinationName | DestinationType | DestConnection         | TopicName |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | Manual Schema | H_JSON      | DemoDestination | File System     | AUTOMATION_DONOTDELETE | CDR       |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | Auto_Kerb_DND | CSV      | .csv     | ,         | Manual Schema | Auto_ManualSchema      | DemoDestination | File System     | Auto_Kerb_DND | CDR       |
 
-  @Smoke @Reg @Positive @CDestination-Test1 @TC22
+  @Smoke @RegN @Positive @CDestination-Test1 @TC22
   Scenario Outline: user is able to create Kafka type Destination
     Given user is on DIL login page
     When enter username and password
@@ -79,9 +79,9 @@ Feature:Creation of Sources and Destination
     Then Destination with "<DestinationName>" should get created
     Examples:
       | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName | SourceType  | SourceConnection       | fileType | FilePath | Separator | sourceSchema  | SchemaValue | DestinationName | DestinationType | DestConnection | TopicName    |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | AUTOMATION_DONOTDELETE | CSV      | .csv     | ,         | Manual Schema | H_JSON      | DemoDestination | KAFKA           | Kafka_plain    | testkafkacmp |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSource | File System | Auto_Kerb_DND | CSV      | .csv     | ,         | Manual Schema | Auto_ManualSchema      | DemoDestination | KAFKA           | Auto_KAFKA_DND    | CDR |
 
-  @Smoke @Reg @Positive @CSource-Test1 @TC23
+  @Smoke @RegN @Positive @CSource-Test1 @TC23
   Scenario Outline: user is able to create Kafka source for Manual Schema
     Given user is on DIL login page
     When enter username and password
@@ -93,8 +93,8 @@ Feature:Creation of Sources and Destination
     Then Source should get created with "<SourceName>"
     Examples:
       | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName      | SourceType | SourceConnection | TopicName | SourceSchema | RegistryName            | Offset|Key | Value |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSourceKafka | KAFKA      | Kafka_plain      | CDR       | Manual    | AAA_Automation_DoNotDEl | Earlier |K   | v     |
-  @Smoke @Reg @Positive @CSource-Test1 @TC24
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSourceKafka | KAFKA      | Auto_KAFKA_DND      | CDR       | Manual    | Auto_ManualSchema | Earlier |K   | v     |
+  @Smoke @RegN @Positive @CSource-Test1 @TC24
   Scenario Outline: user is able to create Kafka source for NoSchema
     Given user is on DIL login page
     When enter username and password
@@ -106,7 +106,7 @@ Feature:Creation of Sources and Destination
     Then Source should get created with "<SourceName>"
     Examples:
       | ProjectName | Description          | Tag           | Pipeline | Icon         | SourceName      | SourceType | SourceConnection | TopicName | SourceSchema | RegistryName            | Offset|Key | Value |
-      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSourceKafka | KAFKA      | Kafka_plain      | CDR       | No_Schema    | AAA_Automation_DoNotDEl | Earlier |K   | v     |
+      | AutoDIL     | ProjectForAutomation | Test_Pipeline | PipeLIne | Add a Source | DemoSourceKafka | KAFKA      | Auto_KAFKA_DND      | CDR       | No_Schema    | Auto_ManualSchema | Earlier |K   | v     |
 #-----------------------------------In Progress__----------------------
 
 

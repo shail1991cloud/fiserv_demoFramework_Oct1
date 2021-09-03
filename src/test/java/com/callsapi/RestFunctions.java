@@ -39,6 +39,7 @@ public class RestFunctions {
         String jsonString = response.asString();
         token = JsonPath.from(jsonString).get("token");
         return response;
+
     }
 
     /**

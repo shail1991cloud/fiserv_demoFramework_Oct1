@@ -32,6 +32,7 @@ public class createConnectionsSteps extends Baseclass {
     @When("enters {string},{string},{string},principal and fileType")
     public void entersPrincipalAndFileType(String name, String description, String connectionType) throws InterruptedException, IOException {
         connectionsPage.enterDetailsForKerberosConnection(name,description,connectionType);
+        connectionsPage.enterKerberosPrincipalDetails();
     }
 
 
@@ -52,6 +53,13 @@ public class createConnectionsSteps extends Baseclass {
     }
 
 
+    @And("enters {string},{string},{string},{string},{string}")
+    public void enters(String KFile, String TFile, String KPass, String TPass, String Protocol) throws IOException, InterruptedException {
+       connectionsPage.enterDetailsForSSLConnection(KFile,TFile,KPass,TPass,Protocol);
+    }
 
-
+    @When("enters {string},{string},{string}")
+    public void enters(String name, String description, String connectionType) throws IOException, InterruptedException {
+        connectionsPage.enterDetailsForKerberosConnection(name,description,connectionType);
+    }
 }
