@@ -4326,3 +4326,6 @@
 2021-09-17 13:09:642 INFO  createSourceDestAndTransform:85 - Transformation is Created with Name-->TestTrans
 2021-09-17 13:09:244 INFO  createSourceDestAndTransform:93 - Transformation is validated with Name-->TestTrans
 2021-09-17 13:09:118 INFO  createSourceDestAndTransform:99 - Destination is Created with Name-->DemoDestination
+2021-09-17 19:09:332 INFO  commonSteps:33 - --Browser Launched--and user is navigated to DIL Login Page
+2021-09-17 19:09:758 INFO  DIL_loginpage:43 - User is logged into DIL UI with userId-->parihars
+2021-09-17 19:09:758 INFO  commonSteps:40 - --user name and Password are entered--
