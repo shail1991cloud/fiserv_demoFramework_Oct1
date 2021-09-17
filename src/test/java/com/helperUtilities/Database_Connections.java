@@ -32,6 +32,7 @@ public class Database_Connections {
     public static ResultSet executeSQL(String sql, Connection conn) throws SQLException {
         Statement stmt = conn.createStatement();
         ResultSet res = stmt.executeQuery(sql);
+
         int count = 1;
 
         if (res.next() == false) {

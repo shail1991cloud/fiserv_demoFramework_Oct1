@@ -5,6 +5,7 @@ package com.config.enums;
  */
 
 public enum Browsers {
+
 	/**
 	 * @enum are used to define set of constants for different browsers
 	 */
