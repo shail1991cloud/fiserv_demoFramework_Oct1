@@ -18,7 +18,7 @@ import java.util.List;
 
 public class ProjectsPage {
 
-    public final String customisedProjectOnProjectListingPage = "//*[text()=' %s ']";
+    public final String customisedProjectOnProjectListingPage = "//*[text()='%s']";
     public final String customisedCreateProjectTab = "//*[text()=' %s ']";
     public Functions_LeanPageObject functions_leanPageObject;
     public RestFunctions restFunctions;

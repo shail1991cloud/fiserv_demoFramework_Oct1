@@ -4,6 +4,7 @@ import com.baselibrary.Baseclass;
 import com.dataproviderUtilities.ConfigFileReader;
 import com.helperUtilities.LoggerHelper;
 import com.pagesPF.ConnectionsPage;
+import com.pagesPF.DIL_loginpage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,6 +16,7 @@ import java.io.IOException;
 public class createConnectionsSteps extends Baseclass {
     public ConfigFileReader configFileReader;
     public ConnectionsPage connectionsPage;
+    public DIL_loginpage loginpage;
     Logger log = LoggerHelper.getLogger(createConnectionsSteps.class);
 
     public createConnectionsSteps() {
@@ -56,6 +58,7 @@ public class createConnectionsSteps extends Baseclass {
     @And("enters {string},{string},{string},{string},{string}")
     public void enters(String KFile, String TFile, String KPass, String TPass, String Protocol) throws IOException, InterruptedException {
        connectionsPage.enterDetailsForSSLConnection(KFile,TFile,KPass,TPass,Protocol);
+
     }
 
     @When("enters {string},{string},{string}")

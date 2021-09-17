@@ -21,12 +21,12 @@ public class ExcelUtility {
     /**
      * @method read_ExcelFile used to read all data from input sheet
      */
-    public static void read_ExcelFile(String fileName) {
+    public static void read_ExcelFile(String fileName,int index) {
         try {
             File file = new File(fileName);                    //creating a new file instance
             FileInputStream fis = new FileInputStream(file);   //obtaining bytes from the fil
             XSSFWorkbook wb = new XSSFWorkbook(fis);            // creating Workbook instance that refers to .xlsx file
-            XSSFSheet sheet = wb.getSheetAt(0);           //creating a Sheet object to retrieve object
+            XSSFSheet sheet = wb.getSheetAt(index);           //creating a Sheet object to retrieve object
             Iterator<Row> itr = sheet.iterator();               //iterating over excel file
             while (itr.hasNext()) {
                 Row row = itr.next();
