@@ -10,22 +10,22 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 
-public class SearchResultsOnGoogle {
+public class SearchEngine_Google {
     WebDriver driver;
     public ConfigFileReader configFileReader;
-    public final String customisedSearchResult = "//*[text()='%s']";
+    public final String searchItemOnGoogle = "//*[text()='%s']";
     @FindBy(how = How.XPATH, using = "//*[@title='Search']")
     WebElement searchBoxOnGooglePage;
 
 
 
-    public SearchResultsOnGoogle(WebDriver driver) {
+    public SearchEngine_Google(WebDriver driver) {
         this.driver = driver;
         configFileReader = new ConfigFileReader();
     }
 
 
-    public void searchItem(String item ) throws InterruptedException {
+    public void searchItemOnGoogle(String item ) throws InterruptedException {
 
         CommonFunction.waitForElementToAppear(driver,searchBoxOnGooglePage);
         searchBoxOnGooglePage.sendKeys(item);
@@ -33,20 +33,14 @@ public class SearchResultsOnGoogle {
 
     }
 
-    public void validateResult(String resultToAdd ) throws InterruptedException {
+    public void validateFirstItemOnGoogle(String itemValueToAdd ) throws InterruptedException {
 
 
-        CommonFunction.waitForElementToAppear(driver,CommonFunction.getCustomisedWebElement(driver,customisedSearchResult,resultToAdd));
-        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,customisedSearchResult,resultToAdd).isDisplayed());
-
-    }
-    public void enterUrl(String url ) throws InterruptedException {
-
-        driver.get(url);
-        CommonFunction.deleteAllCookies(driver);
-        CommonFunction.maximiseBrowser(driver);
+        CommonFunction.waitForElementToAppear(driver,CommonFunction.getCustomisedWebElement(driver,searchItemOnGoogle,itemValueToAdd));
+        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,searchItemOnGoogle,itemValueToAdd).isDisplayed());
 
     }
+
 
 
 }

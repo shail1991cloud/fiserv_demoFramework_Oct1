@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="fiserv_demo_project" />
+        <module name="demo_framework" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="fiserv_demo_project" target="1.8" />
+      <module name="demo_framework" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

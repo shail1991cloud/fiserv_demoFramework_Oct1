@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/fiserv_demo_project.iml" filepath="$PROJECT_DIR$/.idea/fiserv_demo_project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/demo_framework.iml" filepath="$PROJECT_DIR$/.idea/demo_framework.iml" />
     </modules>
   </component>
 </project>
