@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="dil_automation" />
+        <module name="fiserv_demo_project" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="dil_automation" target="1.8" />
+      <module name="fiserv_demo_project" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">DILTest</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 18, 2021 01:25:06 PM</span></a>
+<a href="#"><span class="badge badge-primary">Sep 30, 2021 05:53:43 PM</span></a>
 </li>
 </ul>
 </div>
@@ -79,7 +79,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@CreatePipeLine</a><a class="dropdown-item" href="#">@CP-Test3</a><a class="dropdown-item" href="#">@TC4</a><a class="dropdown-item" href="#">@Smoke</a><a class="dropdown-item" href="#">@Reg</a><a class="dropdown-item" href="#">@Positive</a>
+<a class="dropdown-item" href="#">@SmokeTest</a>
 </ul>
 </li>
 </ul>
@@ -90,9 +90,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">Creation and Field level validation of pipelines</p>
+            <p class="name">To search result in Google Search box</p>
             <p class="text-sm">
-              <span>13:25:07 PM</span> / <span>00:01:03:132</span>
+              <span>17:53:44 PM</span> / <span>00:00:06:040</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -100,28 +100,26 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">Creation and Field level validation of pipelines</h5>
-<span class='badge badge-success'>08.18.2021 13:25:07</span>
-<span class='badge badge-danger'>08.18.2021 13:26:10</span>
-<span class='badge badge-default'>00:01:03:132</span>
+<h5 class="test-status text-pass">To search result in Google Search box</h5>
+<span class='badge badge-success'>09.30.2021 17:53:44</span>
+<span class='badge badge-danger'>09.30.2021 17:53:50</span>
+<span class='badge badge-default'>00:00:06:040</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
-<div class="m-t-10 m-l-5"> As a user I want to Create a Pipeline,Validate the PipelineListing Page
-and is able to validate individual pipelines for field level validation</div>
 </div>
 </div>
 <div class="accordion mt-4">
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>user is able to delete pipeline and validate the same in Pipeline Listing page</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User is able to search a result and verify the same</div>
       </div>
     </div>
         <div class="scenario_outline collapse">
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>user is able to delete pipeline and validate the same in Pipeline Listing page</div>
+                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>User is able to search a result and verify the same</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
@@ -133,37 +131,17 @@ and is able to validate individual pipelines for field level validation</div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Given user is on DIL login page</span>
+                    <span>Given user passes "https://www.google.com/" and navigates to Google page</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>When enter username and password</span>
+                    <span>When enters "Fiserv" to Google Search box</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>And clicks on createProject tab</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When creates project with "AutoDIL","ProjectForAutomation","Test_Pipeline" and engine</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And creates a "PipeLIne" with "ProjectForAutomation" and "Test_Pipeline"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When deletes pipeline</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then "PipeLIne" should get disappeared</span>
+                    <span>Then "Fiserv: Financial Services Technology, Mobile Banking ..." should be validated in Search result</span>
       <div>
       </div>
                   </div>
@@ -194,7 +172,7 @@ and is able to validate individual pipelines for field level validation</div>
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">6</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -203,12 +181,12 @@ and is able to validate individual pipelines for field level validation</div>
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@CreatePipeLine</p>
+<p class="name">@SmokeTest</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@CreatePipeLine</h4>
+<h4>@SmokeTest</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -222,191 +200,11 @@ and is able to validate individual pipelines for field level validation</div>
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>13:25:07 PM</td>
+<td>17:53:44 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>user is able to delete pipeline and validate the same in Pipeline Listing page</a>
+<a href="#" class="linked" test-id='1' id='3'>User is able to search a result and verify the same</a>
 <div class="">
-<span class="badge badge-default">Creation and Field level validation of pipelines.user is able to delete pipeline and validate the same in Pipeline Listing page</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
-<p class="name">@CP-Test3</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@CP-Test3</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>13:25:07 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='3'>user is able to delete pipeline and validate the same in Pipeline Listing page</a>
-<div class="">
-<span class="badge badge-default">Creation and Field level validation of pipelines.user is able to delete pipeline and validate the same in Pipeline Listing page</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
-<p class="name">@TC4</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@TC4</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>13:25:07 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='3'>user is able to delete pipeline and validate the same in Pipeline Listing page</a>
-<div class="">
-<span class="badge badge-default">Creation and Field level validation of pipelines.user is able to delete pipeline and validate the same in Pipeline Listing page</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
-<p class="name">@Smoke</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@Smoke</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>13:25:07 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='3'>user is able to delete pipeline and validate the same in Pipeline Listing page</a>
-<div class="">
-<span class="badge badge-default">Creation and Field level validation of pipelines.user is able to delete pipeline and validate the same in Pipeline Listing page</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
-<p class="name">@Reg</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@Reg</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>13:25:07 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='3'>user is able to delete pipeline and validate the same in Pipeline Listing page</a>
-<div class="">
-<span class="badge badge-default">Creation and Field level validation of pipelines.user is able to delete pipeline and validate the same in Pipeline Listing page</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
-<p class="name">@Positive</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@Positive</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>13:25:07 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='3'>user is able to delete pipeline and validate the same in Pipeline Listing page</a>
-<div class="">
-<span class="badge badge-default">Creation and Field level validation of pipelines.user is able to delete pipeline and validate the same in Pipeline Listing page</span>
+<span class="badge badge-default">To search result in Google Search box.User is able to search a result and verify the same</span>
 </div>
 </td>
 </tr>
@@ -427,13 +225,13 @@ and is able to validate individual pipelines for field level validation</div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 18, 2021 01:25:06 PM</h3>
+<h3>Sep 30, 2021 05:53:43 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 18, 2021 01:26:10 PM</h3>
+<h3>Sep 30, 2021 05:53:50 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -504,7 +302,7 @@ and is able to validate individual pipelines for field level validation</div>
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>9</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>5</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -523,7 +321,7 @@ and is able to validate individual pipelines for field level validation</div>
 </div></div>
 <script>
 var timeline = {
-"Creation and Field level validation of pipelines":63.132
+"To search result in Google Search box":6.04
 };
 </script>
 <div class="row">
@@ -533,47 +331,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@CreatePipeLine</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@CP-Test3</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@TC4</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@Smoke</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@Reg</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@Positive</td>
+<td>@SmokeTest</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -600,7 +358,7 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 9,
+passGrandChild: 5,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
