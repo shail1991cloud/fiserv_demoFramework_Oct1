@@ -18,7 +18,6 @@ public class SearchEngine_Bing {
     WebElement searchBoxOnBingPage;
 
 
-
     public SearchEngine_Bing(WebDriver driver) {
         this.driver = driver;
         configFileReader = new ConfigFileReader();
@@ -26,16 +25,15 @@ public class SearchEngine_Bing {
 
 
     public void searchItemOnBing(String item) throws InterruptedException {
-        CommonFunction.waitForElementToAppear(driver,searchBoxOnBingPage);
+        CommonFunction.waitForElementToAppear(driver, searchBoxOnBingPage);
         searchBoxOnBingPage.sendKeys(item);
         searchBoxOnBingPage.sendKeys(Keys.ENTER);
     }
 
     public void validateFirstItemOnBing(String itemValueToAdd) throws InterruptedException {
-        CommonFunction.waitForElementToAppear(driver,CommonFunction.getCustomisedWebElement(driver,searchItemOnBing,itemValueToAdd));
-        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,searchItemOnBing,itemValueToAdd).isDisplayed());
+        CommonFunction.waitForElementToAppear(driver, CommonFunction.getCustomisedWebElement(driver, searchItemOnBing, itemValueToAdd));
+        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, searchItemOnBing, itemValueToAdd).isDisplayed());
     }
-
 
 
 }

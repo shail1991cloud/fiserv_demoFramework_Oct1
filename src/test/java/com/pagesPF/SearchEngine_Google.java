@@ -18,29 +18,27 @@ public class SearchEngine_Google {
     WebElement searchBoxOnGooglePage;
 
 
-
     public SearchEngine_Google(WebDriver driver) {
         this.driver = driver;
         configFileReader = new ConfigFileReader();
     }
 
 
-    public void searchItemOnGoogle(String item ) throws InterruptedException {
+    public void searchItemOnGoogle(String item) throws InterruptedException {
 
-        CommonFunction.waitForElementToAppear(driver,searchBoxOnGooglePage);
+        CommonFunction.waitForElementToAppear(driver, searchBoxOnGooglePage);
         searchBoxOnGooglePage.sendKeys(item);
         searchBoxOnGooglePage.sendKeys(Keys.ENTER);
 
     }
 
-    public void validateFirstItemOnGoogle(String itemValueToAdd ) throws InterruptedException {
+    public void validateFirstItemOnGoogle(String itemValueToAdd) throws InterruptedException {
 
 
-        CommonFunction.waitForElementToAppear(driver,CommonFunction.getCustomisedWebElement(driver,searchItemOnGoogle,itemValueToAdd));
-        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver,searchItemOnGoogle,itemValueToAdd).isDisplayed());
+        CommonFunction.waitForElementToAppear(driver, CommonFunction.getCustomisedWebElement(driver, searchItemOnGoogle, itemValueToAdd));
+        Assert.assertTrue(CommonFunction.getCustomisedWebElement(driver, searchItemOnGoogle, itemValueToAdd).isDisplayed());
 
     }
-
 
 
 }

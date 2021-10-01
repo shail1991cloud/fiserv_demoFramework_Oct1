@@ -26,7 +26,7 @@ public class Hooks {
 
     @Before
     public void beforeScenario(Scenario scenario) {
-       scenario.log("--Starting the Execution--");
+        scenario.log("--Starting the Execution--");
 
 
     }

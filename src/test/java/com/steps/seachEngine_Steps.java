@@ -38,12 +38,12 @@ public class seachEngine_Steps extends Baseclass {
         switch (engineName) {
             case "Google":
                 searchResultsOnGoogle.searchItemOnGoogle(term);
-                log.info("Term is entered to get first Item-->" + term + " "+"on-" + searchEngine);
+                log.info("Term is entered to get first Item-->" + term + " " + "on-" + searchEngine);
                 break;
 
             case "Bing":
                 searchEngine_bing.searchItemOnBing(term);
-                log.info("Term is entered to get first Item-->" + term + " "+"on-" + searchEngine);
+                log.info("Term is entered to get first Item-->" + term + " " + "on-" + searchEngine);
                 break;
 
         }
@@ -55,10 +55,10 @@ public class seachEngine_Steps extends Baseclass {
         switch (engineName) {
             case "Google":
                 searchResultsOnGoogle.validateFirstItemOnGoogle(firstItemInSearchResult);
-                log.info("First Item is validated on -->" + searchEngine +" "+ "having value-->" + firstItemInSearchResult);
+                log.info("First Item is validated on -->" + searchEngine + " " + "having value-->" + firstItemInSearchResult);
                 break;
             case "Bing":
-                log.info("First Item is validated on -->" + searchEngine +" "+ "having value-->" + firstItemInSearchResult);
+                log.info("First Item is validated on -->" + searchEngine + " " + "having value-->" + firstItemInSearchResult);
                 break;
         }
 

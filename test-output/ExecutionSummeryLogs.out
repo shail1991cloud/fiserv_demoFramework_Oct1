@@ -1,32 +1,6 @@
-2021-10-01 01:10:453 INFO  seachEngine_Steps:32 - url is launched--->https://www.google.com/
-2021-10-01 01:10:631 INFO  seachEngine_Steps:41 - Term is entered to get first Item-->Fiservon-Google
-2021-10-01 01:10:870 INFO  seachEngine_Steps:32 - url is launched--->https://www.bing.com/
-2021-10-01 01:10:758 INFO  seachEngine_Steps:32 - url is launched--->https://www.google.com/
-2021-10-01 01:10:940 INFO  seachEngine_Steps:41 - Term is entered to get first Item-->Fiservon-Google
-2021-10-01 01:10:600 INFO  seachEngine_Steps:32 - url is launched--->https://www.bing.com/
-2021-10-01 01:10:149 INFO  seachEngine_Steps:32 - url is launched--->https://www.google.com/
-2021-10-01 01:10:396 INFO  seachEngine_Steps:41 - Term is entered to get first Item-->Fiservon-Google
-2021-10-01 01:10:547 INFO  seachEngine_Steps:44 - Term is entered to get first Item-->Fiservon-Google
-2021-10-01 01:10:606 INFO  seachEngine_Steps:55 - First Item is validated on -->Googlehaving value-->Fiserv: Financial Services Technology, Mobile Banking ...
-2021-10-01 01:10:606 INFO  seachEngine_Steps:57 - First Item is validated on -->Googlehaving value-->Fiserv: Financial Services Technology, Mobile Banking ...
-2021-10-01 01:10:667 INFO  seachEngine_Steps:32 - url is launched--->https://www.bing.com/
-2021-10-01 01:10:585 INFO  seachEngine_Steps:44 - Term is entered to get first Item-->Clover Network Wikion-Bing
-2021-10-01 01:10:586 INFO  seachEngine_Steps:57 - First Item is validated on -->Binghaving value-->Clover Network - Wikipedia
-2021-10-01 01:10:904 INFO  seachEngine_Steps:32 - url is launched--->https://www.google.com/
-2021-10-01 01:10:994 INFO  seachEngine_Steps:41 - Term is entered to get first Item-->Fiservon-Google
-2021-10-01 01:10:52 INFO  seachEngine_Steps:58 - First Item is validated on -->Googlehaving value-->Fiserv: Financial Services Technology, Mobile Banking ...
-2021-10-01 01:10:169 INFO  seachEngine_Steps:32 - url is launched--->https://www.bing.com/
-2021-10-01 01:10:147 INFO  seachEngine_Steps:46 - Term is entered to get first Item-->Clover Network Wikion-Bing
-2021-10-01 01:10:148 INFO  seachEngine_Steps:61 - First Item is validated on -->Binghaving value-->Clover Network - Wikipedia
-2021-10-01 01:10:856 INFO  seachEngine_Steps:32 - url is launched--->https://www.google.com/
-2021-10-01 01:10:220 INFO  seachEngine_Steps:41 - Term is entered to get first Item-->Fiserv on-Google
-2021-10-01 01:10:335 INFO  seachEngine_Steps:58 - First Item is validated on -->Google having value-->Fiserv: Financial Services Technology, Mobile Banking ...
-2021-10-01 01:10:395 INFO  seachEngine_Steps:32 - url is launched--->https://www.bing.com/
-2021-10-01 01:10:204 INFO  seachEngine_Steps:46 - Term is entered to get first Item-->Clover Network Wiki on-Bing
-2021-10-01 01:10:205 INFO  seachEngine_Steps:61 - First Item is validated on -->Bing having value-->Clover Network - Wikipedia
-2021-10-01 01:10:479 INFO  seachEngine_Steps:32 - url is launched--->https://www.google.com/
-2021-10-01 01:10:751 INFO  seachEngine_Steps:41 - Term is entered to get first Item-->Fiserv on-Google
-2021-10-01 01:10:885 INFO  seachEngine_Steps:58 - First Item is validated on -->Google having value-->Fiserv: Financial Services Technology, Mobile Banking ...
-2021-10-01 01:10:966 INFO  seachEngine_Steps:32 - url is launched--->https://www.bing.com/
-2021-10-01 01:10:837 INFO  seachEngine_Steps:46 - Term is entered to get first Item-->Clover Network Wiki on-Bing
-2021-10-01 01:10:838 INFO  seachEngine_Steps:61 - First Item is validated on -->Bing having value-->Clover Network - Wikipedia
+2021-10-01 11:10:842 INFO  seachEngine_Steps:32 - url is launched--->https://www.google.com/
+2021-10-01 11:10:480 INFO  seachEngine_Steps:41 - Term is entered to get first Item-->Fiserv on-Google
+2021-10-01 11:10:585 INFO  seachEngine_Steps:58 - First Item is validated on -->Google having value-->Fiserv: Financial Services Technology, Mobile Banking ...
+2021-10-01 11:10:641 INFO  seachEngine_Steps:32 - url is launched--->https://www.bing.com/
+2021-10-01 11:10:778 INFO  seachEngine_Steps:46 - Term is entered to get first Item-->Clover Network Wiki on-Bing
+2021-10-01 11:10:779 INFO  seachEngine_Steps:61 - First Item is validated on -->Bing having value-->Clover Network - Wikipedia

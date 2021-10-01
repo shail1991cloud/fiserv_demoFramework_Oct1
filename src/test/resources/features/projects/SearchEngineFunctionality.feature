@@ -6,6 +6,6 @@ Feature: To search an item and validate first visible result on Search Engines
     When  enters "<Term>" to "<SearchEngine>" search  box
     Then "<FirstItemInSearchResult>" should be validated in Search result for "<SearchEngine>"
     Examples:
-    |SearchEngine| url               |Term   |FirstItemInSearchResult                                  |
-    |Google |https://www.google.com/ | Fiserv|Fiserv: Financial Services Technology, Mobile Banking ...|
-    |Bing   |https://www.bing.com/   | Clover Network Wiki|Clover Network - Wikipedia                  |
+      | SearchEngine | url                     | Term                | FirstItemInSearchResult                                   |
+      | Google       | https://www.google.com/ | Fiserv              | Fiserv: Financial Services Technology, Mobile Banking ... |
+      | Bing         | https://www.bing.com/   | Clover Network Wiki | Clover Network - Wikipedia                                |
