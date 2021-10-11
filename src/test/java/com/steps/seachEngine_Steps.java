@@ -3,7 +3,6 @@ package com.steps;
 import com.baselibrary.Baseclass;
 import com.helperUtilities.LoggerHelper;
 import com.pagesPF.CommonPageFunctions;
-import com.pagesPF.SearchEngine_Bing;
 import com.pagesPF.SearchEngine_Google;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,7 +12,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class seachEngine_Steps extends Baseclass {
     public SearchEngine_Google searchResultsOnGoogle;
-    public SearchEngine_Bing searchEngine_bing;
     public CommonPageFunctions commonPageFunctions;
 
     Logger log = LoggerHelper.getLogger(seachEngine_Steps.class);
@@ -21,7 +19,6 @@ public class seachEngine_Steps extends Baseclass {
 
     public seachEngine_Steps() {
         searchResultsOnGoogle = PageFactory.initElements(driver, SearchEngine_Google.class);
-        searchEngine_bing = PageFactory.initElements(driver, SearchEngine_Bing.class);
         commonPageFunctions = PageFactory.initElements(driver, CommonPageFunctions.class);
 
     }
