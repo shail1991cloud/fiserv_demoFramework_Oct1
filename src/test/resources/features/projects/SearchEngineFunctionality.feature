@@ -8,4 +8,3 @@ Feature: To search an item and validate first visible result on Search Engines
     Examples:
       | SearchEngine | url                     | Term                | FirstItemInSearchResult                                   |
       | Google       | https://www.google.com/ | Fiserv              | Fiserv: Financial Services Technology, Mobile Banking ... |
-      | Bing         | https://www.bing.com/   | Clover Network Wiki | Clover Network - Wikipedia                                |

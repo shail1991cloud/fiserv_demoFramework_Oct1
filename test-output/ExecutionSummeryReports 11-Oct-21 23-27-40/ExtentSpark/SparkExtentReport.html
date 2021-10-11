@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">DILTest</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Sep 30, 2021 05:53:43 PM</span></a>
+<a href="#"><span class="badge badge-primary">Oct 11, 2021 11:27:39 PM</span></a>
 </li>
 </ul>
 </div>
@@ -79,7 +79,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@SmokeTest</a>
+<a class="dropdown-item" href="#">@Smoke</a><a class="dropdown-item" href="#">@Reg</a>
 </ul>
 </li>
 </ul>
@@ -90,9 +90,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">To search result in Google Search box</p>
+            <p class="name">To search an item and validate first visible result on Search Engines</p>
             <p class="text-sm">
-              <span>17:53:44 PM</span> / <span>00:00:06:040</span>
+              <span>23:27:41 PM</span> / <span>00:00:09:664</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -100,10 +100,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">To search result in Google Search box</h5>
-<span class='badge badge-success'>09.30.2021 17:53:44</span>
-<span class='badge badge-danger'>09.30.2021 17:53:50</span>
-<span class='badge badge-default'>00:00:06:040</span>
+<h5 class="test-status text-pass">To search an item and validate first visible result on Search Engines</h5>
+<span class='badge badge-success'>10.11.2021 23:27:41</span>
+<span class='badge badge-danger'>10.11.2021 23:27:50</span>
+<span class='badge badge-default'>00:00:09:664</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 </div>
 </div>
@@ -112,14 +112,14 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User is able to search a result and verify the same</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>User is able to search a term and verify the first result on Search engine</div>
       </div>
     </div>
         <div class="scenario_outline collapse">
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>User is able to search a result and verify the same</div>
+                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>User is able to search a term and verify the first result on Search engine</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
@@ -131,17 +131,55 @@
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Given user passes "https://www.google.com/" and navigates to Google page</span>
+                    <span>Given user launches "https://www.google.com/" for SearchEngine</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>When enters "Fiserv" to Google Search box</span>
+                    <span>When enters "Fiserv" to "Google" search  box</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then "Fiserv: Financial Services Technology, Mobile Banking ..." should be validated in Search result</span>
+                    <span>Then "Fiserv: Financial Services Technology, Mobile Banking ..." should be validated in Search result for "Google"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>com.steps.Hooks.quitBrowser(io.cucumber.java.Scenario)</span>
+      <div>---Closing the Browser---
+      </div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="10"><span class="badge log pass-bg mr-2">Pass</span>User is able to search a term and verify the first result on Search engine</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>com.steps.Hooks.beforeScenario(io.cucumber.java.Scenario)</span>
+      <div>--Starting the Execution--
+      </div>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Given user launches "https://www.bing.com/" for SearchEngine</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When enters "Clover Network Wiki" to "Bing" search  box</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then "Clover Network - Wikipedia" should be validated in Search result for "Bing"</span>
       <div>
       </div>
                   </div>
@@ -172,22 +210,22 @@
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>1</span>
+<span class='badge log pass-bg'>2</span>
 </span>
-<p class="name">@SmokeTest</p>
-<p class="duration text-sm">1 tests</p>
+<p class="name">@Smoke</p>
+<p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@SmokeTest</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
+<h4>@Smoke</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -200,11 +238,67 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>17:53:44 PM</td>
+<td>23:27:41 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>User is able to search a result and verify the same</a>
+<a href="#" class="linked" test-id='1' id='3'>User is able to search a term and verify the first result on Search engine</a>
 <div class="">
-<span class="badge badge-default">To search result in Google Search box.User is able to search a result and verify the same</span>
+<span class="badge badge-default">To search an item and validate first visible result on Search Engines.User is able to search a term and verify the first result on Search engine</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:27:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='10'>User is able to search a term and verify the first result on Search engine</a>
+<div class="">
+<span class="badge badge-default">To search an item and validate first visible result on Search Engines.User is able to search a term and verify the first result on Search engine</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">@Reg</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Reg</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:27:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>User is able to search a term and verify the first result on Search engine</a>
+<div class="">
+<span class="badge badge-default">To search an item and validate first visible result on Search Engines.User is able to search a term and verify the first result on Search engine</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:27:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='10'>User is able to search a term and verify the first result on Search engine</a>
+<div class="">
+<span class="badge badge-default">To search an item and validate first visible result on Search Engines.User is able to search a term and verify the first result on Search engine</span>
 </div>
 </td>
 </tr>
@@ -225,13 +319,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Sep 30, 2021 05:53:43 PM</h3>
+<h3>Oct 11, 2021 11:27:39 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Sep 30, 2021 05:53:50 PM</h3>
+<h3>Oct 11, 2021 11:27:50 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -282,7 +376,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>2</b> scenarios passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -302,7 +396,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>5</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>10</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -321,7 +415,7 @@
 </div></div>
 <script>
 var timeline = {
-"To search result in Google Search box":6.04
+"To search an item and validate first visible result on Search Engines":9.664
 };
 </script>
 <div class="row">
@@ -331,8 +425,16 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@SmokeTest</td>
-<td>1</td>
+<td>@Smoke</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Reg</td>
+<td>2</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -352,13 +454,13 @@ failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 1,
+passChild: 2,
 failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 5,
+passGrandChild: 10,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,

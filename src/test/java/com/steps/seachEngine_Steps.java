@@ -34,32 +34,18 @@ public class seachEngine_Steps extends Baseclass {
 
     @When("enters {string} to {string} search  box")
     public void entersToSearchBox(String term, String searchEngine) throws InterruptedException {
-        String engineName = searchEngine;
-        switch (engineName) {
-            case "Google":
                 searchResultsOnGoogle.searchItemOnGoogle(term);
                 log.info("Term is entered to get first Item-->" + term + " " + "on-" + searchEngine);
-                break;
-
-            case "Bing":
-                searchEngine_bing.searchItemOnBing(term);
-                log.info("Term is entered to get first Item-->" + term + " " + "on-" + searchEngine);
-                break;
 
         }
-    }
+
 
     @Then("{string} should be validated in Search result for {string}")
     public void shouldBeValidatedInSearchResultFor(String firstItemInSearchResult, String searchEngine) throws InterruptedException {
-        String engineName = searchEngine;
-        switch (engineName) {
-            case "Google":
-                searchResultsOnGoogle.validateFirstItemOnGoogle(firstItemInSearchResult);
+        {
+            searchResultsOnGoogle.validateFirstItemOnGoogle(firstItemInSearchResult);
                 log.info("First Item is validated on -->" + searchEngine + " " + "having value-->" + firstItemInSearchResult);
-                break;
-            case "Bing":
-                log.info("First Item is validated on -->" + searchEngine + " " + "having value-->" + firstItemInSearchResult);
-                break;
+
         }
 
     }
